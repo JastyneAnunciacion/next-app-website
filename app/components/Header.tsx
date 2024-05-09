@@ -15,10 +15,14 @@ const Header = () => {
               <div className='w-40'>
                 <WalletDropdown />
               </div>
+              <div className='w-40'>
+                <WalletDropdown />
+              </div>
               <Link href="/wallet" className='w-10 h-10 bg-gray-900 rounded-xl text-white flex items-center justify-center text-3xl font-bold pb-[4px]'>+</Link>
               <div className='w-10 h-10 bg-gray-900 rounded-xl text-white flex items-center justify-center text-3xl font-bold pb-[4px]'>
                 <Image className='rounded-full' src={`/images/phx-gamble-logo.jpeg`} alt="Header Main Logo" width={30} height={30} />
               </div>
+              
               {/* <ProfileButton /> */}
             </div>
         </div>
