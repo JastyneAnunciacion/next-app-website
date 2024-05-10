@@ -20,7 +20,7 @@ const QuickBonusButton = () => {
         </button>
 
         {isBonusesOpen && 
-            <div className='absolute w-[350px] rounded-b-xl bg-gray-700 text-white p-3 flex flex-col gap-2 overflow-hidden'>
+            <div className='absolute w-[350px] rounded-b-xl bg-gray-700 text-white p-3 flex flex-col gap-2 overflow-hidden z-10'>
                 <div className='flex gap-1 items-center'> 
                     <h1 className='font-bold text-lg'>Available Bonuses</h1>
                     <p>2/8</p>

@@ -39,7 +39,7 @@ const WalletDropdown = () => {
         </button>
 
         {isOpen && (
-          <div className='absolute bg-gray-800 w-72 left-0 top-11 flex flex-col rounded-lg overflow-hidden'>
+          <div className='absolute bg-gray-800 w-72 left-0 top-11 flex flex-col rounded-lg overflow-hidden z-20'>
             <div className='w-[95%] h-10 bg-gray-900 text-white flex border border-gray-600 rounded-md gap-2 items-center justify-center p-3 m-2'>
               <div className=''>
                 <Image src={`${basePath}/images/search-image.png`} alt="Search Icon" width={15} height={15}></Image>
