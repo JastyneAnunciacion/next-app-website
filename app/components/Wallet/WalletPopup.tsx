@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react'
 import WalletTokenDropdown from './WalletTokenDropdown';
 import WalletDropdown from './WalletDropdown';
