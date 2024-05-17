@@ -1,19 +1,19 @@
 'use client';
 
 import React, { useState } from 'react'
-import list from './wallet-list.json'
+import list from '../wallet-list.json'
 import Image from 'next/image';
-import basePath from '../utilities/basepath';
-import WalletPopup from './Wallet/WalletPopup';
+import basePath from '../../utilities/basepath';
+import WalletPopup from './WalletPopup';
 
-const WalletDropdown = () => {
+const WalletHeaderDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentlySelected, setCurrentlySelected] = useState(0);
   const [showPopup, setShowPopup] = useState(false);
 
   const handleItemClick = (index: number) => {
     setCurrentlySelected(index);
-    setIsOpen(false); // Close the dropdown after selecting an item
+    setIsOpen(false);
   };
 
   const selectedWallet = list[currentlySelected];
@@ -74,4 +74,4 @@ const WalletDropdown = () => {
   )
 }
 
-export default WalletDropdown
+export default WalletHeaderDropdown

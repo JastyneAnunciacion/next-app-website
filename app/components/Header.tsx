@@ -1,5 +1,5 @@
 import React from 'react';
-import WalletDropdown from './WalletDropdown';
+import WalletHeaderDropdown from './Wallet/WalletHeaderDropdown';
 import Profile from './Profile';
 import Searchbar from './Searchbar';
 
@@ -8,7 +8,7 @@ const Header = () => {
     <header className='w-full'>
       <div className='py-2 px-72 w-full flex justify-between h-[66px] bg-gray-700'>
         <div className='flex w-full items-center justify-center gap-2'>
-          <WalletDropdown />
+          <WalletHeaderDropdown />
         </div>
         <div className='flex items-center justify-center gap-4'>
           <div className='w-40 h-10'>
