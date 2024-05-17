@@ -41,7 +41,7 @@ const SideBar = () => {
                 </button>
 
                 <ul className={`${isOpen && 'self-start flex flex-col items-start'} text-white mt-2`}>
-                    <SideBarListItem isSideBarOpen={isOpen} itemName='Lobby' pageHref='/casino' />
+                    <SideBarListItem isSideBarOpen={isOpen} itemName='Lobby' pageHref='/' />
                     <SideBarListItem isSideBarOpen={isOpen} itemName='Slots' pageHref='/casino' />
                     <SideBarListItem isSideBarOpen={isOpen} itemName='New Slots' pageHref='/casino' />
                     <SideBarListItem isSideBarOpen={isOpen} itemName='Bonus Buys' pageHref='/casino' />
