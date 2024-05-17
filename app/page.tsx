@@ -1,79 +1,28 @@
-import Image from 'next/image'
-import Header from './components/Header'
-import basePath from './utilities/basepath'
+import BigBannerSlider from './components/Banners/BigBannerSlider'
+import CryptocurrencyCard from './components/CryptocurrencyCard'
+import MainComponents from './components/MainComponents'
+import QuickListGames from './components/Quicklist/QuickListGames'
+import QuickListProviders from './components/Quicklist/QuickListProviders'
+import RealTimeBetWinners from './components/RealTimeBetWinners/RealTimeBetWinners'
+import ShortcutCards from './components/ShortcutCards'
+import walletList from "./components/wallet-list.json";
 
 export default function Home() {
   return (
-    <main>
-      <Header />
-      <div className='ml-10'>
-        <div className='relative w-full h-[300px] bg-gray-400 p-5'>
-          <p>PHX GAMBLE is</p>
-          <div className='text-3xl font-extrabold'>
-            <p>CRYPTO CASINO,</p>
-            <p>SPORTS BETTING,</p>
-            <p>BFG STAKING</p>
-          </div>
-
-          <button className='h-14 w-44 bg-gray-900 rounded-xl font-semibold text-sm text-whi flex items-center justify-center gap-2 text-white mt-4'>
-            Make a Deposit
-          </button>
-
-          <div className='absolute h-20 w-10 right-0 top-16 bg-gray-900 rounded-l-xl flex flex-col items-center justify-center gap-3'>
-            <button className='shrink-0'>
-                <div className='h-7 w-7 bg-gray-300 rounded-full' />
-            </button>
-            <button className='shrink-0'>
-                <div className='h-7 w-7 bg-gray-300 rounded-full' />
-            </button>
-          </div>
-        </div>
-
-        <div className='p-3 text-white text-xl font-bold'>
-          {/*  */}
-          <div className='w-full flex flex-col gap-2'>
-            <div className='w-full flex gap-3'>
-              <div className='w-full h-32 bg-slate-600 rounded-xl p-5'>
-                Casino
-              </div>
-              <div className='w-full h-32 bg-slate-600 rounded-xl p-5'>
-                Crypto Loans
-              </div>
-            </div>
-
-            <div className='w-full flex gap-3'>
-              <div className='w-full h-64 flex flex-col gap-3'>
-                <div className='w-full shrink-0 h-32 bg-slate-600 rounded-xl p-5'>
-                  Futures
-                </div>
-                <div className='w-full shrink-0 h-32 bg-slate-600 rounded-xl p-5'>
-                  Sports
-                </div>
-              </div>
-              
-              <div className='w-full h-[270px] bg-slate-600 rounded-xl p-5'>
-                Earn
-              </div>
-
-            </div>
-          </div>
-          {/*  */}
-
-          <div className='w-full h-28 bg-gray-500 mt-10 rounded-xl flex items-center justify-between gap-3 p-6'>
-            <div className='flex items-center gap-6'>
-              <p>Buy Crypto Quickly and Easily</p>
-              {/* <p>G Pay</p>
-              <p>Apple Pay</p>
-              <p>MasterCard</p>
-              <p>VISA</p> */}
-            </div>
-            <button className='h-14 w-44 bg-gray-900 rounded-xl font-semibold text-sm shrink-0 flex items-center justify-center gap-2 text-white mt-4'>
-              Buy Crypto
-            </button>
-          </div>
-        </div>
-
+    <MainComponents>
+      <BigBannerSlider />
+      <div className='flex w-full gap-6 justify-between'>
+        <ShortcutCards imgSrc='' title='Casino' description={`Bonus buys, big multipliers and all the latest slots and table games.`} buttonText='Go To Casino' />
+        <ShortcutCards imgSrc='' title='Sports' description={`All the biggest sports action. Pre-match & in-play betting on football, tennis and much more.`} buttonText='Go To Sports' />
+        <ShortcutCards imgSrc='' title='Instant Signup' description={`Get signed up in seconds with our lightning quick sign up process.`} buttonText='Sign Up Now' />
+        <ShortcutCards imgSrc='' title='Telegram Casino' description={`Exclusive gaming at your chat's edge with our streamlined Telegram Casino.`} buttonText='Play on Telegram' />
       </div>
-    </main>
+      <CryptocurrencyCard />
+      <div className='w-full flex flex-col gap-5'>
+        <QuickListGames gameListTitle='Top Picks' gameList={walletList} />
+        <QuickListProviders gameList={walletList} />
+      </div>
+      <RealTimeBetWinners />
+    </MainComponents>
   )
 }
