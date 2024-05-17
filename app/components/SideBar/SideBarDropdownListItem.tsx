@@ -42,14 +42,14 @@ const SideBarDropdownListItem = ({ isSideBarOpen, itemName }: SideBarDropdownLis
 
                     {isDropdownOpen && (
                         <ul className='flex flex-col items-start'>
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='All Sports' />
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='In Play' />
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Football' />
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Golf' />
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Tennis' />
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Basketball' />
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Horse Racing' />
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='American Football' />
+                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='All Sports' pageHref='/' />
+                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='In Play' pageHref='/' />
+                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Football' pageHref='/' />
+                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Golf' pageHref='/' />
+                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Tennis' pageHref='/' />
+                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Basketball' pageHref='/' />
+                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Horse Racing' pageHref='/' />
+                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='American Football' pageHref='/' />
                         </ul>
                     )}
                 </div>
