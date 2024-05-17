@@ -3,7 +3,6 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import basePath from '../../utilities/basepath'
-import Link from 'next/link'
 import SideBarListItem from './SideBarListItem'
 import SideBarSeperator from './SideBarSeperator'
 import SideBarDropdownListItem from './SideBarDropdownListItem'
