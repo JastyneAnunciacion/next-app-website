@@ -3,9 +3,15 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import basePath from '../utilities/basepath'
+import Link from 'next/link'
 
-const Profile = () => {
+interface ProfileProps {
+    walletOnClick: () => void,
+}
+
+const Profile = ({ walletOnClick }: ProfileProps) => {
     const [showPopup, setShowPopup] = useState(false);
+
     return (
         <div className='relative'>
             <button onClick={() => setShowPopup((prev) => !prev)} className='shrink-0 rounded-full hover:bg-gray-800 h-9 w-9 flex justify-center items-center'>
@@ -16,16 +22,19 @@ const Profile = () => {
                 <div className='absolute top-11 left-[-3rem] z-10 bg-gray-800 text-white p-2 flex flex-col gap-2 rounded-md'>
                     <div className='flex items-center gap-2'>
                         <div className='h-6 w-6 bg-gray-300 rounded-full' />
-                        <p className='hover:border-gray-200 border-b border-gray-800'>
+                        <button
+                            className='hover:border-gray-200 border-b border-gray-800'
+                            onClick={walletOnClick}
+                        >
                             Wallet
-                        </p>
+                        </button>
                     </div>
 
                     <div className='flex items-center gap-2'>
                         <div className='h-6 w-6 bg-gray-300 rounded-full' />
-                        <p className='hover:border-gray-200 border-b border-gray-800'>
+                        <Link href='/settings' className='hover:border-gray-200 border-b border-gray-800'>
                             Settings
-                        </p>
+                        </Link>
                     </div>
 
                     <div className='flex items-center gap-2'>

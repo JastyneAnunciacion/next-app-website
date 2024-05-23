@@ -8,7 +8,7 @@ interface SideBarListItemProps {
 }
 
 const SideBarListItem = ({ isSideBarOpen, itemName, pageHref }: SideBarListItemProps) => {
-    const [showItemName, setShowItemName] = useState(false);
+    const [showItemName, setShowItemName] = useState(isSideBarOpen);
 
     useEffect(() => {
         let timer: NodeJS.Timeout;

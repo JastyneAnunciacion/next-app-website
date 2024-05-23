@@ -5,11 +5,15 @@ import list from '../wallet-list.json'
 import Image from 'next/image';
 import basePath from '../../utilities/basepath';
 import WalletPopup from './WalletPopup';
+import Toggle from '../Toggle';
 
-const WalletHeaderDropdown = () => {
+interface WalletHeaderDropdownProps {
+  walletButtonOnClick: () => void,
+}
+
+const WalletHeaderDropdown = ({ walletButtonOnClick }: WalletHeaderDropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentlySelected, setCurrentlySelected] = useState(0);
-  const [showPopup, setShowPopup] = useState(false);
 
   const handleItemClick = (index: number) => {
     setCurrentlySelected(index);
@@ -34,11 +38,10 @@ const WalletHeaderDropdown = () => {
           }
         </button>
 
-        <button onClick={() => setShowPopup(true)} className='bg-slate-200 w-20 h-9 rounded-lg text-lg font-bold flex items-center justify-center gap-2 shrink-0'>
+        <button onClick={walletButtonOnClick} className='bg-slate-200 w-20 h-9 rounded-lg text-lg font-bold flex items-center justify-center gap-2 shrink-0'>
           <p>Wallet</p>
         </button>
 
-        <WalletPopup show={showPopup} onClose={() => setShowPopup(false)} />
 
         {isOpen && (
           <div className='absolute bg-gray-800 w-72 left-0 top-11 flex flex-col rounded-lg overflow-hidden z-20'>
@@ -63,8 +66,9 @@ const WalletHeaderDropdown = () => {
               ))}
             </div>
 
-            <div className='text-white text-sm px-3 pt-4 pb-3 flex flex-col gap-2 bg-gray-700'>
+            <div className='text-white text-sm px-3 pt-4 pb-3 flex justify-between bg-gray-700'>
               <p>Display in fiat</p>
+              <Toggle offBGisLight={true} />
             </div>
           </div>
         )}

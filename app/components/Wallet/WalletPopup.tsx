@@ -12,7 +12,6 @@ interface WalletPopupProps {
 const WalletPopup = ({ show, onClose }: WalletPopupProps) => {
     const [currentlySelected, setCurrentlySelected] = useState(0)
     if (!show) return null;
-
     return (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
             <div className="relative w-[50rem] h-[35rem] bg-gray-600 p-5 rounded-lg shadow-lg">
