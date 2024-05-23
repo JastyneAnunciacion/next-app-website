@@ -5,8 +5,8 @@ import DropdownListItem from '../Dropdown/DropdownListItem'
 const SettingsActivity = () => {
     return (
         <div>
-            <DropdownListItem title='uwaaa'>
-                a
+            <DropdownListItem title='Options'>
+                Test
             </DropdownListItem>
         </div>
     )
