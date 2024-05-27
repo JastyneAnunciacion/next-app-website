@@ -5,19 +5,32 @@ import SelectionDropdown from '../Dropdown/SelectionDropdown'
 import FilterToggleOptions from '../Filters/FilterToggleOptions'
 import walletList from '../wallet-list.json'
 
-const SettingsActivity = () => {
-    const activitySelections = [
-        { value: 'Bets' },
-        { value: 'Transactions' },
-        { value: 'Sport bets' },
+const SettingsBonusHistory = () => {
+    const bonusHistorySelections = [
+        { value: 'History' },
     ]
-    const [currentSelection, setSelection] = useState(activitySelections[0].value)
 
-    const activities = activitySelections.map(activitySelection => ({
-        content: activitySelection.value,
+    const typeSelections = [
+        { value: 'All' },
+        { value: 'Wagering' },
+        { value: 'Casino cashback' },
+        { value: 'Sportsbook cashback' },
+        { value: 'Free spins' },
+        { value: 'Chained bonus' },
+        { value: 'Sport freebet' }
+    ]
+
+    const types = typeSelections.map(typeSelection => ({
+        content: typeSelection.value,
         onClick: () => {
-            console.log(`Selected option: ${activitySelection.value}`);
-            setSelection(activitySelection.value);
+            console.log(`Selected option: ${typeSelection.value}`);
+        }
+    }));
+
+    const bonusHistory = bonusHistorySelections.map(bonusHistorySelection => ({
+        content: bonusHistorySelection.value,
+        onClick: () => {
+            console.log(`Selected option: ${bonusHistorySelection.value}`);
         }
     }));
 
@@ -38,16 +51,22 @@ const SettingsActivity = () => {
         <div className='self-start w-full flex flex-col gap-5'>
             <div className='flex gap-2'>
                 <div className='w-80'>
-                    <SelectionDropdown items={activities} placeArrowOnRight={true} />
+                    <SelectionDropdown items={bonusHistory} placeArrowOnRight={true} />
                 </div>
                 <FilterToggleOptions onClick={handleToggle} />
             </div>
 
             {currentShowToggle && (
                 <div className='flex flex-col gap-2'>
-                    <div className='w-[774px]'>
-                        <p className='font-semibold pl-1'>Currency</p>
-                        <SelectionDropdown items={wallet} placeArrowOnRight={true} />
+                    <div className='w-[774px] flex gap-2'>
+                        <div className='w-full'>
+                            <p className='font-semibold pl-1'>Type</p>
+                            <SelectionDropdown items={types} placeArrowOnRight={true} />
+                        </div>
+                        <div className='w-full'>
+                            <p className='font-semibold pl-1'>Currency</p>
+                            <SelectionDropdown items={wallet} placeArrowOnRight={true} />
+                        </div>
                     </div>
 
                     <div className='flex gap-2'>
@@ -75,10 +94,10 @@ const SettingsActivity = () => {
             )}
 
             <div className='w-full h-[400px] bg-gray-700 flex items-center justify-center rounded-lg'>
-                <p className='font-bold text-white'>{`No ${currentSelection}`}</p>
+                <p className='font-bold text-white'>No Bonuses</p>
             </div>
         </div>
     )
 }
 
-export default SettingsActivity
+export default SettingsBonusHistory

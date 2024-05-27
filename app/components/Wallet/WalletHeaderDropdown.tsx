@@ -68,7 +68,7 @@ const WalletHeaderDropdown = ({ walletButtonOnClick }: WalletHeaderDropdownProps
 
             <div className='text-white text-sm px-3 pt-4 pb-3 flex justify-between bg-gray-700'>
               <p>Display in fiat</p>
-              <Toggle offBGisLight={true} />
+              <Toggle bgIsDark={true} />
             </div>
           </div>
         )}

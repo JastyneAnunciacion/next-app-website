@@ -39,9 +39,9 @@ const Profile = ({ walletOnClick }: ProfileProps) => {
 
                     <div className='flex items-center gap-2'>
                         <div className='h-6 w-6 bg-gray-300 rounded-full' />
-                        <p className='hover:border-gray-200 border-b border-gray-800'>
+                        <Link href='/settings' className='hover:border-gray-200 border-b border-gray-800'>
                             Transactions
-                        </p>
+                        </Link>
                     </div>
 
                     <div className='flex items-center gap-2'>
@@ -54,7 +54,7 @@ const Profile = ({ walletOnClick }: ProfileProps) => {
                     <div className='flex items-center gap-2'>
                         <div className='h-6 w-6 bg-gray-300 rounded-full' />
                         <p className='hover:border-gray-200 border-b border-gray-800'>
-                            Log out
+                            Logout
                         </p>
                     </div>
                 </div>

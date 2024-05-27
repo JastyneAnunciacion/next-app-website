@@ -2,7 +2,7 @@ import React from 'react'
 
 interface SettingsInputFieldProps {
     inputTitle: string,
-    placeholder: string,
+    placeholder?: string,
     isImportant?: boolean,
 }
 

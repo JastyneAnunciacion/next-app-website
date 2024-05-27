@@ -16,7 +16,7 @@ interface QuickListGamesProps {
 const QuickListGames = ({ gameListTitle, gameList }: QuickListGamesProps) => {
   return (
     <QuickList
-      headerIconPath="/images/pencil-circle-fill.256x256.png"
+      headerIconPath="/images/temporary-image.png"
       title={gameListTitle}
       gapAmount={3}
       viewAllLink='/games'
