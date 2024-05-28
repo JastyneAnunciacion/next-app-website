@@ -42,14 +42,14 @@ const SideBarDropdownListItem = ({ isSideBarOpen, itemName }: SideBarDropdownLis
 
                     {isDropdownOpen && (
                         <ul className='flex flex-col items-start'>
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='All Sports' pageHref='/' />
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='In Play' pageHref='/' />
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Football' pageHref='/' />
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Golf' pageHref='/' />
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Tennis' pageHref='/' />
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Basketball' pageHref='/' />
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Horse Racing' pageHref='/' />
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='American Football' pageHref='/' />
+                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='All Sports' pageHref='/sports' />
+                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='In Play' pageHref='/sports' />
+                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Football' pageHref='/sports' />
+                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Golf' pageHref='/sports' />
+                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Tennis' pageHref='/sports' />
+                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Basketball' pageHref='/sports' />
+                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Horse Racing' pageHref='/sports' />
+                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='American Football' pageHref='/sports' />
                         </ul>
                     )}
                 </div>

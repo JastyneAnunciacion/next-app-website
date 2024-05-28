@@ -41,14 +41,15 @@ const SideBar = () => {
 
                 <ul className={`${isOpen && 'self-start flex flex-col items-start'} text-white mt-2`}>
                     <SideBarListItem isSideBarOpen={isOpen} itemName='Lobby' pageHref='/' />
-                    <SideBarListItem isSideBarOpen={isOpen} itemName='Slots' pageHref='/casino' />
-                    <SideBarListItem isSideBarOpen={isOpen} itemName='New Slots' pageHref='/casino' />
-                    <SideBarListItem isSideBarOpen={isOpen} itemName='Bonus Buys' pageHref='/casino' />
-                    <SideBarListItem isSideBarOpen={isOpen} itemName='Live Casino' pageHref='/casino' />
-                    <SideBarListItem isSideBarOpen={isOpen} itemName='Game Shows' pageHref='/casino' />
-                    <SideBarListItem isSideBarOpen={isOpen} itemName='Blackjack' pageHref='/casino' />
-                    <SideBarListItem isSideBarOpen={isOpen} itemName='Baccarat' pageHref='/casino' />
-                    <SideBarListItem isSideBarOpen={isOpen} itemName='Roulette' pageHref='/casino' />
+                    <SideBarListItem isSideBarOpen={isOpen} itemName='Games' pageHref='/casino' />
+                    <SideBarListItem isSideBarOpen={isOpen} itemName='Slots' pageHref='/games' />
+                    <SideBarListItem isSideBarOpen={isOpen} itemName='New Slots' pageHref='/games' />
+                    <SideBarListItem isSideBarOpen={isOpen} itemName='Bonus Buys' pageHref='/games' />
+                    <SideBarListItem isSideBarOpen={isOpen} itemName='Live Casino' pageHref='/games' />
+                    <SideBarListItem isSideBarOpen={isOpen} itemName='Game Shows' pageHref='/games' />
+                    <SideBarListItem isSideBarOpen={isOpen} itemName='Blackjack' pageHref='/games' />
+                    <SideBarListItem isSideBarOpen={isOpen} itemName='Baccarat' pageHref='/games' />
+                    <SideBarListItem isSideBarOpen={isOpen} itemName='Roulette' pageHref='/games' />
                     <SideBarSeperator isSideBarOpen={isOpen} />
                     <SideBarDropdownListItem isSideBarOpen={isOpen} itemName='Sports' />
                     <SideBarSeperator isSideBarOpen={isOpen} />
