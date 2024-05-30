@@ -10,13 +10,13 @@ const Header = () => {
   const [showWalletPopup, setShowWalletPopup] = useState(false);
 
   return (
-    <header className='w-full'>
-      <div className='py-2 px-72 w-full flex justify-between h-[66px] bg-gray-700'>
+    <header className='w-full relative'>
+      <div className='py-2 px-72 w-full flex justify-between h-[66px] border-b'>
         <div className='flex w-full items-center justify-center gap-2'>
           <WalletHeaderDropdown walletButtonOnClick={() => setShowWalletPopup(true)} />
         </div>
         <div className='flex items-center justify-center gap-4'>
-          <div className='w-40 h-10'>
+          <div className='w-40 h-10 border rounded-lg'>
             <Searchbar />
           </div>
           <Profile walletOnClick={() => setShowWalletPopup(true)} />

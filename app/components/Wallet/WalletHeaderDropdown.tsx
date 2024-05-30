@@ -6,6 +6,7 @@ import Image from 'next/image';
 import basePath from '../../utilities/basepath';
 import WalletPopup from './WalletPopup';
 import Toggle from '../Toggle';
+import Searchbar from '../Searchbar';
 
 interface WalletHeaderDropdownProps {
   walletButtonOnClick: () => void,
@@ -24,7 +25,7 @@ const WalletHeaderDropdown = ({ walletButtonOnClick }: WalletHeaderDropdownProps
   return (
     <div className='relative h-11'>
       <div className='flex items-center'>
-        <button onClick={() => setIsOpen((prev) => !prev)} className="bg-gray-800 text-white p-2 w-44 h-9 flex items-center justify-between font-bold text-xs rounded-md">
+        <button onClick={() => setIsOpen((prev) => !prev)} className="text-orange-400 border border-orange-400 text-glow p-2 w-44 h-9 flex items-center justify-between font-bold text-xs rounded-md">
           {selectedWallet && (
             <div className='flex w-full items-center justify-between gap-1'>
               <h3>{selectedWallet.Amount}</h3>
@@ -38,21 +39,20 @@ const WalletHeaderDropdown = ({ walletButtonOnClick }: WalletHeaderDropdownProps
           }
         </button>
 
-        <button onClick={walletButtonOnClick} className='bg-slate-200 w-20 h-9 rounded-lg text-lg font-bold flex items-center justify-center gap-2 shrink-0'>
+        <button onClick={walletButtonOnClick} className='bg-orange-500 text-black w-20 h-9 rounded-lg text-lg font-bold flex items-center justify-center gap-2 shrink-0'>
           <p>Wallet</p>
         </button>
 
 
         {isOpen && (
-          <div className='absolute bg-gray-800 w-72 left-0 top-11 flex flex-col rounded-lg overflow-hidden z-20'>
-            <div className='w-[95%] h-10 bg-gray-900 text-white flex border border-gray-600 rounded-md gap-2 items-center justify-center p-3 m-2'>
-              <div className=''>
-                <Image src={`${basePath}/images/search-image.png`} alt="Search Icon" width={15} height={15}></Image>
+          <div className='absolute bg-orange-800 w-72 left-0 top-11 flex flex-col rounded-lg overflow-hidden z-20'>
+            <div className='p-3'>
+              <div className='border text-white bg-orange-950'>
+                <Searchbar />
               </div>
-              <input className='bg-gray-950 w-full' placeholder='Search' />
             </div>
 
-            <div className="h-[260px] overflow-y-auto z-10 text-white font-semibold px-3" style={{ scrollbarWidth: "thin", scrollbarColor: "#374151 #031200" }}>
+            <div className="h-[260px] overflow-y-auto z-10 text-white font-semibold px-3" style={{ scrollbarWidth: "thin", scrollbarColor: "orange transparent" }}>
               {list.map((item, i) => (
                 <button onClick={(() => handleItemClick(i))} className='flex p-1 gap-2 w-full hover:bg-gray-600 cursor-pointer rounded-lg items-center justify-between' key={i}>
                   <div className='flex items-center gap-2'>
@@ -66,7 +66,7 @@ const WalletHeaderDropdown = ({ walletButtonOnClick }: WalletHeaderDropdownProps
               ))}
             </div>
 
-            <div className='text-white text-sm px-3 pt-4 pb-3 flex justify-between bg-gray-700'>
+            <div className='text-white text-sm px-3 pt-4 pb-3 flex justify-between bg-orange-600'>
               <p>Display in fiat</p>
               <Toggle bgIsDark={true} />
             </div>

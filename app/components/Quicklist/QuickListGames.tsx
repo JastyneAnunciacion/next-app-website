@@ -24,7 +24,7 @@ const QuickListGames = ({ gameListTitle, gameList }: QuickListGamesProps) => {
         const imageIndex = (i % 5) + 1;
         return (
           <div key={i}>
-            <button className='bg-gray-600 w-[158px] h-[100px] rounded-lg mt-2 cursor-pointer'>
+            <button className='bg-gray-200/20 w-[158px] h-[100px] rounded-lg mt-2 cursor-pointer'>
               <Image
                 src={`${basePath}/images/small-image-${imageIndex}.jpg`}
                 alt="Banner"
@@ -34,8 +34,8 @@ const QuickListGames = ({ gameListTitle, gameList }: QuickListGamesProps) => {
               />
             </button>
             <div className='text-sm'>
-              <p className='font-bold text-black'>{item.name ? item.name : 'Game Name'}</p>
-              <p className='text-black'>{item.provider ? item.provider : 'Provider'}</p>
+              <p className='font-bold text-orange-500 text-glow'>{item.name ? item.name : 'Game Name'}</p>
+              <p className='text-white'>{item.provider ? item.provider : 'Provider'}</p>
             </div>
           </div>
         );

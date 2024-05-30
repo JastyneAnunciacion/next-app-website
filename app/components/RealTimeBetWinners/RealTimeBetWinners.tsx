@@ -8,17 +8,17 @@ const RealTimeBetWinners = () => {
     const [currentSectionSelected, setSectionSelected] = useState(0)
 
     return (
-        <div className='w-full flex flex-col gap-5'>
-            <p className='font-bold text-lg'>Fair and provable winners</p>
+        <div className='w-full flex flex-col gap-5 text-white'>
+            <p className='font-bold text-lg text-glow'>Fair and provable winners</p>
 
             <div className='flex flex-col gap-3'>
                 <div className='flex gap-2 px-3'>
-                    <button onClick={() => (setSectionSelected(0))} className={`${currentSectionSelected === 0 && 'border-b-4 border-black font-semibold'} text-lg`}>All Bets</button>
-                    <button onClick={() => (setSectionSelected(1))} className={`${currentSectionSelected === 1 && 'border-b-4 border-black font-semibold'} text-lg`}>HighRollers</button>
+                    <button onClick={() => (setSectionSelected(0))} className={`${currentSectionSelected === 0 && 'text-orange-500 text-glow font-semibold'} text-lg`}>All Bets</button>
+                    <button onClick={() => (setSectionSelected(1))} className={`${currentSectionSelected === 1 && 'text-orange-500 text-glow font-semibold'} text-lg`}>HighRollers</button>
                 </div>
 
                 <div>
-                    <div className='grid grid-cols-6 gap-20 px-2 text-sm'>
+                    <div className='grid grid-cols-6 gap-20 px-2 text-lg text-orange-500'>
                         <p>Game</p>
                         <p>User</p>
                         <p>Time</p>

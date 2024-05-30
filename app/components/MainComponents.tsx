@@ -9,7 +9,7 @@ interface MainComponentsProps {
 
 const MainComponents = ({ children }: MainComponentsProps) => {
     return (
-        <main className='h-full w-full overflow-x-hidden'>
+        <main className='h-full w-full overflow-x-hidden pixel'>
             <div className="flex w-full h-full">
                 <SideBar />
                 <div className='flex-1 overflow-auto flex flex-col items-center min-h-screen'>

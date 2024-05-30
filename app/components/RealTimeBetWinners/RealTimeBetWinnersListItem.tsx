@@ -26,7 +26,7 @@ const RealTimeBetWinnersListItem = ({
     const formattedTimeStamp = timeStamp.toLocaleTimeString();
 
     return (
-        <div className={`w-full h-20 ${isEvenInList ? 'bg-gray-500' : 'bg-gray-400'} rounded-xl`}>
+        <div className={`w-full h-20 ${isEvenInList ? 'border-orange-500 border' : ''}`}>
             <div className='w-full h-full grid grid-cols-6 gap-20 items-center px-2 text-white font-lg'>
                 <p className=''>{gameName}</p>
                 <p className=''>{userName}</p>

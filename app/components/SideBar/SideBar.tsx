@@ -24,7 +24,7 @@ const SideBar = () => {
                     overflowY: 'scroll',
                     overflowX: 'visible',
                 }}
-                className={`fixed transition-width duration-300 ${isOpen ? 'w-60 px-6' : 'w-14'} bg-gray-800 h-full flex flex-col items-center py-3`}>
+                className={`fixed transition-width duration-300 ${isOpen ? 'w-60 px-6' : 'w-14'} bg-orange-900 h-full flex flex-col items-center py-3`}>
                 {isOpen && (
                     <div className='flex flex-col text-white font-extrabold text-xl items-center gap-2'>
                         <div>
@@ -34,7 +34,7 @@ const SideBar = () => {
                     </div>
                 )}
                 <button className={`p-2 text-white ${isOpen && 'fixed ml-60 top-20'}`} onClick={toggleSidebar}>
-                    <div className='h-9 w-9 bg-gray-500 rounded-full flex items-center justify-center' >
+                    <div className='h-9 w-9 bg-orange-500 rounded-full flex items-center justify-center' >
                         <Image src={`${basePath}/images/${isOpen ? 'left-arrow' : 'right-arrow'}-image.png`} alt='expand icon' width={30} height={30} />
                     </div>
                 </button>

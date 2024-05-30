@@ -65,7 +65,7 @@ const BigBannerSlider = () => {
                     <button
                         key={index}
                         onClick={() => goToSlide(index)}
-                        className={`rounded-full flex items-center justify-center ${currentSlide === index ? 'bg-gray-600 cursor-default w-3 h-3' : 'bg-gray-900 w-2 h-2 cursor-pointer'}`}
+                        className={`rounded-full flex items-center justify-center ${currentSlide === index ? 'bg-orange-600 cursor-default w-3 h-3' : 'bg-orange-300 w-2 h-2 cursor-pointer'}`}
                     />
                 ))}
             </div>
