@@ -12,7 +12,7 @@ const SettingsInputField = ({ inputTitle, placeholder, isImportant = false }: Se
             <p className='font-semibold pl-1'>{inputTitle}{isImportant && '*'}</p>
             <input
                 placeholder={placeholder}
-                className='bg-gray-600 rounded-lg p-2 h-12 w-96 outline-none focus:ring-0'
+                className='border border-orange-500 bg-transparent border-dashed rounded-lg p-2 h-12 w-96 outline-none focus:ring-0'
             />
         </div>
     )

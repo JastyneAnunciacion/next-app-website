@@ -13,8 +13,8 @@ const RealTimeBetWinners = () => {
 
             <div className='flex flex-col gap-3'>
                 <div className='flex gap-2 px-3'>
-                    <button onClick={() => (setSectionSelected(0))} className={`${currentSectionSelected === 0 && 'text-orange-500 text-glow font-semibold'} text-lg`}>All Bets</button>
-                    <button onClick={() => (setSectionSelected(1))} className={`${currentSectionSelected === 1 && 'text-orange-500 text-glow font-semibold'} text-lg`}>HighRollers</button>
+                    <button onClick={() => (setSectionSelected(0))} className={`${currentSectionSelected === 0 && 'text-orange-500 text-glow font-semibold border-b-2 border-orange-500'} text-lg`}>All Bets</button>
+                    <button onClick={() => (setSectionSelected(1))} className={`${currentSectionSelected === 1 && 'text-orange-500 text-glow font-semibold border-b-2 border-orange-500'} text-lg`}>HighRollers</button>
                 </div>
 
                 <div>

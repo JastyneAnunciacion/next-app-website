@@ -4,7 +4,7 @@ import Toggle from '../Toggle'
 
 const SettingsAccountInfo = () => {
     return (
-        <div className='self-start w-full flex flex-col gap-4'>
+        <div className='self-start w-full flex flex-col gap-4 text-orange-500 text-glow'>
             <SettingsInputField
                 inputTitle='Email'
                 placeholder='exampleemail@email.com'
@@ -35,7 +35,7 @@ const SettingsAccountInfo = () => {
                 <p className='font-semibold pl-1'>Date of birth*</p>
                 <input
                     type='date'
-                    className='bg-gray-600 rounded-lg p-2 h-12 w-96 text-gray-400 outline-none focus:ring-0'
+                    className='border border-orange-500 bg-transparent border-dashed rounded-lg p-2 h-12 w-96 text-gray-400 outline-none focus:ring-0'
                 />
             </div>
 
@@ -74,7 +74,7 @@ const SettingsAccountInfo = () => {
                 isImportant={true}
             />
 
-            <button className='bg-gray-400 w-48 rounded-md p-3 mt-4 font-semibold'>
+            <button className='bg-orange-600 w-48 rounded-md p-3 mt-4 font-semibold text-white mb-10'>
                 Save
             </button>
         </div>

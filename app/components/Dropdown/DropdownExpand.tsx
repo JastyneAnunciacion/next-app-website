@@ -14,10 +14,10 @@ const DropdownExpand = ({ title, children, isArrowOnRight = false }: DropdownExp
     const [isOpen, setOpen] = useState(false);
 
     return (
-        <div className={`w-full ${isOpen ? 'h-96' : 'h-10'} transition-height duration-500 rounded-lg bg-gray-500 overflow-hidden`}>
+        <div className={`w-full ${isOpen ? 'h-96' : 'h-10'} transition-height duration-500 rounded-lg border border-orange-600 bg-black overflow-hidden`}>
             <button
                 onClick={() => (setOpen(prev => !prev))}
-                className='w-full flex items-center justify-between px-4 bg-gray-600'>
+                className='w-full flex items-center justify-between px-4 bg-orange-600'>
                 {isArrowOnRight ? (
                     <>
                         <p className='font-semibold pl-1 text-white'>{title}</p>

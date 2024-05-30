@@ -22,7 +22,7 @@ const SelectionDropdown = ({ items, hasArrow = true, placeArrowOnRight = false, 
     <div className="relative w-full">
       <button
         onClick={() => setIsOpen(prev => !prev)}
-        className="relative bg-gray-800 text-white p-4 w-full h-10 flex justify-between items-center font-bold rounded-lg"
+        className="relative border border-orange-600 text-white p-4 w-full h-10 flex justify-between items-center font-bold rounded-lg"
       >
         {hasArrow && !placeArrowOnRight && (
           !isOpen
@@ -33,7 +33,7 @@ const SelectionDropdown = ({ items, hasArrow = true, placeArrowOnRight = false, 
         )}
         <div className='flex gap-1'>
           {placeHolderText && (
-            <div className='text-gray-400'>
+            <div className='text-orange-500'>
               {placeHolderText}
             </div>
           )}
@@ -48,14 +48,14 @@ const SelectionDropdown = ({ items, hasArrow = true, placeArrowOnRight = false, 
         )}
 
         {isOpen && (
-          <div className="bg-gray-800 absolute left-0 top-11 flex flex-col rounded-lg p-2 w-full max-h-[260px] overflow-y-auto z-10 scrollbar scrollbar-thumb-gray-950 scrollbar-track-gray-900">
+          <div className="bg-black border border-orange-600 absolute left-0 top-11 flex flex-col rounded-lg p-2 w-full max-h-[260px] overflow-y-auto z-10 scrollbar scrollbar-thumb-gray-950 scrollbar-track-gray-900">
             {items.map((item, i) => (
               <div
                 onClick={() => {
                   item.onClick();
                   setSelectedItem(i);
                 }}
-                className="flex p-1 gap-2 w-full hover:bg-gray-600 cursor-pointer rounded-lg items-center"
+                className="flex p-1 gap-2 w-full hover:bg-orange-600 cursor-pointer rounded-lg items-center"
                 key={i}
               >
                 {item.content}

@@ -4,7 +4,7 @@ import basePath from '../utilities/basepath'
 
 const CryptocurrencyCard = () => {
     return (
-        <div className='flex items-center justify-between p-10 gap-2 w-full h-28 border-[2px] border-orange-500 overflow-hidden'>
+        <div className='flex items-center justify-between p-10 gap-2 w-full h-28 border-2 border-orange-500 border-dashed overflow-hidden'>
             <p className='text-white text-lg w-60'>Play using your favourite cryptocurrency</p>
             <div className='flex gap-4'>
                 <div className='shrink-0'>

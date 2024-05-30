@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import WalletTokenDropdown from './WalletTokenDropdown';
 import WalletDropdown from './WalletDropdown';
 
@@ -11,10 +11,23 @@ interface WalletPopupProps {
 
 const WalletPopup = ({ show, onClose }: WalletPopupProps) => {
     const [currentlySelected, setCurrentlySelected] = useState(0)
+
+    useEffect(() => {
+        if (show) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [show]);
+
     if (!show) return null;
     return (
-        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
-            <div className="relative w-[50rem] h-[35rem] bg-gray-600 p-5 rounded-lg shadow-lg">
+        <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center z-50">
+            <div className="relative w-[50rem] h-[35rem] bg-black border border-orange-500 p-5 shadow-lg">
                 <button
                     onClick={onClose}
                     className="absolute top-0 right-0 text-gray-300 hover:text-white"
@@ -24,15 +37,15 @@ const WalletPopup = ({ show, onClose }: WalletPopupProps) => {
                 <div className='w-full flex justify-between mt-2 text-white font-semibold'>
                     <button
                         onClick={() => setCurrentlySelected(0)}
-                        className={`${currentlySelected === 0 ? 'border-white text-white' : 'border-gray-500 text-gray-300'} border-b-2  w-full`}
+                        className={`${currentlySelected === 0 ? 'border-orange-500 text-orange-500 text-glow' : 'border-white text-gray-300'} border-b-2  w-full`}
                     >Deposit</button>
                     <button
                         onClick={() => setCurrentlySelected(1)}
-                        className={`${currentlySelected === 1 ? 'border-white text-white' : 'border-gray-500 text-gray-300'} border-b-2  w-full`}
+                        className={`${currentlySelected === 1 ? 'border-orange-500 text-orange-500 text-glow' : 'border-white text-gray-300'} border-b-2  w-full`}
                     >Withdraw</button>
                     <button
                         onClick={() => setCurrentlySelected(2)}
-                        className={`${currentlySelected === 2 ? 'border-white text-white' : 'border-gray-500 text-gray-300'} border-b-2  w-full`}
+                        className={`${currentlySelected === 2 ? 'border-orange-500 text-orange-500 text-glow' : 'border-white text-gray-300'} border-b-2  w-full`}
                     >Buy Crypto</button>
                 </div>
 
@@ -61,7 +74,7 @@ const WalletPopup = ({ show, onClose }: WalletPopupProps) => {
                                 <p className='text-white font-semibold'>Your BTC Depositing address</p>
                                 <input
                                     placeholder='Enter your address'
-                                    className='w-full h-10 bg-gray-800 px-3 rounded-lg'
+                                    className='w-full h-10 border border-orange-500 px-3 bg-transparent'
                                 />
                             </div>
 
@@ -73,12 +86,12 @@ const WalletPopup = ({ show, onClose }: WalletPopupProps) => {
                                 <div className='h-10 flex items-center'>
                                     <input
                                         placeholder='Enter your address'
-                                        className='w-72 h-full bg-gray-800 px-3 rounded-lg'
+                                        className='w-72 h-full border border-orange-500 px-3 bg-transparent'
                                     />
-                                    <button className='bg-gray-900 h-full p-3 flex items-center text-white rounded-lg'>MAX</button>
+                                    <button className='bg-orange-600 h-full p-3 flex items-center text-white rounded-lg'>MAX</button>
                                 </div>
                             </div>
-                            <button className='bg-gray-800 w-64 self-center h-12 rounded-lg text-white font-bold'>Withdraw</button>
+                            <button className='bg-orange-600 text-glow w-64 self-center h-12 rounded-lg text-white font-bold'>Withdraw</button>
                             <p className='text-white text-center'>Requesting a withdrawal will mean that you forfeit all bonus funds</p>
                         </div>
                     </div>

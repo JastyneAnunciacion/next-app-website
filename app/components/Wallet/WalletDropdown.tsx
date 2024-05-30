@@ -12,7 +12,7 @@ const WalletDropdown = () => {
     const selectedWallet = list[currentlySelected];
     return (
         <div>
-            <button onClick={() => setIsOpen((prev) => !prev)} className="relative bg-gray-800 text-white p-2 w-full h-10 flex items-center justify-between font-bold text-lg rounded-lg">
+            <button onClick={() => setIsOpen((prev) => !prev)} className="relative border border-orange-500 text-white p-2 w-full h-10 flex items-center justify-between font-bold text-lg">
                 {selectedWallet && (
                     <div className='flex items-center w-full justify-between'>
                         <h3>{selectedWallet.Amount}</h3>

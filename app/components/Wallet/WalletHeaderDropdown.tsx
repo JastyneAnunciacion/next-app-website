@@ -45,9 +45,9 @@ const WalletHeaderDropdown = ({ walletButtonOnClick }: WalletHeaderDropdownProps
 
 
         {isOpen && (
-          <div className='absolute bg-orange-800 w-72 left-0 top-11 flex flex-col rounded-lg overflow-hidden z-20'>
+          <div className='absolute bg-black border border-orange-500 w-72 left-0 top-11 flex flex-col overflow-hidden z-20'>
             <div className='p-3'>
-              <div className='border text-white bg-orange-950'>
+              <div className='border text-white'>
                 <Searchbar />
               </div>
             </div>

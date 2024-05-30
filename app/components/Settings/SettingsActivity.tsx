@@ -44,7 +44,7 @@ const SettingsActivity = () => {
             </div>
 
             {currentShowToggle && (
-                <div className='flex flex-col gap-2'>
+                <div className='flex flex-col gap-2 text-orange-500 text-glow'>
                     <div className='w-[774px]'>
                         <p className='font-semibold pl-1'>Currency</p>
                         <SelectionDropdown items={wallet} placeArrowOnRight={true} />
@@ -55,7 +55,7 @@ const SettingsActivity = () => {
                             <p className='font-semibold pl-1'>From</p>
                             <input
                                 type='date'
-                                className='bg-gray-600 rounded-lg p-2 h-12 w-96 text-gray-400 outline-none focus:ring-0'
+                                className='border border-orange-500 bg-transparent border-dashed rounded-lg p-2 h-12 w-96 text-gray-400 outline-none focus:ring-0'
                             />
                         </div>
 
@@ -63,18 +63,18 @@ const SettingsActivity = () => {
                             <p className='font-semibold pl-1'>To</p>
                             <input
                                 type='date'
-                                className='bg-gray-600 rounded-lg p-2 h-12 w-96 text-gray-400 outline-none focus:ring-0'
+                                className='border border-orange-500 bg-transparent border-dashed rounded-lg p-2 h-12 w-96 text-gray-400 outline-none focus:ring-0'
                             />
                         </div>
                     </div>
 
-                    <button className='h-10 w-48 border border-gray-800 rounded-lg'>
+                    <button className='h-10 w-48 bg-orange-600 text-white text-glow rounded-lg'>
                         Apply
                     </button>
                 </div>
             )}
 
-            <div className='w-full h-[400px] bg-gray-700 flex items-center justify-center rounded-lg'>
+            <div className='w-full h-[400px] border border-dashed border-orange-600 flex items-center justify-center'>
                 <p className='font-bold text-white'>{`No ${currentSelection}`}</p>
             </div>
         </div>

@@ -10,7 +10,7 @@ interface ShortcutCardsProps {
 
 const ShortcutCards = ({ title, description, buttonText, imgSrc }: ShortcutCardsProps) => {
     return (
-        <div className='flex flex-col flex-shrink-0 gap-2 w-[17rem] h-[21rem] border-2 border-orange-500 overflow-hidden'>
+        <div className='flex flex-col flex-shrink-0 gap-2 w-[17rem] h-[21rem] border-2 border-dotted border-orange-500 overflow-hidden'>
             <div className='w-full h-[135px] shrink-0 bg-gray-300/20'>
                 <div className='relative w-full h-full'>
                     {imgSrc && (

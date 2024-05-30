@@ -31,7 +31,7 @@ const CasinoPage = () => {
                         buttonText='Get link on Telegram'
                     />
                 </div>
-                <div className='w-full bg-gray-700 rounded-lg'>
+                <div className='w-full border'>
                     <Searchbar />
                 </div>
                 <div className='w-full flex flex-col gap-5'>
