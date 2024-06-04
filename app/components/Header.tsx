@@ -16,7 +16,7 @@ const Header = () => {
       <div className='py-2 w-full flex items-center h-[66px] border-b bg-black'>
         <div className='flex text-white font-extrabold text-xl items-center gap-2'>
           <Image className='rounded-full' src={`${basePath}/images/phx-gamble-logo.png`} alt="Header Main Logo" width={50} height={50} />
-          <p>PHX.GAMBLE</p>
+          <p className='text-nowrap'>PHOENIX GAME</p>
         </div>
 
         <div className='flex w-full items-center justify-center gap-2 pl-72'>
