@@ -4,7 +4,7 @@ import basePath from '../utilities/basepath'
 
 const Footer = () => {
     return (
-        <div className='w-full bg-black mt-5 flex justify-center pt-10'>
+        <div className='w-full bg-black mt-5 flex justify-center pt-10 pb-5'>
             <div className='w-[min(76rem,90%)] h-full flex flex-col gap-8'>
                 <div className='grid grid-cols-4 text-white text-xl gap-16 px-10'>
                     <div className='flex flex-col gap-2 items-center'>
