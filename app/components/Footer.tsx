@@ -4,7 +4,7 @@ import basePath from '../utilities/basepath'
 
 const Footer = () => {
     return (
-        <div className='w-full h-[23rem] bg-orange-600 mt-5 flex justify-center '>
+        <div className='w-full h-[23rem] bg-black mt-5 flex justify-center '>
             <div className='w-[min(76rem,90%)] h-full'>
 
                 <div className='grid grid-cols-4 text-white text-xl gap-16 p-10'>
@@ -30,31 +30,31 @@ const Footer = () => {
                     <div>
                         <p className='font-bold'>About Us</p>
                         <div className='text-sm text-gray-300 mt-3 flex flex-col gap-3'>
-                            <p className='border-b border-gray-500 hover:border-white'>Terms & Conditions</p>
-                            <p className='border-b border-gray-500 hover:border-white'>Responsible Gambling</p>
-                            <p className='border-b border-gray-500 hover:border-white'>AML Policy</p>
-                            <p className='border-b border-gray-500 hover:border-white'>Privacy Policy</p>
-                            <p className='border-b border-gray-500 hover:border-white'>Help</p>
+                            <p className='border-b border-black hover:border-white'>Terms & Conditions</p>
+                            <p className='border-b border-black hover:border-white'>Responsible Gambling</p>
+                            <p className='border-b border-black hover:border-white'>AML Policy</p>
+                            <p className='border-b border-black hover:border-white'>Privacy Policy</p>
+                            <p className='border-b border-black hover:border-white'>Help</p>
                         </div>
                     </div>
 
                     <div>
                         <p className='font-bold'>Casino</p>
                         <div className='text-sm text-gray-300 mt-3 flex flex-col gap-3'>
-                            <p className='border-b border-gray-500 hover:border-white'>Bonus Terms & Conditions</p>
-                            <p className='border-b border-gray-500 hover:border-white'>Promotions</p>
-                            <p className='border-b border-gray-500 hover:border-white'>Casino</p>
-                            <p className='border-b border-gray-500 hover:border-white'>Slots</p>
-                            <p className='border-b border-gray-500 hover:border-white'>Live Casino</p>
-                            <p className='border-b border-gray-500 hover:border-white'>Crypto Casino</p>
+                            <p className='border-b border-black hover:border-white'>Bonus Terms & Conditions</p>
+                            <p className='border-b border-black hover:border-white'>Promotions</p>
+                            <p className='border-b border-black hover:border-white'>Casino</p>
+                            <p className='border-b border-black hover:border-white'>Slots</p>
+                            <p className='border-b border-black hover:border-white'>Live Casino</p>
+                            <p className='border-b border-black hover:border-white'>Crypto Casino</p>
                         </div>
                     </div>
 
                     <div>
                         <p className='font-bold'>Sports</p>
                         <div className='text-sm text-gray-300 mt-3 flex flex-col gap-3'>
-                            <p className='border-b border-gray-500 hover:border-white'>Sports</p>
-                            <p className='border-b border-gray-500 hover:border-white'>Sportsbook Terms & Conditions</p>
+                            <p className='border-b border-black hover:border-white'>Sports</p>
+                            <p className='border-b border-black hover:border-white'>Sportsbook Terms & Conditions</p>
                         </div>
                     </div>
                 </div>

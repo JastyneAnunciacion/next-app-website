@@ -45,7 +45,7 @@ const QuickList = ({ headerIconPath: headerImagePath, title, childrenList, gapAm
             <div className='h-7 w-7 bg-gray-300/20 rounded-full' />
             {/* <Image src={basePath + headerImagePath} alt="Quick List Icon" width={24} height={24}></Image> */}
           </div>
-          <div className='font-bold text-white text-glow'>
+          <div className='font-bold text-white '>
             {title}
           </div>
         </div>

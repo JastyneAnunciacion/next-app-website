@@ -19,7 +19,7 @@ const ShortcutCards = ({ title, description, buttonText, imgSrc }: ShortcutCards
                 </div>
             </div>
             <div className='p-2 flex flex-col gap-2'>
-                <p className='text-white font-bold text-lg text-glow'>{title}</p>
+                <p className='text-orange-500 font-bold text-lg  self-center'>{title}</p>
                 <p className='text-gray-400 text-sm h-16'>{description}</p>
                 <button className='w-full h-12 mt-1 bg-orange-600 text-white text-glow rounded-md font-bold text-lg'>{buttonText}</button>
             </div>

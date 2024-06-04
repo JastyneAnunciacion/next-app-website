@@ -57,7 +57,7 @@ const SettingsBonusHistory = () => {
             </div>
 
             {currentShowToggle && (
-                <div className='flex flex-col gap-2 text-orange-500 text-glow'>
+                <div className='flex flex-col gap-2 text-orange-500 '>
                     <div className='w-[774px] flex gap-2'>
                         <div className='w-full'>
                             <p className='font-semibold pl-1'>Type</p>
@@ -87,7 +87,7 @@ const SettingsBonusHistory = () => {
                         </div>
                     </div>
 
-                    <button className='h-10 w-48 bg-orange-600 text-white text-glow rounded-lg'>
+                    <button className='h-10 w-48 bg-orange-600 text-white  rounded-lg'>
                         Apply
                     </button>
                 </div>

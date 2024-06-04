@@ -4,7 +4,7 @@ import Toggle from '../Toggle'
 
 const SettingsAccountInfo = () => {
     return (
-        <div className='self-start w-full flex flex-col gap-4 text-orange-500 text-glow'>
+        <div className='self-start w-full flex flex-col gap-4 text-orange-500 '>
             <SettingsInputField
                 inputTitle='Email'
                 placeholder='exampleemail@email.com'

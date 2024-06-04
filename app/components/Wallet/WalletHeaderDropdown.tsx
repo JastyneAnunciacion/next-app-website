@@ -25,7 +25,7 @@ const WalletHeaderDropdown = ({ walletButtonOnClick }: WalletHeaderDropdownProps
   return (
     <div className='relative h-11'>
       <div className='flex items-center'>
-        <button onClick={() => setIsOpen((prev) => !prev)} className="text-orange-400 border border-orange-400 text-glow p-2 w-44 h-9 flex items-center justify-between font-bold text-xs rounded-md">
+        <button onClick={() => setIsOpen((prev) => !prev)} className="text-orange-400 border border-orange-400  p-2 w-44 h-9 flex items-center justify-between font-bold text-xs rounded-md">
           {selectedWallet && (
             <div className='flex w-full items-center justify-between gap-1'>
               <h3>{selectedWallet.Amount}</h3>

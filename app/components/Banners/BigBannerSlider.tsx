@@ -48,7 +48,7 @@ const BigBannerSlider = () => {
 
     return (
         <div className='relative flex items-center justify-center flex-col w-full'>
-            <div className="overflow-hidden w-full h-[375px]">
+            <div className="overflow-hidden w-full h-full]">
                 <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
                     {slides.map((slide, index) => (
                         <div key={index} className='w-full flex-shrink-0 flex justify-center'>

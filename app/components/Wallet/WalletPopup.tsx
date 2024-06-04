@@ -37,15 +37,15 @@ const WalletPopup = ({ show, onClose }: WalletPopupProps) => {
                 <div className='w-full flex justify-between mt-2 text-white font-semibold'>
                     <button
                         onClick={() => setCurrentlySelected(0)}
-                        className={`${currentlySelected === 0 ? 'border-orange-500 text-orange-500 text-glow' : 'border-white text-gray-300'} border-b-2  w-full`}
+                        className={`${currentlySelected === 0 ? 'border-orange-500 text-orange-500 ' : 'border-white text-gray-300'} border-b-2  w-full`}
                     >Deposit</button>
                     <button
                         onClick={() => setCurrentlySelected(1)}
-                        className={`${currentlySelected === 1 ? 'border-orange-500 text-orange-500 text-glow' : 'border-white text-gray-300'} border-b-2  w-full`}
+                        className={`${currentlySelected === 1 ? 'border-orange-500 text-orange-500 ' : 'border-white text-gray-300'} border-b-2  w-full`}
                     >Withdraw</button>
                     <button
                         onClick={() => setCurrentlySelected(2)}
-                        className={`${currentlySelected === 2 ? 'border-orange-500 text-orange-500 text-glow' : 'border-white text-gray-300'} border-b-2  w-full`}
+                        className={`${currentlySelected === 2 ? 'border-orange-500 text-orange-500 ' : 'border-white text-gray-300'} border-b-2  w-full`}
                     >Buy Crypto</button>
                 </div>
 
@@ -91,7 +91,7 @@ const WalletPopup = ({ show, onClose }: WalletPopupProps) => {
                                     <button className='bg-orange-600 h-full p-3 flex items-center text-white rounded-lg'>MAX</button>
                                 </div>
                             </div>
-                            <button className='bg-orange-600 text-glow w-64 self-center h-12 rounded-lg text-white font-bold'>Withdraw</button>
+                            <button className='bg-orange-600  w-64 self-center h-12 rounded-lg text-white font-bold'>Withdraw</button>
                             <p className='text-white text-center'>Requesting a withdrawal will mean that you forfeit all bonus funds</p>
                         </div>
                     </div>

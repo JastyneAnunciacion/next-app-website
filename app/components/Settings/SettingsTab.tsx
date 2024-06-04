@@ -60,7 +60,7 @@ const SettingsTab = () => {
                 <p className='underline font-bold'>Security</p>
                 <div className='w-[410px]'>
                     <DropdownExpand title='Change password' isArrowOnRight={true}>
-                        <div className='p-3 text-orange-500 text-glow flex flex-col gap-4'>
+                        <div className='p-3 text-orange-500  flex flex-col gap-4'>
                             <SettingsInputField
                                 inputTitle='Old password'
                                 isImportant={true}
@@ -73,7 +73,7 @@ const SettingsTab = () => {
                                 inputTitle='Confrim new password'
                                 isImportant={true}
                             />
-                            <button className='self-start w-40 h-10 bg-orange-600 text-white text-glow rounded-lg font-semibold'>
+                            <button className='self-start w-40 h-10 bg-orange-600 text-white  rounded-lg font-semibold'>
                                 Save
                             </button>
                         </div>
