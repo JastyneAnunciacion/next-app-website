@@ -14,7 +14,7 @@ const MainComponents = ({ children }: MainComponentsProps) => {
                 <Header />
                 <SideBar />
                 <div className='flex-1 overflow-auto flex flex-col items-center min-h-screen'>
-                    <div className='flex flex-col mt-[66px] w-[min(76rem,90%)] flex-grow items-center gap-5'>
+                    <div className='flex flex-col mt-[66px] w-[min(1200px,90%)] flex-grow items-center gap-5'>
                         {children}
                     </div>
                     <div className='self-start w-full'>

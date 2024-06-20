@@ -6,7 +6,7 @@ import basePath from '@/app/utilities/basepath';
 
 const slides = [
     {
-        imgSrc: '/'
+        imgSrc: '/images/bigBannerImages/BB-1.jpg'
     },
     {
         imgSrc: '/'
