@@ -9,13 +9,10 @@ const slides = [
         imgSrc: '/images/bigBannerImages/BB-1.jpg'
     },
     {
-        imgSrc: '/'
+        imgSrc: '/images/bigBannerImages/BB-2.jpg'
     },
     {
-        imgSrc: '/'
-    },
-    {
-        imgSrc: '/'
+        imgSrc: '/images/bigBannerImages/BB-3.jpg'
     }
 ];
 
