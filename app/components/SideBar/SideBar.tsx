@@ -24,7 +24,7 @@ const SideBar = () => {
                     overflowY: 'scroll',
                     overflowX: 'visible',
                 }}
-                className={`fixed mt-[66px] transition-width duration-300 ${isOpen ? 'w-60 px-6' : 'w-14'} bg-black h-full flex flex-col items-center py-3`}>
+                className={`fixed mt-[81px] transition-width duration-300 ${isOpen ? 'w-60 px-6' : 'w-14'} bg-black h-full flex flex-col items-center py-3`}>
 
                 <button className={`p-2 text-white ${isOpen && 'fixed ml-60 top-20'}`} onClick={toggleSidebar}>
                     <div className='h-9 w-9 bg-orange-500 rounded-full flex items-center justify-center' >

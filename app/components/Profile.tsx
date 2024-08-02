@@ -14,8 +14,8 @@ const Profile = ({ walletOnClick }: ProfileProps) => {
 
     return (
         <div className='relative'>
-            <button onClick={() => setShowPopup((prev) => !prev)} className='shrink-0 rounded-full hover:bg-black h-9 w-9 flex justify-center items-center'>
-                <Image src={`${basePath}/images/profile-image.png`} alt="Header Main Logo" width={20} height={20} />
+            <button onClick={() => setShowPopup((prev) => !prev)} className='w-[2.77vw] aspect-square shrink-0 flex items-center justify-center bg-[#241A46] rounded-2xl'   >
+                <Image src={`${basePath}/images/small-profile-image.png`} alt="Header Main Logo" layout='responsive' width={100} height={100} />
             </button>
 
             {showPopup &&

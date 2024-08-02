@@ -27,12 +27,23 @@ body {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Offside-Regular';
+  src: url('./assets/fonts/Offside-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 input[type='date']::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }
 
 .pixel {
   font-family: 'PixelifySans-Regular', sans-serif;
+}
+
+.font-offside {
+  font-family: 'Offside-Regular', sans-serif;
 }
 
 .text-glow {

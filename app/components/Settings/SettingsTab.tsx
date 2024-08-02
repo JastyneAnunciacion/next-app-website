@@ -29,7 +29,7 @@ const SettingsTab = () => {
     }));
 
     return (
-        <div className='self-start flex flex-col gap-3'>
+        <div className='self-start flex flex-col gap-3 text-orange-500'>
             <div className='w-[774px] flex gap-2'>
                 <div className='w-full'>
                     <p className='font-semibold pl-1'>Language</p>

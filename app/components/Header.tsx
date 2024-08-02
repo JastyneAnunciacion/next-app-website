@@ -13,27 +13,48 @@ const Header = () => {
 
   return (
     <header className='w-full fixed z-20'>
-      <div className='py-2 w-full flex items-center h-[66px] border-b bg-black'>
-        <div className='flex text-white font-extrabold text-xl items-center gap-2'>
-          <Image className='rounded-full' src={`${basePath}/images/phx-gamble-logo.png`} alt="Header Main Logo" width={50} height={50} />
-          <p className='text-nowrap'>PHOENIX GAME</p>
+      <div className='pb-[10px] px-[1.18%] w-full flex h-[81px] items-end bg-[#070123] justify-between'>
+        <div className='flex w-full items-center'>
+          <button className={`w-[1.74vw] aspect-square bg-[#150934] shrink-0 mr-[1.6%] flex items-center justify-center rounded-md`}>
+            <div className='w-[48%] h-[40%]'>
+              <Image src={`${basePath}/images/${'thin-purple-right-arrow'}-image.png`} alt='Expand icon' layout='responsive' width={100} height={100} />
+            </div>
+          </button>
+          <div className='flex text-white text-[24px] items-center gap-2'>
+            <Image className='rounded-full' src={`${basePath}/images/phx-gamble-logo.png`} alt="Header Main Logo" width={50} height={50} />
+            <div className='flex gap-[8px] font-offside text-nowrap'>
+              <p className='text-[#B767FA]'>Phoenix</p>
+              <p>Game</p>
+            </div>
+          </div>
         </div>
 
-        <div className='flex w-full items-center justify-center gap-2 pl-72'>
-          <WalletHeaderDropdown walletButtonOnClick={() => setShowWalletPopup(true)} />
-        </div>
-        <div className='flex items-center justify-center gap-4'>
-          <div className='w-40 h-10 border rounded-lg'>
+        <div className='flex w-full items-center justify-center gap-[0.69vw]'>
+          <div className='w-[21.39vw] shrink-0 aspect-[77/10]'>
             <Searchbar />
           </div>
-          <div className='pr-72'>
-            <Profile walletOnClick={() => setShowWalletPopup(true)} />
+          <div className='w-[2.77vw] aspect-square shrink-0 flex items-center justify-center bg-[#241A46] rounded-2xl'>
+            <div className='w-[35%] h-[37.5%]'>
+              <Image src={`/images/purple-notification-bell-image.png`} alt='Notification icon' layout='responsive' width={100} height={100} />
+            </div>
+          </div>
+          <div className='w-[2.77vw] aspect-square shrink-0 flex items-center justify-center bg-[#241A46] rounded-2xl'>
+            <div className='w-[40%] h-[37.5%]'>
+              <Image src={`/images/gradient-white-to-purple-chat-image.png`} alt='Chat icon' layout='responsive' width={100} height={100} />
+            </div>
+          </div>
+          <div className='w-[12.15vw] aspect-[35/8]'>
+            <WalletHeaderDropdown walletButtonOnClick={() => setShowWalletPopup(true)} />
+          </div>
+          <Profile walletOnClick={() => setShowWalletPopup(true)} />
+          <div className='w-[2.77vw] aspect-square shrink-0 flex items-center justify-center bg-[#241A46] rounded-2xl'>
+            <div className='w-[40%] aspect-square'>
+              <Image src={`/images/globe-image.png`} alt='Language icon' layout='responsive' width={100} height={100} />
+            </div>
           </div>
         </div>
       </div>
-
       <WalletPopup show={showWalletPopup} onClose={() => setShowWalletPopup(false)} />
-
     </header>
   )
 }

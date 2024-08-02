@@ -1,10 +1,9 @@
 'use client';
 
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import list from '../wallet-list.json'
 import Image from 'next/image';
 import basePath from '../../utilities/basepath';
-import WalletPopup from './WalletPopup';
 import Toggle from '../Toggle';
 import Searchbar from '../Searchbar';
 
@@ -15,6 +14,7 @@ interface WalletHeaderDropdownProps {
 const WalletHeaderDropdown = ({ walletButtonOnClick }: WalletHeaderDropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentlySelected, setCurrentlySelected] = useState(0);
+  const mainButtonRef = useRef(null);
 
   const handleItemClick = (index: number) => {
     setCurrentlySelected(index);
@@ -23,26 +23,23 @@ const WalletHeaderDropdown = ({ walletButtonOnClick }: WalletHeaderDropdownProps
 
   const selectedWallet = list[currentlySelected];
   return (
-    <div className='relative h-11'>
-      <div className='flex items-center'>
-        <button onClick={() => setIsOpen((prev) => !prev)} className="text-orange-400 border border-orange-400  p-2 w-44 h-9 flex items-center justify-between font-bold text-xs rounded-md">
-          {selectedWallet && (
-            <div className='flex w-full items-center justify-between gap-1'>
-              <h3>{selectedWallet.Amount}</h3>
-              <Image src={basePath + selectedWallet.TokenIconSrc} alt="Token Icon" width={20} height={20}></Image>
-            </div>
-          )}
-          {!isOpen ?
-            <Image src={`${basePath}/images/down-arrow-image.png`} alt="Down Arrow" width={20} height={20} />
-            :
-            <Image src={`${basePath}/images/up-arrow-image.png`} alt="Up Arrow" width={20} height={20} />
-          }
-        </button>
-
-        <button onClick={walletButtonOnClick} className='bg-orange-500 text-black w-20 h-9 rounded-lg text-lg font-bold flex items-center justify-center gap-2 shrink-0'>
-          <p>Wallet</p>
-        </button>
-
+    <div className='relative w-full h-full'>
+      <div className='w-full h-full'>
+        <div className='relative bg-gradient-to-r from-[#A379DF] to-[##221C42]/0 w-full h-full p-[1px] flex items-center justify-center rounded-lg text-white'>
+          <button ref={mainButtonRef} onClick={() => setIsOpen((prev) => !prev)} className="bg-gradient-to-r from-[#412A78] to-[#221C42] pl-[5.71%] pb-[1px] pr-[2.29%] w-full h-full flex items-center justify-between rounded-md">
+            {selectedWallet && (
+              <div className='flex w-full items-center h-full gap-[0.34vw]'>
+                <div className='flex items-center justify-center shrink-0 h-[37.5%] aspect-square'>
+                  <Image src={basePath + selectedWallet.TokenIconSrc} alt="Token Icon" layout='responsive' width={100} height={100} />
+                </div>
+                <p className='text-[0.83vw]'>{selectedWallet.Amount}</p>
+              </div>
+            )}
+            <button onClick={walletButtonOnClick} className='bg-[#02CC00] w-[38.86%] aspect-[68/35] rounded-lg flex items-center justify-center shrink-0'>
+              <p>Deposit</p>
+            </button>
+          </button>
+        </div>
 
         {isOpen && (
           <div className='absolute bg-black border border-orange-500 w-72 left-0 top-11 flex flex-col overflow-hidden z-20'>
