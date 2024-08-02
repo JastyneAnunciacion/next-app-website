@@ -29,8 +29,10 @@ const Header = ({ onMenuButtonClick, isMenuOpen }: HeaderProps) => {
               <Image src={`${basePath}/images/thin-purple-${isMenuOpen ? 'back' : 'right'}-arrow-image.png`} alt='Expand icon' layout='responsive' width={100} height={100} />
             </div>
           </button>
-          <div className='flex text-white text-[24px] items-center gap-2'>
-            <Image className='rounded-full' src={`${basePath}/images/phx-gamble-logo.png`} alt="Header Main Logo" width={50} height={50} />
+          <div className='flex text-white text-[1.66vw] items-center gap-2'>
+            <div className='w-[2.43vw] aspect-[35/34]'>
+              <Image src={`${basePath}/images/phx-gamble-logo.png`} alt='Language icon' layout='responsive' width={100} height={100} />
+            </div>
             <div className='flex gap-[8px] font-offside text-nowrap'>
               <p className='text-[#B767FA]'>Phoenix</p>
               <p>Game</p>
