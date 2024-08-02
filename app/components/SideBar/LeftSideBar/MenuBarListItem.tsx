@@ -28,14 +28,14 @@ const MenuBarListItem = ({ isSideBarOpen, notSelectedImgSrc, SelectedImgSrc, ite
     return (
         <li className='w-full flex items-start justify-start'>
             {!isSideBarOpen ? (
-                <a href={pageHref} className='relative flex items-center justify-center'>
+                <a href={pageHref} className='relative flex items-center justify-center group'>
                     <div className={`w-[2.77vw] aspect-square shrink-0 flex items-center justify-center rounded-lg ${isSelected ? 'bg-gradient-to-b from-[#BD73F9] to-[#9B34FD] shadow-glow shadow-[#bb6ffa86]' : 'bg-[#241A46]'}`}>
                         <div className='w-[37.5%] aspect-square'>
                             <Image src={`${!isSelected ? notSelectedImgSrc : SelectedImgSrc}`} alt='Language icon' layout='responsive' width={100} height={100} />
                         </div>
                     </div>
                     {showItemName && (
-                        <p className='fixed z-10 p-2 h-8 left-[4vw] bg-gradient-to-b from-[#BD73F9] shadow-glow shadow-[#BB6FFA] to-[#9B34FD] text-sm text-nowrap rounded-lg opacity-0 transition-opacity duration-200 pointer-events-none text-white font-bold'>
+                        <p className='fixed z-10 p-2 h-8 left-[4vw] bg-gradient-to-b from-[#BD73F9] shadow-glow shadow-[#BB6FFA] to-[#9B34FD] text-sm text-nowrap rounded-lg opacity-0 transition-opacity duration-200 pointer-events-none group-hover:opacity-100 text-white font-bold'>
                             {itemName}
                         </p>
                     )}

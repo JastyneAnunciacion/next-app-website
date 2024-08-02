@@ -20,10 +20,16 @@ const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => 
         <main className='h-full w-full overflow-x-hidden'>
             <div className="flex w-full h-full flex-col">
                 <Header onMenuButtonClick={toggleMenuBar} isMenuOpen={isMenuBarOpen} />
-                <MenuBar isMenuOpen={isMenuBarOpen} currentPage={currentPage} />
-                <div className='flex-1 overflow-auto flex flex-col items-center min-h-screen'>
-                    <div className='flex flex-col mt-[66px] w-[min(1200px,90%)] flex-grow items-center gap-5'>
-                        {children}
+                <div>
+                    <div className='flex'>
+                        <div>
+                            <MenuBar isMenuOpen={isMenuBarOpen} currentPage={currentPage} />
+                        </div>
+                        <div className='w-full flex justify-center items-center'>
+                            <div className='flex-col w-[69.44vw] items-center'>
+                                {children}
+                            </div>
+                        </div>
                     </div>
                     <div className='self-start w-full'>
                         <Footer />
