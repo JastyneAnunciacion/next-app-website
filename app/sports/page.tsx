@@ -8,7 +8,7 @@ import MainComponents from '../components/MainComponents'
 
 const sportsPage = () => {
   return (
-    <MainComponents>
+    <MainComponents currentPage='Sports'>
       <div className='w-full'>
         <SportsHeader />
         <div className='px-4'>

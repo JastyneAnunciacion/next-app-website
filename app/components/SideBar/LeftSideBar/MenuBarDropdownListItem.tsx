@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import basePath from '@/app/utilities/basepath';
-import SideBarListItem from './SideBarListItem';
+import MenuBarListItem from './MenuBarListItem';
 
-interface SideBarDropdownListItemProps {
+interface MenuBarDropdownListItemProps {
     isSideBarOpen: boolean
     itemName: string,
 }
 
-const SideBarDropdownListItem = ({ isSideBarOpen, itemName }: SideBarDropdownListItemProps) => {
+const MenuBarDropdownListItem = ({ isSideBarOpen, itemName }: MenuBarDropdownListItemProps) => {
     const [showItemName, setShowItemName] = useState(false);
     const [isDropdownOpen, setDropdownOpen] = useState(false);
 
     useEffect(() => {
         let timer: NodeJS.Timeout;
         if (!isSideBarOpen) {
-            timer = setTimeout(() => setShowItemName(true), 200); // Adjust timeout as needed
+            timer = setTimeout(() => setShowItemName(true), 200);
         } else {
             setShowItemName(false);
         }
@@ -42,14 +42,14 @@ const SideBarDropdownListItem = ({ isSideBarOpen, itemName }: SideBarDropdownLis
 
                     {isDropdownOpen && (
                         <ul className='flex flex-col items-start'>
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='All Sports' pageHref='/sports' />
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='In Play' pageHref='/sports' />
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Football' pageHref='/sports' />
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Golf' pageHref='/sports' />
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Tennis' pageHref='/sports' />
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Basketball' pageHref='/sports' />
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='Horse Racing' pageHref='/sports' />
-                            <SideBarListItem isSideBarOpen={isSideBarOpen} itemName='American Football' pageHref='/sports' />
+                            {/* <MenuBarListItem isSideBarOpen={isSideBarOpen} itemName='All Sports' pageHref='/sports' />
+                            <MenuBarListItem isSideBarOpen={isSideBarOpen} itemName='In Play' pageHref='/sports' />
+                            <MenuBarListItem isSideBarOpen={isSideBarOpen} itemName='Football' pageHref='/sports' />
+                            <MenuBarListItem isSideBarOpen={isSideBarOpen} itemName='Golf' pageHref='/sports' />
+                            <MenuBarListItem isSideBarOpen={isSideBarOpen} itemName='Tennis' pageHref='/sports' />
+                            <MenuBarListItem isSideBarOpen={isSideBarOpen} itemName='Basketball' pageHref='/sports' />
+                            <MenuBarListItem isSideBarOpen={isSideBarOpen} itemName='Horse Racing' pageHref='/sports' />
+                            <MenuBarListItem isSideBarOpen={isSideBarOpen} itemName='American Football' pageHref='/sports' /> */}
                         </ul>
                     )}
                 </div>
@@ -61,7 +61,6 @@ const SideBarDropdownListItem = ({ isSideBarOpen, itemName }: SideBarDropdownLis
                             {itemName}
                         </p>
                     )}
-
                     {/* <Image className='rounded-full' src={`${basePath}/images/temporary-image.png`} alt="Side Bar Image" width={25} height={25} /> */}
                 </button>
             )}
@@ -69,4 +68,4 @@ const SideBarDropdownListItem = ({ isSideBarOpen, itemName }: SideBarDropdownLis
     )
 }
 
-export default SideBarDropdownListItem
+export default MenuBarDropdownListItem

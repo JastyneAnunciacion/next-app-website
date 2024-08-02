@@ -9,7 +9,7 @@ import BoxBanner from '../components/Banners/BoxBanner'
 
 const CasinoPage = () => {
     return (
-        <MainComponents>
+        <MainComponents currentPage='Casino'>
             <div className='w-full mt-5 flex flex-col gap-5'>
                 <div className='flex w-full justify-between'>
                     <BoxBanner

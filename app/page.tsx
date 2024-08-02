@@ -9,8 +9,8 @@ import walletList from "./components/wallet-list.json"
 
 export default function Home() {
   return (
-    <MainComponents>
-      <BigBannerSlider />
+    <MainComponents currentPage='Home'>
+      {/* <BigBannerSlider /> */}
       <div className='flex w-full gap-6 justify-between'>
         <ShortcutCards imgSrc='' title='Instant Signup' description={`Get signed up in seconds with our lightning quick sign up process.`} buttonText='Sign Up Now' />
         <ShortcutCards imgSrc='' title='Telegram Casino' description={`Exclusive gaming at your chat's edge with our streamlined Telegram Casino.`} buttonText='Play on Telegram' />

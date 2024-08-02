@@ -32,11 +32,11 @@ const WalletHeaderDropdown = ({ walletButtonOnClick }: WalletHeaderDropdownProps
                 <div className='flex items-center justify-center shrink-0 h-[37.5%] aspect-square'>
                   <Image src={basePath + selectedWallet.TokenIconSrc} alt="Token Icon" layout='responsive' width={100} height={100} />
                 </div>
-                <p className='text-[0.83vw]'>{selectedWallet.Amount}</p>
+                <p className='text-[0.83vw] font-montserrat'>{selectedWallet.Amount}</p>
               </div>
             )}
             <button onClick={walletButtonOnClick} className='bg-[#02CC00] w-[38.86%] aspect-[68/35] rounded-lg flex items-center justify-center shrink-0'>
-              <p>Deposit</p>
+              <p className='text-[0.83vw] font-montserrat'>Deposit</p>
             </button>
           </button>
         </div>

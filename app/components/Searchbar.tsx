@@ -12,7 +12,7 @@ const Searchbar = ({ placeholderText = 'Search' }: SerachbarProps) => {
       <div className='shrink-0 w-[4.87%] aspect-square'>
         <Image src={`/images/purple-search-image.png`} alt='Search Icon' layout='responsive' width={100} height={100} />
       </div>
-      <input placeholder={placeholderText} className='w-full h-full bg-transparent text-white text-sm outline-none focus:ring-0' />
+      <input placeholder={placeholderText} className='w-full text-[0.83vw] font-montserrat h-full bg-transparent text-white text-sm outline-none focus:ring-0' />
     </div>
   )
 }

@@ -8,16 +8,25 @@ import WalletPopup from './Wallet/WalletPopup';
 import Image from 'next/image';
 import basePath from '../utilities/basepath';
 
-const Header = () => {
+interface HeaderProps {
+  onMenuButtonClick: () => void;
+  isMenuOpen: boolean;
+}
+
+const Header = ({ onMenuButtonClick, isMenuOpen }: HeaderProps) => {
   const [showWalletPopup, setShowWalletPopup] = useState(false);
+  const [showChat, setShowChat] = useState(true);
 
   return (
     <header className='w-full fixed z-20'>
       <div className='pb-[10px] px-[1.18%] w-full flex h-[81px] items-end bg-[#070123] justify-between'>
         <div className='flex w-full items-center'>
-          <button className={`w-[1.74vw] aspect-square bg-[#150934] shrink-0 mr-[1.6%] flex items-center justify-center rounded-md`}>
+          <button
+            onClick={onMenuButtonClick}
+            className={`w-[1.74vw] aspect-square bg-[#150934] shrink-0 mr-[1.6%] flex items-center justify-center rounded-md`}
+          >
             <div className='w-[48%] h-[40%]'>
-              <Image src={`${basePath}/images/${'thin-purple-right-arrow'}-image.png`} alt='Expand icon' layout='responsive' width={100} height={100} />
+              <Image src={`${basePath}/images/thin-purple-${isMenuOpen ? 'back' : 'right'}-arrow-image.png`} alt='Expand icon' layout='responsive' width={100} height={100} />
             </div>
           </button>
           <div className='flex text-white text-[24px] items-center gap-2'>
@@ -33,23 +42,29 @@ const Header = () => {
           <div className='w-[21.39vw] shrink-0 aspect-[77/10]'>
             <Searchbar />
           </div>
-          <div className='w-[2.77vw] aspect-square shrink-0 flex items-center justify-center bg-[#241A46] rounded-2xl'>
+          <button
+            onClick={() => setShowChat(false)}
+            className={`w-[2.77vw] aspect-square shrink-0 flex items-center justify-center rounded-2xl ${showChat ? 'bg-[#241A46]' : 'bg-gradient-to-b from-[#BD73F9] to-[#9B34FD] shadow-glow shadow-[#bb6ffa86]'} `}
+          >
             <div className='w-[35%] h-[37.5%]'>
-              <Image src={`/images/purple-notification-bell-image.png`} alt='Notification icon' layout='responsive' width={100} height={100} />
+              <Image src={`${basePath}/images/${!showChat ? 'gradient-white-to-purple' : 'purple'}-notification-bell-image.png`} alt='Notification icon' layout='responsive' width={100} height={100} />
             </div>
-          </div>
-          <div className='w-[2.77vw] aspect-square shrink-0 flex items-center justify-center bg-[#241A46] rounded-2xl'>
+          </button>
+          <button
+            onClick={() => setShowChat(true)}
+            className={`w-[2.77vw] aspect-square shrink-0 flex items-center justify-center rounded-2xl ${showChat ? 'bg-gradient-to-b from-[#BD73F9] to-[#9B34FD] shadow-glow shadow-[#bb6ffa86]' : 'bg-[#241A46]'} `}
+          >
             <div className='w-[40%] h-[37.5%]'>
-              <Image src={`/images/gradient-white-to-purple-chat-image.png`} alt='Chat icon' layout='responsive' width={100} height={100} />
+              <Image src={`${basePath}/images/${showChat ? 'gradient-white-to-purple' : 'purple'}-chat-image.png`} alt='Chat icon' layout='responsive' width={100} height={100} />
             </div>
-          </div>
+          </button>
           <div className='w-[12.15vw] aspect-[35/8]'>
             <WalletHeaderDropdown walletButtonOnClick={() => setShowWalletPopup(true)} />
           </div>
           <Profile walletOnClick={() => setShowWalletPopup(true)} />
           <div className='w-[2.77vw] aspect-square shrink-0 flex items-center justify-center bg-[#241A46] rounded-2xl'>
             <div className='w-[40%] aspect-square'>
-              <Image src={`/images/globe-image.png`} alt='Language icon' layout='responsive' width={100} height={100} />
+              <Image src={`${basePath}/images/globe-image.png`} alt='Language icon' layout='responsive' width={100} height={100} />
             </div>
           </div>
         </div>
