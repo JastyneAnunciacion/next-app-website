@@ -11,9 +11,11 @@ import basePath from '../utilities/basepath';
 interface HeaderProps {
   onMenuButtonClick: () => void;
   isMenuOpen: boolean;
+  onClickChatButton: () => void;
+  onClickNotificationButton: () => void;
 }
 
-const Header = ({ onMenuButtonClick, isMenuOpen }: HeaderProps) => {
+const Header = ({ onMenuButtonClick, isMenuOpen, onClickChatButton, onClickNotificationButton }: HeaderProps) => {
   const [showWalletPopup, setShowWalletPopup] = useState(false);
   const [showChat, setShowChat] = useState(true);
 
@@ -47,16 +49,16 @@ const Header = ({ onMenuButtonClick, isMenuOpen }: HeaderProps) => {
               <Searchbar />
             </div>
             <button
-              onClick={() => setShowChat(false)}
-              className={`w-[2.77vw] aspect-square shrink-0 flex items-center justify-center rounded-2xl ${showChat ? 'bg-[#241A46]' : 'bg-gradient-to-b from-[#BD73F9] to-[#9B34FD] shadow-glow shadow-[#bb6ffa86]'} `}
+              onClick={() => { setShowChat(false); onClickNotificationButton(); }}
+              className={`${!showChat && 'pointer-events-none'} w-[2.77vw] aspect-square shrink-0 flex items-center justify-center rounded-2xl ${showChat ? 'bg-[#241A46]' : 'bg-gradient-to-b from-[#BD73F9] to-[#9B34FD] shadow-glow shadow-[#bb6ffa86]'} `}
             >
               <div className='w-[35%] h-[37.5%]'>
                 <Image src={`${basePath}/images/${!showChat ? 'gradient-white-to-purple' : 'purple'}-notification-bell-image.png`} alt='Notification icon' layout='responsive' width={100} height={100} />
               </div>
             </button>
             <button
-              onClick={() => setShowChat(true)}
-              className={`w-[2.77vw] aspect-square shrink-0 flex items-center justify-center rounded-2xl ${showChat ? 'bg-gradient-to-b from-[#BD73F9] to-[#9B34FD] shadow-glow shadow-[#bb6ffa86]' : 'bg-[#241A46]'} `}
+              onClick={() => { setShowChat(true); onClickChatButton(); }}
+              className={`${showChat && 'pointer-events-none'} w-[2.77vw] aspect-square shrink-0 flex items-center justify-center rounded-2xl ${showChat ? 'bg-gradient-to-b from-[#BD73F9] to-[#9B34FD] shadow-glow shadow-[#bb6ffa86]' : 'bg-[#241A46]'} `}
             >
               <div className='w-[40%] h-[37.5%]'>
                 <Image src={`${basePath}/images/${showChat ? 'gradient-white-to-purple' : 'purple'}-chat-image.png`} alt='Chat icon' layout='responsive' width={100} height={100} />
@@ -75,7 +77,7 @@ const Header = ({ onMenuButtonClick, isMenuOpen }: HeaderProps) => {
         </div>
         <WalletPopup show={showWalletPopup} onClose={() => setShowWalletPopup(false)} />
       </div>
-    </header>
+    </header >
   )
 }
 
