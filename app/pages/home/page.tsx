@@ -1,11 +1,11 @@
-import BigBannerSlider from '../components/Banners/BigBannerSlider'
-import CryptocurrencyCard from '../components/CryptocurrencyCard'
-import MainComponents from '../components/MainComponents'
-import QuickListGames from '../components/Quicklist/QuickListGames'
-import QuickListProviders from '../components/Quicklist/QuickListProviders'
-import RealTimeBetWinners from '../components/RealTimeBetWinners/RealTimeBetWinners'
-import ShortcutCards from '../components/ShortcutCards'
-import walletList from "../components/wallet-list.json"
+import BigBannerSlider from '@/app/components/Banners/BigBannerSlider'
+import CryptocurrencyCard from '@/app/components/CryptocurrencyCard'
+import MainComponents from '@/app/components/MainComponents'
+import QuickListGames from '@/app/components/Quicklist/QuickListGames'
+import QuickListProviders from '@/app/components/Quicklist/QuickListProviders'
+import RealTimeBetWinners from '@/app/components/RealTimeBetWinners/RealTimeBetWinners'
+import ShortcutCards from '@/app/components/ShortcutCards'
+import walletList from "@/app/components/wallet-list.json"
 
 export default function Home() {
   return (

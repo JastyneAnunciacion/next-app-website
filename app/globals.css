@@ -41,6 +41,13 @@ body {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Righteous-Regular';
+  src: url('./assets/fonts/Righteous-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 input[type='date']::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }
@@ -55,6 +62,10 @@ input[type='date']::-webkit-calendar-picker-indicator {
 
 .font-montserrat {
   font-family: 'Montserrat-Regular', sans-serif;
+}
+
+.font-righteous {
+  font-family: 'Righteous-Regular', sans-serif;
 }
 
 .text-glow {

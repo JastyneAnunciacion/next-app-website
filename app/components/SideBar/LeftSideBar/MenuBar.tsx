@@ -25,7 +25,7 @@ const MenuBar = ({ isMenuOpen, currentPage }: MenuBarProps) => {
                         notSelectedImgSrc='/images/gradient-purple-cards-image.png'
                         SelectedImgSrc='/images/gradient-white-to-purple-cards-image.png'
                         itemName='Casino'
-                        pageHref='/casino'
+                        pageHref='/pages/casino'
                         isSelected={currentPage === 'Casino'}
                     />
                     <MenuBarListItem
@@ -33,7 +33,7 @@ const MenuBar = ({ isMenuOpen, currentPage }: MenuBarProps) => {
                         notSelectedImgSrc='/images/gradient-purple-sports-image.png'
                         SelectedImgSrc='/images/gradient-white-to-purple-sports-image.png'
                         itemName='Sports'
-                        pageHref='/games'
+                        pageHref='/pages/games'
                         isSelected={false}
                     />
                     <MenuBarListItem
@@ -41,7 +41,7 @@ const MenuBar = ({ isMenuOpen, currentPage }: MenuBarProps) => {
                         notSelectedImgSrc='/images/gradient-purple-medal-image.png'
                         SelectedImgSrc='/images/gradient-white-to-purple-medal-image.png'
                         itemName='Affiliate'
-                        pageHref='/games'
+                        pageHref='/pages/games'
                         isSelected={false}
                     />
                     <MenuBarListItem
@@ -49,7 +49,7 @@ const MenuBar = ({ isMenuOpen, currentPage }: MenuBarProps) => {
                         notSelectedImgSrc='/images/gradient-purple-trophy-image.png'
                         SelectedImgSrc='/images/gradient-white-to-purple-trophy-image.png'
                         itemName='Leaderboard'
-                        pageHref='/games'
+                        pageHref='/pages/games'
                         isSelected={false}
                     />
                     <MenuBarListItem
@@ -57,7 +57,7 @@ const MenuBar = ({ isMenuOpen, currentPage }: MenuBarProps) => {
                         notSelectedImgSrc='/images/gradient-purple-stacked-image.png'
                         SelectedImgSrc='/images/gradient-white-to-purple-stacked-image.png'
                         itemName='Staking'
-                        pageHref='/games'
+                        pageHref='/pages/games'
                         isSelected={false}
                     />
                 </ul>
@@ -67,7 +67,7 @@ const MenuBar = ({ isMenuOpen, currentPage }: MenuBarProps) => {
                         notSelectedImgSrc='/images/gradient-purple-profile-image.png'
                         SelectedImgSrc='/images/gradient-white-to-purple-profile-image.png'
                         itemName='Profile'
-                        pageHref='/games'
+                        pageHref='/pages/games'
                         isSelected={false}
                     />
                     <MenuBarListItem
@@ -75,16 +75,16 @@ const MenuBar = ({ isMenuOpen, currentPage }: MenuBarProps) => {
                         notSelectedImgSrc='/images/gradient-purple-wallet-image.png'
                         SelectedImgSrc='/images/gradient-white-to-purple-wallet-image.png'
                         itemName='Wallet'
-                        pageHref='/games'
-                        isSelected={false}
+                        pageHref='/pages/wallet'
+                        isSelected={currentPage === 'Wallet'}
                     />
                     <MenuBarListItem
                         isSideBarOpen={isMenuOpen}
                         notSelectedImgSrc='/images/gradient-purple-cog-image.png'
                         SelectedImgSrc='/images/gradient-white-to-purple-cog-image.png'
                         itemName='Settings'
-                        pageHref='/games'
-                        isSelected={false}
+                        pageHref='/pages/settings'
+                        isSelected={currentPage === 'Settings'}
                     />
                 </ul>
             </div >

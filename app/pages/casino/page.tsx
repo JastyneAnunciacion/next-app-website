@@ -1,11 +1,11 @@
 import React from 'react'
-import MainComponents from '../components/MainComponents'
-import Searchbar from '../components/Searchbar'
-import QuickListGames from '../components/Quicklist/QuickListGames'
-import list from '../components/wallet-list.json'
-import QuickListProviders from '../components/Quicklist/QuickListProviders'
-import RealTimeBetWinners from '../components/RealTimeBetWinners/RealTimeBetWinners'
-import BoxBanner from '../components/Banners/BoxBanner'
+import Searchbar from '@/app/components/Searchbar'
+import QuickListGames from '@/app/components/Quicklist/QuickListGames'
+import list from '@/app/components/wallet-list.json'
+import QuickListProviders from '@/app/components/Quicklist/QuickListProviders'
+import RealTimeBetWinners from '@/app/components/RealTimeBetWinners/RealTimeBetWinners'
+import BoxBanner from '@/app/components/Banners/BoxBanner'
+import MainComponents from '@/app/components/MainComponents'
 
 const CasinoPage = () => {
     return (

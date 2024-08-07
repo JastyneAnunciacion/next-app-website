@@ -9,7 +9,7 @@ const ChatBarMessage = () => {
 
                 <div className='flex w-full items-center gap-[0.35vw]'>
                     <div className='w-[1.04vw] aspect-square '>
-                        <Image src={`${basePath}/images/2xs-profile-image.png`} alt='User Profile Picture' width={100} height={100} />
+                        <Image src={`${basePath}/images/2xs-profile-image.png`} alt='User Profile Picture' layout='responsive' width={100} height={100} />
                     </div>
                     <p>@username99</p>
                 </div>

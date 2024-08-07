@@ -1,13 +1,11 @@
 'use client'
 
 import React from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import walletList from '../components/wallet-list.json'
-import MainComponents from '../components/MainComponents'
-import SelectionDropdown from '../components/Dropdown/SelectionDropdown'
-import Searchbar from '../components/Searchbar'
-import GridList from '../components/GridList'
+import walletList from '@/app/components/wallet-list.json'
+import MainComponents from '@/app/components/MainComponents'
+import SelectionDropdown from '@/app/components/Dropdown/SelectionDropdown'
+import Searchbar from '@/app/components/Searchbar'
+import GridList from '@/app/components/GridList'
 
 const CasinoPage = () => {
   const sortOptions = [

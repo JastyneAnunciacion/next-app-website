@@ -28,7 +28,7 @@ const MenuBarListItem = ({ isSideBarOpen, notSelectedImgSrc, SelectedImgSrc, ite
     return (
         <li className='w-full flex items-start justify-start'>
             <a href={pageHref}
-                className={`transition-all duration-300 flex items-center pl-[0.83vw] h-[2.77vw] overflow-hidden gap-[0.69vw] rounded-lg
+                className={`${isSelected && 'pointer-events-none'} transition-all duration-300 flex items-center pl-[0.83vw] h-[2.77vw] overflow-hidden gap-[0.69vw] rounded-lg
                     ${!isSideBarOpen ?
                         'w-[2.77vw] relative group shrink-0'
                         :

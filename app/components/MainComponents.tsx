@@ -33,7 +33,7 @@ const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => 
                     <div className='flex w-full h-full pt-[10vh]'>
                         <MenuBar isMenuOpen={isMenuBarOpen} currentPage={currentPage} />
                         <div className='w-full flex justify-center items-center'>
-                            <div className={`transition-width duration-300 flex-col ${isMenuBarOpen ? ' w-[65.27vw]' : 'w-[74.30vw]'} items-center`}>
+                            <div className={`transition-width duration-300 flex-col px-[2.08vw] py-[3.7vh] rounded-lg ${isMenuBarOpen ? ' w-[65.27vw]' : 'w-[74.30vw]'} items-center bg-gradient-to-b from-[#11062E] to-[#070123]`}>
                                 {children}
                             </div>
                         </div>

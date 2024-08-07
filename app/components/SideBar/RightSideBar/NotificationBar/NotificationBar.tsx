@@ -8,7 +8,7 @@ interface NotificationBarProps {
 const NotificationBar = ({ show }: NotificationBarProps) => {
     return (
         <>
-            <div className={`shrink-0 fixed transition-width duration-300 w-[17.71vw] pt-[10px] bg-[#070123] h-[90vh] flex flex-col text-white ${show ? '' : 'translate-x-full'}`}>
+            <div className={`shrink-0 fixed transition-width duration-300 w-[17.71vw] pt-[10px] bg-[#070123] h-[90vh] flex flex-col text-white ${!show && 'translate-x-full'}`}>
                 <p className='pl-[2.54vw] mb-[10px]'>Notification</p>
                 <div
                     style={{
