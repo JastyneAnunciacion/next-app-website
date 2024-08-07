@@ -10,7 +10,7 @@ interface MenuBarProps {
 const MenuBar = ({ isMenuOpen, currentPage }: MenuBarProps) => {
     return (
         <div>
-            <div className={`fixed transition-width duration-300 ${!isMenuOpen ? 'w-[3.82vw] items-center' : 'w-[12.85vw]'} bg-[#070123] pl-[0.69vw] pr-[0.35vw] h-full flex flex-col`}>
+            <div className={`fixed justify-between transition-width duration-300 ${!isMenuOpen ? 'w-[3.82vw]' : 'w-[12.85vw]'} bg-[#070123] pl-[0.69vw] pr-[0.35vw] h-full justify-between`}>
                 <ul className={`flex flex-col gap-[1.25vh] text-white w-full`}>
                     <MenuBarListItem
                         isSideBarOpen={isMenuOpen}
@@ -61,6 +61,16 @@ const MenuBar = ({ isMenuOpen, currentPage }: MenuBarProps) => {
                         isSelected={false}
                     />
                 </ul>
+                {/* <ul>
+                    <MenuBarListItem
+                        isSideBarOpen={isMenuOpen}
+                        notSelectedImgSrc='/images/gradient-purple-stacked-image.png'
+                        SelectedImgSrc='/images/gradient-white-to-purple-stacked-image.png'
+                        itemName='Staking'
+                        pageHref='/games'
+                        isSelected={false}
+                    />
+                </ul> */}
             </div >
             <div className={`h-full transition-width duration-300 pl-[0.69vw] mr-[0.35vw] ${!isMenuOpen ? 'w-[3.82vw] ' : 'w-[12.85vw]'}`} />
         </div >

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import basePath from '@/app/utilities/basepath'
+import basePath from '@/app/utilities/basepath';
 
 interface MenuBarListItemProps {
     isSideBarOpen: boolean,
@@ -27,27 +27,30 @@ const MenuBarListItem = ({ isSideBarOpen, notSelectedImgSrc, SelectedImgSrc, ite
 
     return (
         <li className='w-full flex items-start justify-start'>
-            {!isSideBarOpen ? (
-                <a href={pageHref} className='relative flex items-center justify-center group'>
-                    <div className={`w-[2.77vw] aspect-square shrink-0 flex items-center justify-center rounded-lg ${isSelected ? 'bg-gradient-to-b from-[#BD73F9] to-[#9B34FD] shadow-glow shadow-[#bb6ffa86]' : 'bg-[#241A46]'}`}>
-                        <div className='w-[37.5%] aspect-square'>
-                            <Image src={`${!isSelected ? notSelectedImgSrc : SelectedImgSrc}`} alt='Language icon' layout='responsive' width={100} height={100} />
-                        </div>
-                    </div>
-                    {showItemName && (
-                        <p className='fixed z-10 p-2 h-8 left-[4vw] bg-gradient-to-b from-[#BD73F9] shadow-glow shadow-[#BB6FFA] to-[#9B34FD] text-sm text-nowrap rounded-lg opacity-0 transition-opacity duration-200 pointer-events-none group-hover:opacity-100 text-white font-bold'>
-                            {itemName}
-                        </p>
-                    )}
-                </a>
-            ) : (
-                <a href={pageHref} className={`pl-[7.05%] w-[11.80vw] h-[2.77vw] flex items-center gap-2 rounded-lg ${isSelected ? 'bg-gradient-to-b from-[#BD73F9] to-[#9B34FD] shadow-glow shadow-[#bb6ffa86]' : 'bg-[#241A46]'}`}>
-                    <div className='w-[8.82%] aspect-square'>
-                        <Image src={`${!isSelected ? notSelectedImgSrc : SelectedImgSrc}`} alt='Language icon' layout='responsive' width={100} height={100} />
-                    </div>
-                    <p className='text-gray-300 text-nowrap'>{itemName}</p>
-                </a>
-            )}
+            <a href={pageHref}
+                className={`transition-all duration-300 flex items-center pl-[0.83vw] h-[2.77vw] overflow-hidden gap-[0.69vw] rounded-lg
+                    ${!isSideBarOpen ?
+                        'w-[2.77vw] relative group shrink-0'
+                        :
+                        'w-[11.80vw]'
+                    }  
+                    ${isSelected ?
+                        'bg-gradient-to-b from-[#BD73F9] to-[#9B34FD] shadow-glow shadow-[#bb6ffa86]'
+                        :
+                        'bg-[#241A46]'
+                    }
+                    `}>
+                <div className={`h-[1.84vh] aspect-square`}>
+                    <Image src={`${!isSelected ? basePath + notSelectedImgSrc : basePath + SelectedImgSrc}`} alt='Menu icon' layout='responsive' width={100} height={100} />
+                </div>
+                <p className={`${isSideBarOpen ? 'text-white' : 'text-white/0'} text-[0.83vw] transition-colors duration-100`}>{itemName}</p>
+
+                {showItemName && (
+                    <p className='fixed z-[1000] p-2 h-8 left-[4vw] bg-gradient-to-b from-[#BD73F9] shadow-glow shadow-[#bb6ffa86] to-[#9B34FD] text-sm text-nowrap rounded-lg opacity-0 transition-opacity duration-200 pointer-events-none group-hover:opacity-100 text-white font-bold'>
+                        {itemName}
+                    </p>
+                )}
+            </a>
         </li>
     )
 }

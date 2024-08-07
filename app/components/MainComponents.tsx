@@ -30,17 +30,16 @@ const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => 
                     onClickNotificationButton={() => setRightSideOption(1)}
                 />
                 <div>
-                    <div className='flex w-full h-full mt-[10vh]'>
+                    <div className='flex w-full h-full pt-[10vh]'>
                         <MenuBar isMenuOpen={isMenuBarOpen} currentPage={currentPage} />
                         <div className='w-full flex justify-center items-center'>
-                            <div className='flex-col w-[69.44vw] items-center'>
+                            <div className={`transition-width duration-300 flex-col ${isMenuBarOpen ? ' w-[65.27vw]' : 'w-[74.30vw]'} items-center`}>
                                 {children}
                             </div>
                         </div>
-                        <div>
+                        <div className='shrink-0 w-[17.71vw]'>
                             <ChatBar show={rightSideOption == 0} />
                             <NotificationBar show={rightSideOption == 1} />
-                            <div className='shrink-0 w-[17.71vw] h-full text-white' />
                         </div>
                     </div>
                     <div className='self-start w-full'>

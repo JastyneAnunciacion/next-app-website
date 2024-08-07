@@ -20,11 +20,9 @@ const NotificationBar = ({ show }: NotificationBarProps) => {
                     }}
                     className='flex flex-col items-end pr-[0.69vw] gap-[5px] mb-[6px]'
                 >
-                    <Notification />
-                    <Notification />
-                    <Notification />
-                    <Notification />
-                    <Notification />
+                    {Array.from({ length: 18 }).map((_, index) => (
+                        <Notification key={index} />
+                    ))}
                 </div>
             </div >
         </>
