@@ -10,7 +10,7 @@ interface MenuBarProps {
 const MenuBar = ({ isMenuOpen, currentPage }: MenuBarProps) => {
     return (
         <div>
-            <div className={`fixed justify-between transition-width duration-300 ${!isMenuOpen ? 'w-[3.82vw]' : 'w-[12.85vw]'} bg-[#070123] pl-[0.69vw] pr-[0.35vw] h-full justify-between`}>
+            <div className={`fixed justify-between transition-width duration-300 ${!isMenuOpen ? 'w-[3.82vw]' : 'w-[12.85vw]'} bg-[#070123] pl-[0.69vw] pr-[0.35vw] h-[90vh] flex flex-col justify-between pb-[1.35vh]`}>
                 <ul className={`flex flex-col gap-[1.25vh] text-white w-full`}>
                     <MenuBarListItem
                         isSideBarOpen={isMenuOpen}
@@ -61,16 +61,32 @@ const MenuBar = ({ isMenuOpen, currentPage }: MenuBarProps) => {
                         isSelected={false}
                     />
                 </ul>
-                {/* <ul>
+                <ul className='flex flex-col gap-[1.25vh] text-white w-full'>
                     <MenuBarListItem
                         isSideBarOpen={isMenuOpen}
-                        notSelectedImgSrc='/images/gradient-purple-stacked-image.png'
-                        SelectedImgSrc='/images/gradient-white-to-purple-stacked-image.png'
-                        itemName='Staking'
+                        notSelectedImgSrc='/images/gradient-purple-profile-image.png'
+                        SelectedImgSrc='/images/gradient-white-to-purple-profile-image.png'
+                        itemName='Profile'
                         pageHref='/games'
                         isSelected={false}
                     />
-                </ul> */}
+                    <MenuBarListItem
+                        isSideBarOpen={isMenuOpen}
+                        notSelectedImgSrc='/images/gradient-purple-wallet-image.png'
+                        SelectedImgSrc='/images/gradient-white-to-purple-wallet-image.png'
+                        itemName='Wallet'
+                        pageHref='/games'
+                        isSelected={false}
+                    />
+                    <MenuBarListItem
+                        isSideBarOpen={isMenuOpen}
+                        notSelectedImgSrc='/images/gradient-purple-cog-image.png'
+                        SelectedImgSrc='/images/gradient-white-to-purple-cog-image.png'
+                        itemName='Settings'
+                        pageHref='/games'
+                        isSelected={false}
+                    />
+                </ul>
             </div >
             <div className={`h-full transition-width duration-300 pl-[0.69vw] mr-[0.35vw] ${!isMenuOpen ? 'w-[3.82vw] ' : 'w-[12.85vw]'}`} />
         </div >
