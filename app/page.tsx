@@ -7,7 +7,6 @@ import QuickListGames from './components/Quicklist/QuickListGames'
 import QuickListProviders from './components/Quicklist/QuickListProviders'
 import RealTimeBetWinners from './components/RealTimeBetWinners/RealTimeBetWinners'
 import Searchbar from './components/Searchbar'
-import ShortcutCards from './components/ShortcutCards'
 import walletList from "./components/wallet-list.json"
 
 export default function Home() {
