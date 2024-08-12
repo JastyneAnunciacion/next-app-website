@@ -35,15 +35,13 @@ const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => 
                         <div className='w-full flex justify-center items-center'>
                             <div className={`transition-width duration-300 flex-col px-[2.08vw] py-[3.7vh] rounded-lg ${isMenuBarOpen ? ' w-[65.27vw]' : 'w-[74.30vw]'} items-center bg-gradient-to-b from-[#11062E] to-[#070123]`}>
                                 {children}
+                                <Footer />
                             </div>
                         </div>
                         <div className='shrink-0 w-[17.71vw]'>
                             <ChatBar show={rightSideOption == 0} />
                             <NotificationBar show={rightSideOption == 1} />
                         </div>
-                    </div>
-                    <div className='self-start w-full'>
-                        <Footer />
                     </div>
                 </div>
             </div>

@@ -1,5 +1,7 @@
 import GameBanner from './components/Banners/GameBanner'
 import ReferralBanner from './components/Banners/ReferralBanner'
+import DropdownExpand from './components/Dropdown/DropdownExpand'
+import FAQReferral from './components/FAQReferral'
 import MainComponents from './components/MainComponents'
 import QuickListGames from './components/Quicklist/QuickListGames'
 import QuickListSports from './components/Quicklist/QuickListSports'
@@ -32,6 +34,10 @@ export default function Home() {
           gameListTitle='Popular Games'
           gameList={walletList}
         />
+      </div>
+      <div className='mb-[3.7vh]'>
+
+        <FAQReferral />
       </div>
       <RealTimeBetWinners />
     </MainComponents>
