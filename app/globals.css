@@ -48,6 +48,13 @@ body {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'MontserratAlternates-Regular';
+  src: url('./assets/fonts/MontserratAlternates-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 input[type='date']::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }
@@ -66,6 +73,10 @@ input[type='date']::-webkit-calendar-picker-indicator {
 
 .font-righteous {
   font-family: 'Righteous-Regular', sans-serif;
+}
+
+.font-montserrat-alternates {
+  font-family: 'MontserratAlternates-Regular', sans-serif;
 }
 
 .text-glow {

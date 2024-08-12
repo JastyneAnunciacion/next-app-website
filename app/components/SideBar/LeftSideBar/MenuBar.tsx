@@ -33,7 +33,7 @@ const MenuBar = ({ isMenuOpen, currentPage }: MenuBarProps) => {
                         notSelectedImgSrc='/images/gradient-purple-sports-image.png'
                         SelectedImgSrc='/images/gradient-white-to-purple-sports-image.png'
                         itemName='Sports'
-                        pageHref='/pages/games'
+                        pageHref=''
                         isSelected={false}
                     />
                     <MenuBarListItem

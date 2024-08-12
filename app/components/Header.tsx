@@ -67,7 +67,7 @@ const Header = ({ onMenuButtonClick, isMenuOpen, onClickChatButton, onClickNotif
             <div className='w-[12.15vw] aspect-[35/8]'>
               <WalletHeaderDropdown walletButtonOnClick={() => setShowWalletPopup(true)} />
             </div>
-            <Profile walletOnClick={() => setShowWalletPopup(true)} />
+            <Profile profileOnClick={() => setShowWalletPopup(true)} />
             <div className='w-[2.77vw] aspect-square shrink-0 flex items-center justify-center bg-[#241A46] rounded-2xl'>
               <div className='w-[40%] aspect-square'>
                 <Image src={`${basePath}/images/globe-image.png`} alt='Language icon' layout='responsive' width={100} height={100} />

@@ -6,6 +6,7 @@ import Footer from './Footer'
 import MenuBar from './SideBar/LeftSideBar/MenuBar'
 import ChatBar from './SideBar/RightSideBar/ChatBar/ChatBar'
 import NotificationBar from './SideBar/RightSideBar/NotificationBar/NotificationBar'
+import ProfilePopup from './ProfilePopup'
 
 interface MainComponentsProps {
     children: ReactNode,
@@ -45,6 +46,7 @@ const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => 
                     </div>
                 </div>
             </div>
+            <ProfilePopup />
         </main>
     )
 }

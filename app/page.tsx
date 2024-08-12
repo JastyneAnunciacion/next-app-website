@@ -36,7 +36,6 @@ export default function Home() {
         />
       </div>
       <div className='mb-[3.7vh]'>
-
         <FAQReferral />
       </div>
       <RealTimeBetWinners />
