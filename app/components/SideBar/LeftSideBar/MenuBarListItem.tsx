@@ -40,7 +40,7 @@ const MenuBarListItem = ({ isSideBarOpen, notSelectedImgSrc, SelectedImgSrc, ite
                         'bg-[#241A46]'
                     }
                     `}>
-                <div className={`h-[1.84vh] aspect-square`}>
+                <div className={`h-[1.04vw] aspect-square`}>
                     <Image src={`${!isSelected ? basePath + notSelectedImgSrc : basePath + SelectedImgSrc}`} alt='Menu icon' layout='responsive' width={100} height={100} />
                 </div>
                 <p className={`${isSideBarOpen ? 'text-white' : 'text-white/0'} text-[0.83vw] transition-colors duration-100`}>{itemName}</p>

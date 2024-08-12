@@ -9,34 +9,29 @@ interface GameCard {
 }
 
 interface QuickListGamesProps {
+  headerImgSrc: string;
   gameListTitle: string;
   gameList: any[];
 }
 
-const QuickListGames = ({ gameListTitle, gameList }: QuickListGamesProps) => {
+const QuickListGames = ({ headerImgSrc, gameListTitle, gameList }: QuickListGamesProps) => {
   return (
     <QuickList
-      headerIconPath="/images/temporary-image.png"
+      headerIconPath={headerImgSrc}
       title={gameListTitle}
-      gapAmount={3}
+      gapAmount='1.38%'
       viewAllLink='/games'
       childrenList={gameList.map((item, i) => {
-        const imageIndex = (i % 5) + 1;
+        const imageIndex = Math.floor(Math.random() * 7) + 1;
+        const imageIndex2 = Math.floor(Math.random() * 7) + 1;
         return (
-          <div key={i}>
-            <button className='bg-gray-200/20 w-[158px] h-[100px] rounded-lg mt-2 cursor-pointer'>
-              <Image
-                src={`${basePath}/images/small-image-${imageIndex}.jpg`}
-                alt="Banner"
-                width={20}
-                height={20}
-                className="w-full h-full rounded-lg"
-              />
+          <div key={i} className=' w-[15.55%] aspect-[166/433] flex flex-col gap-[1.21vh] shrink-0'>
+            <button className='w-full aspect-[83/105] shrink-0 overflow-hidden rounded-lg'>
+              <Image src={`${basePath}/images/game-icon-${imageIndex}.png`} alt='Game Banner Image' layout='responsive' width={100} height={100} />
             </button>
-            <div className='text-sm'>
-              <p className='font-bold text-orange-500 '>{item.name ? item.name : 'Game Name'}</p>
-              <p className='text-white'>{item.provider ? item.provider : 'Provider'}</p>
-            </div>
+            <button className='w-full aspect-[83/105] shrink-0 overflow-hidden rounded-lg'>
+              <Image src={`${basePath}/images/game-icon-${imageIndex2}.png`} alt='Game Banner Image' layout='responsive' width={100} height={100} />
+            </button>
           </div>
         );
       })}

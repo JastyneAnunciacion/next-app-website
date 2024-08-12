@@ -3,47 +3,36 @@
 import React, { useState } from 'react'
 import RealTimeBetWinnersListItem from './RealTimeBetWinnersListItem'
 import walletList from '../wallet-list.json'
+import Image from 'next/image'
+import basePath from '@/app/utilities/basepath'
 
 const RealTimeBetWinners = () => {
-    const [currentSectionSelected, setSectionSelected] = useState(0)
 
     return (
-        <div className='w-full flex flex-col gap-5 text-white'>
-            <p className='font-bold text-lg '>Fair and provable winners</p>
-
-            <div className='flex flex-col gap-3'>
-                <div className='flex gap-2 px-3'>
-                    <button onClick={() => (setSectionSelected(0))} className={`${currentSectionSelected === 0 && 'text-orange-500  font-semibold border-b-2 border-orange-500'} text-lg`}>All Bets</button>
-                    <button onClick={() => (setSectionSelected(1))} className={`${currentSectionSelected === 1 && 'text-orange-500  font-semibold border-b-2 border-orange-500'} text-lg`}>HighRollers</button>
+        <div className='w-full flex flex-col gap-5 font-montserrat text-white'>
+            <div className='w-full flex gap-[0.35vw] items-center'>
+                <div className='w-[1.86%] aspect-square'>
+                    <Image src={`${basePath}/images/gradient-purple-fire-image.png`} alt="Latest Bets Icon" layout='responsive' width={100} height={100} />
                 </div>
+                <p className='font-medium text-[0.97vw]'>Latest Bets</p>
+            </div>
 
+            <div className='flex flex-col gap-3 bg-[#170A35] rounded-lg px-[1.86%] pt-[2.46vh]'>
                 <div>
-                    <div className='grid grid-cols-6 gap-20 px-2 text-lg text-orange-500'>
+                    <div className='grid grid-cols-5 px-2 text-[0.83vw] text-[#D187FF] mb-[2.71vh]'>
                         <p>Game</p>
-                        <p>User</p>
-                        <p>Time</p>
-                        <p>Bet Amount</p>
-                        <p>Multiplier</p>
-                        <p>Payout</p>
+                        <p className='flex justify-center items-center'>Player</p>
+                        <p className='flex justify-center items-center'>Bet Amount</p>
+                        <p className='flex justify-center items-center'>Multiplier</p>
+                        <p className='flex justify-end items-center'>Profit Amount</p>
                     </div>
-                    {currentSectionSelected === 0 &&
-                        <ul className=''>
-                            {walletList.slice(0, 10).map((item, i) => (
-                                <li key={i}>
-                                    <RealTimeBetWinnersListItem isEvenInList={i % 2 === 0} />
-                                </li>
-                            ))}
-                        </ul>
-                    }
-                    {currentSectionSelected === 1 &&
-                        <ul className=''>
-                            {walletList.slice(0, 10).map((item, i) => (
-                                <li key={i}>
-                                    <RealTimeBetWinnersListItem isEvenInList={i % 2 === 1} />
-                                </li>
-                            ))}
-                        </ul>
-                    }
+                    <ul className='flex flex-col gap-[0.62vh]'>
+                        {walletList.slice(0, 10).map((item, i) => (
+                            <li key={i}>
+                                <RealTimeBetWinnersListItem isEvenInList={i % 2 === 0} />
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         </div>
