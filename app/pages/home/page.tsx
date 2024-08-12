@@ -19,7 +19,7 @@ export default function Home() {
       </div>
       <CryptocurrencyCard />
       <div className='w-full flex flex-col gap-5'>
-        <QuickListGames gameListTitle='Top Picks' gameList={walletList} />
+        <QuickListGames headerImgSrc='/images/gradient-purple-cards-image.png' gameListTitle='Top Picks' gameList={walletList} />
         <QuickListProviders providerList={walletList} />
       </div>
       <RealTimeBetWinners />

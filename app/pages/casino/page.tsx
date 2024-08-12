@@ -35,12 +35,12 @@ const CasinoPage = () => {
                     <Searchbar />
                 </div>
                 <div className='w-full flex flex-col gap-5'>
-                    <QuickListGames gameListTitle='Popular' gameList={list} />
-                    <QuickListGames gameListTitle='Slots' gameList={list} />
+                    <QuickListGames headerImgSrc='/images/gradient-purple-cards-image.png' gameListTitle='Popular' gameList={list} />
+                    <QuickListGames headerImgSrc='/images/gradient-purple-cards-image.png' gameListTitle='Slots' gameList={list} />
                     <QuickListProviders providerList={list} />
-                    <QuickListGames gameListTitle='Live Casino' gameList={list} />
-                    <QuickListGames gameListTitle='Bonus Buy' gameList={list} />
-                    <QuickListGames gameListTitle='New Casino' gameList={list} />
+                    <QuickListGames headerImgSrc='/images/gradient-purple-cards-image.png' gameListTitle='Live Casino' gameList={list} />
+                    <QuickListGames headerImgSrc='/images/gradient-purple-cards-image.png' gameListTitle='Bonus Buy' gameList={list} />
+                    <QuickListGames headerImgSrc='/images/gradient-purple-cards-image.png' gameListTitle='New Casino' gameList={list} />
                 </div>
                 <RealTimeBetWinners />
             </div>
