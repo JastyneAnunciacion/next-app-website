@@ -29,15 +29,15 @@ const Header = ({ onMenuButtonClick, isMenuOpen, onClickChatButton, onClickNotif
               onClick={onMenuButtonClick}
               className={`w-[1.74vw] aspect-square bg-[#150934] shrink-0 mr-[1.6%] flex items-center justify-center rounded-md`}
             >
-              <div className='w-[48%] h-[40%]'>
+              <div className={`${isMenuOpen ? 'w-[0.69vw] aspect-square' : 'w-[0.82vw] aspect-[11.82/10]'}`}>
                 <Image src={`${basePath}/images/thin-purple-${isMenuOpen ? 'back' : 'right'}-arrow-image.png`} alt='Expand icon' layout='responsive' width={100} height={100} />
               </div>
             </button>
-            <div className='flex text-white text-[1.66vw] items-center gap-2'>
+            <div className='flex text-white text-[1.66vw] items-center gap-[0.69vw]'>
               <div className='w-[2.43vw] aspect-[35/34]'>
                 <Image src={`${basePath}/images/phx-gamble-logo.png`} alt='Language icon' layout='responsive' width={100} height={100} />
               </div>
-              <div className='flex gap-[8px] font-offside text-nowrap'>
+              <div className='flex gap-[0.55vw] font-offside text-nowrap'>
                 <p className='text-[#B767FA]'>Phoenix</p>
                 <p>Game</p>
               </div>
@@ -50,7 +50,7 @@ const Header = ({ onMenuButtonClick, isMenuOpen, onClickChatButton, onClickNotif
             </div>
             <button
               onClick={() => { setShowChat(false); onClickNotificationButton(); }}
-              className={`${!showChat && 'pointer-events-none'} w-[2.77vw] aspect-square shrink-0 flex items-center justify-center rounded-2xl ${showChat ? 'bg-[#241A46]' : 'bg-gradient-to-b from-[#BD73F9] to-[#9B34FD] shadow-glow shadow-[#bb6ffa86]'} `}
+              className={`${!showChat && 'pointer-events-none'} w-[2.77vw] aspect-square shrink-0 flex items-center justify-center rounded-2xl ${showChat ? 'bg-[#241A46] ' : 'bg-gradient-to-b from-[#BD73F9] to-[#9B34FD] shadow-glow shadow-[#bb6ffa86]'} `}
             >
               <div className='w-[35%] h-[37.5%]'>
                 <Image src={`${basePath}/images/${!showChat ? 'gradient-white-to-purple' : 'purple'}-notification-bell-image.png`} alt='Notification icon' layout='responsive' width={100} height={100} />
@@ -68,7 +68,7 @@ const Header = ({ onMenuButtonClick, isMenuOpen, onClickChatButton, onClickNotif
               <WalletHeaderDropdown walletButtonOnClick={() => setShowWalletPopup(true)} />
             </div>
             <Profile profileOnClick={() => setShowWalletPopup(true)} />
-            <div className='w-[2.77vw] aspect-square shrink-0 flex items-center justify-center bg-[#241A46] rounded-2xl'>
+            <div className='w-[2.77vw] aspect-square shrink-0 flex items-center justify-center bg-[#241A46] rounded-xl border border-[#231744]'>
               <div className='w-[40%] aspect-square'>
                 <Image src={`${basePath}/images/globe-image.png`} alt='Language icon' layout='responsive' width={100} height={100} />
               </div>

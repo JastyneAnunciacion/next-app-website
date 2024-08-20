@@ -29,14 +29,14 @@ const WalletHeaderDropdown = ({ walletButtonOnClick }: WalletHeaderDropdownProps
           <button ref={mainButtonRef} onClick={() => setIsOpen((prev) => !prev)} className="bg-gradient-to-r from-[#412A78] to-[#221C42] pl-[5.71%] pb-[1px] pr-[2.29%] w-full h-full flex items-center justify-between rounded-md">
             {selectedWallet && (
               <div className='flex w-full items-center h-full gap-[0.34vw]'>
-                <div className='flex items-center justify-center shrink-0 h-[37.5%] aspect-square'>
+                <div className='flex items-center justify-center shrink-0 w-[1.04vw] aspect-square'>
                   <Image src={basePath + selectedWallet.TokenIconSrc} alt="Token Icon" layout='responsive' width={100} height={100} />
                 </div>
-                <p className='text-[0.83vw] font-[500]'>{selectedWallet.Amount}</p>
+                <p className='text-[0.83vw] font-medium'>{selectedWallet.Amount}</p>
               </div>
             )}
-            <button onClick={(e) => { e.stopPropagation(); walletButtonOnClick(); }} className='bg-[#02CC00] w-[38.86%] aspect-[68/35] rounded-lg flex items-center justify-center shrink-0'>
-              <p className='text-[0.83vw] font-[500]'>Deposit</p>
+            <button onClick={(e) => { e.stopPropagation(); walletButtonOnClick(); }} className='bg-[#02CC00] w-[4.72vw] aspect-[68/35] rounded-lg flex items-center justify-center shrink-0'>
+              <p className='text-[0.83vw] font-medium'>Deposit</p>
             </button>
           </button>
         </div>
