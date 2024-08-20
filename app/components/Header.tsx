@@ -20,10 +20,10 @@ const Header = ({ onMenuButtonClick, isMenuOpen, onClickChatButton, onClickNotif
   const [showChat, setShowChat] = useState(true);
 
   return (
-    <header className='w-full fixed z-20'>
+    <header className='w-full fixed z-50'>
       <div className='bg-gradient-to-r from-[#070123] via-[#573A93] to-[#070123] w-full h-full pb-[1px] flex items-center justify-center rounded-lg text-white'>
 
-        <div className='pb-[10px] px-[1.18%] w-full flex h-[10vh] items-end bg-[#070123] justify-between'>
+        <div className='pb-[10px] px-[1.18%] w-full flex h-[5.63vw] items-end bg-[#070123] justify-between'>
           <div className='flex w-full items-center'>
             <button
               onClick={onMenuButtonClick}

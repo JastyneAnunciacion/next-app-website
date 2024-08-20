@@ -67,8 +67,8 @@ const QuickList = ({ headerIconPath: headerImagePath, title, childrenList, gapAm
   }, []);
 
   return (
-    <div className='flex flex-col gap-[1.85vh] text-white font-montserrat'>
-      <div className='relative h-[2.47vh] flex items-center gap-[0.35vw] w-full'>
+    <div className='flex flex-col gap-[1.04vw]  text-white font-montserrat'>
+      <div className='relative h-[1.39vw] flex items-center gap-[0.35vw] w-full'>
         <div className='absolute w-full flex gap-[0.35vw] h-full items-center'>
           <div className='h-full aspect-square'>
             <Image src={basePath + headerImagePath} alt="Quick List Icon" layout='responsive' width={100} height={100} />
@@ -110,10 +110,10 @@ const QuickList = ({ headerIconPath: headerImagePath, title, childrenList, gapAm
           WebkitOverflowScrolling: 'touch',
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
-          overflowX: 'scroll',
+          overflowX: isOverflowing ? 'scroll' : 'visible',
           gap: gapAmount,
         }}
-        className={`flex overflow-x-auto scrollbar-none`} ref={listRef}>
+        className={`flex scrollbar-none`} ref={listRef}>
         {childrenList}
       </div>
     </div>

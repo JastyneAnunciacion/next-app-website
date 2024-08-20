@@ -4,7 +4,7 @@ import basePath from '@/app/utilities/basepath'
 
 const ReferralBanner = () => {
     return (
-        <div className='relative w-[49.35%] aspect-[176/109]'>
+        <div className='relative w-[49.35%] aspect-[176/109] rounded-lg overflow-hidden'>
             <Image className='absolute' src={`${basePath}/images/4xl-referral-banner-image.png`} alt='Game Banner Image' layout='responsive' width={100} height={100} />
             <div className='absolute mix-blend-overlay bg-gradient-to-b from-[#431d9b75] to-[#5621CF50] w-full h-full' />
             <div className='absolute mix-blend-screen bg-gradient-to-br from-[#ffb37c] via-[#341a2d00] to-[#341a2d00] w-full h-full' />

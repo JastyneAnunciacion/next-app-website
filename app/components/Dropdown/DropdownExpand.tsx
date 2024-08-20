@@ -18,7 +18,8 @@ const DropdownExpand = ({ title, children, isArrowOnRight = true }: DropdownExpa
         const content = contentRef.current;
         if (content) {
             if (isOpen) {
-                content.style.maxHeight = `${content.scrollHeight + 16}px`;
+                const additionalHeightVW = window.innerWidth * 0.0111;
+                content.style.maxHeight = `${content.scrollHeight + additionalHeightVW}px`;
                 content.style.padding = '8px';
             } else {
                 content.style.maxHeight = '0px';
@@ -31,28 +32,22 @@ const DropdownExpand = ({ title, children, isArrowOnRight = true }: DropdownExpa
         <div className={`w-full transition-all duration-500 overflow-hidden text-white font-montserrat font-medium text-[1.25vw]`}>
             <button
                 onClick={() => setOpen(prev => !prev)}
-                className={`w-full h-[9.37vh] flex items-center justify-between px-4 text-left ${!isOpen && 'border-b'} border-[#342155] py-3`}>
+                className={`w-full aspect-[535/38] flex items-center justify-between pl-[1.66vw] pr-[2.15vw] text-left ${!isOpen && 'border-b'} border-[#342155]`}>
                 {isArrowOnRight ? (
                     <>
                         <p>{title}</p>
-                        {!isOpen ? (
-                            <Image src={`${basePath}/images/down-arrow-image.png`} alt="Down Arrow" width={40} height={40} />
-                        ) : (
-                            <Image src={`${basePath}/images/up-arrow-image.png`} alt="Up Arrow" width={40} height={40} />
-                        )}
+                        <div className='w-[0.89vw] aspect-[12.83/6.42]'>
+                            <Image src={`${basePath}/images/${isOpen ? 'up' : 'down'}-thin-no-tail-arrow-image.png`} alt="Arrow" layout='responsive' width={100} height={100} />
+                        </div>
                     </>
                 ) : (
                     <>
-                        {!isOpen ? (
-                            <Image src={`${basePath}/images/right-arrow-image.png`} alt="Right Arrow" width={40} height={40} />
-                        ) : (
-                            <Image src={`${basePath}/images/down-arrow-image.png`} alt="Down Arrow" width={40} height={40} />
-                        )}
+                        <Image src={`${basePath}/images/${isOpen ? 'down' : 'right'}-thin-no-tail-arrow-image.png`} alt="Arrow" width={40} height={40} />
                         <p>{title}</p>
                     </>
                 )}
             </button>
-            <div ref={contentRef} className={`px-4 transition-max-height duration-500 overflow-hidden ${isOpen && 'border-b'} border-[#342155]`} style={{ maxHeight: '0px' }}>
+            <div ref={contentRef} className={`transition-max-height duration-500 overflow-hidden`}>
                 {children}
             </div>
         </div>

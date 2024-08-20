@@ -23,7 +23,7 @@ const QuickListSports = ({ highlightedSportsList }: QuickListSportsProps) => {
                 return (
                     <button key={i} className='relative bg-[#170A35] w-[32.42%] aspect-[347/185] rounded-lg border border-[#231744] flex items-center justify-center'>
                         <Image className='absolute mix-blend-screen' src={`/images/sports-quick-list-vs-image.png`} alt='VS Image' layout='responsive' width={100} height={100} />
-                        <div className='absolute w-full h-full  pl-[8.93%] pt-[9.25%] flex flex-col items-start'>
+                        <div className='absolute w-full h-full pl-[8.93%] pt-[9.25%] flex flex-col items-start'>
                             <div className='w-[23.34%] ml-[1.73%] aspect-square'>
                                 <Image className='mix-blend-screen' src={`/images/md-barcelona-icon.png`} alt='Team Icon Image' layout='responsive' width={100} height={100} />
                             </div>

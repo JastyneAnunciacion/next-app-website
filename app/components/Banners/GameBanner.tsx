@@ -8,7 +8,7 @@ interface GameBannerProps {
 
 const GameBanner = ({ imgSrc }: GameBannerProps) => {
     return (
-        <button className='w-[23.93%] aspect-[256/327] overflow-hidden rounded-lg'>
+        <button className='w-[23.93%] aspect-[256/327] overflow-hidden rounded-xl z-10'>
             <Image src={basePath + imgSrc} alt='Game Banner Image' layout='responsive' width={100} height={100} />
         </button>
     )
