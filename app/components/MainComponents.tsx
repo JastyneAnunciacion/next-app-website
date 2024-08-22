@@ -31,7 +31,6 @@ const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => 
             const { width, top, left } = childrenDivRef.current.getBoundingClientRect();
             setFixedElementStyle({
                 width,
-                top,
                 left,
                 position: 'fixed',
             });
@@ -46,11 +45,29 @@ const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => 
     useEffect(() => {
         updateFixedElementStyle();
 
-        const handleResize = () => updateFixedElementStyle();
-        window.addEventListener('resize', handleResize);
+        const resizeObserver = new ResizeObserver(updateFixedElementStyle);
+
+        if (childrenDivRef.current) {
+            resizeObserver.observe(childrenDivRef.current);
+        }
+
+        const mutationObserver = new MutationObserver(() => {
+            updateFixedElementStyle();
+        });
+
+        if (childrenDivRef.current) {
+            mutationObserver.observe(childrenDivRef.current, {
+                attributes: true,
+                attributeFilter: ['style', 'class'],
+                subtree: true
+            });
+        }
 
         return () => {
-            window.removeEventListener('resize', handleResize);
+            if (childrenDivRef.current) {
+                resizeObserver.unobserve(childrenDivRef.current);
+                mutationObserver.disconnect();
+            }
         };
     }, [isMenuBarOpen]);
 
@@ -101,7 +118,7 @@ const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => 
                     <div style={{ ...fixedElementStyle }} className='fixed rounded-xl h-full bg-gradient-to-b from-[#11062E] to-[#070123]' />
                     <MenuBar isMenuOpen={isMenuBarOpen} currentPage={currentPage} onProfileClick={() => setProfilePopUpOpen(true)} />
                     <div className='w-full flex justify-center items-center'>
-                        <div ref={childrenDivRef} className={`${isMenuBarOpen ? 'w-[69.44vw] max-w-[1000px]' : 'w-[78.47vw] max-w-[1130px]'} transition-width duration-300 flex flex-col gap-[3.47vw] w-[78.47vw] max-w-[1507px] items-center z-10`}>
+                        <div ref={childrenDivRef} className={`w-full max-w-[1130px] transition-width duration-300 flex flex-col items-center z-10`}>
                             <div className='w-full px-[2.08vw] pt-[2.08vw] pb-[4.86vw]'>
                                 {children}
                                 <Footer />
