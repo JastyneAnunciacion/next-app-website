@@ -1,6 +1,6 @@
 // file: components/RealTimeBetWinnersListItem.tsx
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import basePath from '@/app/utilities/basepath';
 
@@ -32,15 +32,26 @@ const RealTimeBetWinnersListItem = ({
         '2 Wild 2 Die'
     ];
 
-    const tempGameName = React.useMemo(() => {
+    const [tempGameName, setTempGameName] = useState<string>('');
+    const [tempBetAmount, setTempBetAmount] = useState<string>('0.0000');
+    const [tempMultiplier, setTempMultiplier] = useState<string>('1.00');
+    const [tempPayout, setTempPayout] = useState<string>('0.0000');
+
+    useEffect(() => {
         const randomIndex = Math.floor(Math.random() * gameNames.length);
-        return gameNames[randomIndex];
+        setTempGameName(gameNames[randomIndex]);
+
+        const generatedBetAmount = (Math.random() * (2 - 0.1) + 0.1).toFixed(4);
+        setTempBetAmount(generatedBetAmount);
+
+        const generatedMultiplier = (Math.random() * (4 - 0.25) + 0.25).toFixed(2);
+        setTempMultiplier(generatedMultiplier);
+
+        const generatedPayout = (Math.random() * (8) - 4).toFixed(4);
+        setTempPayout(generatedPayout);
+
     }, []);
 
-    const tempBetAmount = (Math.random() * (2 - 0.1) + 0.1).toFixed(4);
-    const tempMultiplier = (Math.random() * (4 - 0.25) + 0.25).toFixed(2);
-
-    const tempPayout = (Math.random() * (8) - 4).toFixed(4);
     const numericPayout = parseFloat(tempPayout);
 
     return (
