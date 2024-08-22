@@ -10,12 +10,12 @@ const ProfileStatistics = () => {
                     <div className='absolute w-full h-full pt-[4.82%] flex flex-col items-center'>
                         <div className='w-full flex items-center px-[3.61%]'>
                             <div className='w-[3.9%] aspect-square mr-[2.41%]'>
-                                <Image src={`/images/blue-chart-image.png`} alt="Medal Image" layout='responsive' width={100} height={100} />
+                                <Image src={`${basePath}/images/blue-chart-image.png`} alt="Medal Image" layout='responsive' width={100} height={100} />
                             </div>
                             <p className='mr-auto text-[0.97vw]'>Medals</p>
                             <p className='mr-[1.20%] text-[0.83vw]'>Details</p>
                             <div className='w-[3.38%] aspect-square'>
-                                <Image src={`/images/blue-arrow-right.png`} alt="Medal Image" layout='responsive' width={100} height={100} />
+                                <Image src={`${basePath}/images/blue-arrow-right.png`} alt="Medal Image" layout='responsive' width={100} height={100} />
                             </div>
                         </div>
                         <div className='flex gap-[1.20%] mt-[4.34%] overflow-x-auto w-full'>

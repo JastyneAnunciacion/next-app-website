@@ -19,7 +19,7 @@ const ProfileGameDataBox = ({ title }: ProfileGameDataBoxProps) => {
                     </div>
                     <div className='relative w-full h-full flex flex-col items-center mt-[14.46%]'>
                         <div className=' w-[36.623%] aspect-square flex items-center justify-center '>
-                            <Image src={`/images/grayscale-phoenix-mascot-image.png`} alt="Profile Icon" layout='responsive' width={100} height={100} />
+                            <Image src={`${basePath}/images/grayscale-phoenix-mascot-image.png`} alt="Profile Icon" layout='responsive' width={100} height={100} />
                         </div>
                         <p className='absolute text-[0.97vw] text-[#9D87C9]' style={{ top: 'calc(52%)' }}>Oops! There is no data yet!</p>
                     </div>
