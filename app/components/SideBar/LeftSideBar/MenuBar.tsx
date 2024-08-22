@@ -5,9 +5,10 @@ import MenuBarListItem from './MenuBarListItem'
 interface MenuBarProps {
     isMenuOpen: boolean,
     currentPage: string,
+    onProfileClick: () => void
 }
 
-const MenuBar = ({ isMenuOpen, currentPage }: MenuBarProps) => {
+const MenuBar = ({ isMenuOpen, currentPage, onProfileClick }: MenuBarProps) => {
     return (
         <div>
             <div className={`fixed justify-between transition-width duration-300 ${!isMenuOpen ? 'w-[3.82vw]' : 'w-[12.85vw]'} bg-[#070123] pl-[0.69vw] pr-[0.35vw] h-[90vh] flex flex-col justify-between pb-[1.35vh]`}>
@@ -67,8 +68,8 @@ const MenuBar = ({ isMenuOpen, currentPage }: MenuBarProps) => {
                         notSelectedImgSrc='/images/gradient-purple-profile-image.png'
                         SelectedImgSrc='/images/gradient-white-to-purple-profile-image.png'
                         itemName='Profile'
-                        pageHref='/pages/games'
                         isSelected={false}
+                        onClick={onProfileClick}
                     />
                     <MenuBarListItem
                         isSideBarOpen={isMenuOpen}
