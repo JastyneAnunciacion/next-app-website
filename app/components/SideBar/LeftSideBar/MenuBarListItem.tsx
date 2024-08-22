@@ -26,7 +26,7 @@ const MenuBarListItem = ({ isSideBarOpen, notSelectedImgSrc, SelectedImgSrc, ite
     }, [isSideBarOpen]);
 
     return (
-        <li className='w-full flex items-start justify-start'>
+        <li className='relative w-full flex items-start justify-start'>
             <a href={pageHref}
                 className={`${isSelected && 'pointer-events-none'} ${pageHref == ''} transition-all duration-300 flex items-center pl-[0.83vw] h-[2.77vw] overflow-hidden gap-[0.69vw] rounded-lg
                     ${!isSideBarOpen ?

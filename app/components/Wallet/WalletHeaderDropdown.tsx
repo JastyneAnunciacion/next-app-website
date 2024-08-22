@@ -26,7 +26,7 @@ const WalletHeaderDropdown = ({ walletButtonOnClick }: WalletHeaderDropdownProps
     <div className='relative w-full h-full'>
       <div className='w-full h-full'>
         <div className='relative bg-gradient-to-r from-[#A379DF] to-[#221C42]/0 w-full h-full p-[1px] flex items-center justify-center rounded-lg text-white'>
-          <button ref={mainButtonRef} onClick={() => setIsOpen((prev) => !prev)} className="bg-gradient-to-r from-[#412A78] to-[#221C42] pl-[5.71%] pb-[1px] pr-[2.29%] w-full h-full flex items-center justify-between rounded-md">
+          <div ref={mainButtonRef} onClick={() => setIsOpen((prev) => !prev)} className="bg-gradient-to-r from-[#412A78] to-[#221C42] pl-[5.71%] pb-[1px] pr-[2.29%] w-full h-full flex items-center cursor-pointer justify-between rounded-md">
             {selectedWallet && (
               <div className='flex w-full items-center h-full gap-[0.34vw]'>
                 <div className='flex items-center justify-center shrink-0 w-[1.04vw] aspect-square'>
@@ -38,7 +38,7 @@ const WalletHeaderDropdown = ({ walletButtonOnClick }: WalletHeaderDropdownProps
             <button onClick={(e) => { e.stopPropagation(); walletButtonOnClick(); }} className='bg-[#02CC00] w-[4.72vw] aspect-[68/35] rounded-lg flex items-center justify-center shrink-0'>
               <p className='text-[0.83vw] font-medium'>Deposit</p>
             </button>
-          </button>
+          </div>
         </div>
 
         {isOpen && (

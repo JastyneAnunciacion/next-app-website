@@ -13,9 +13,10 @@ interface HeaderProps {
   isMenuOpen: boolean;
   onClickChatButton: () => void;
   onClickNotificationButton: () => void;
+  onClickProfileButton: () => void;
 }
 
-const Header = ({ onMenuButtonClick, isMenuOpen, onClickChatButton, onClickNotificationButton }: HeaderProps) => {
+const Header = ({ onMenuButtonClick, isMenuOpen, onClickChatButton, onClickNotificationButton, onClickProfileButton }: HeaderProps) => {
   const [showWalletPopup, setShowWalletPopup] = useState(false);
   const [showChat, setShowChat] = useState(true);
 
@@ -67,7 +68,7 @@ const Header = ({ onMenuButtonClick, isMenuOpen, onClickChatButton, onClickNotif
             <div className='w-[12.15vw] aspect-[35/8]'>
               <WalletHeaderDropdown walletButtonOnClick={() => setShowWalletPopup(true)} />
             </div>
-            <Profile profileOnClick={() => setShowWalletPopup(true)} />
+            <Profile profileOnClick={onClickProfileButton} />
             <div className='w-[2.77vw] aspect-square shrink-0 flex items-center justify-center bg-[#241A46] rounded-xl border border-[#231744]'>
               <div className='w-[40%] aspect-square'>
                 <Image src={`${basePath}/images/globe-image.png`} alt='Language icon' layout='responsive' width={100} height={100} />

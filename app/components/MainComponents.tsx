@@ -15,6 +15,7 @@ interface MainComponentsProps {
 
 const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => {
     const [isMenuBarOpen, setMenuBarOpen] = useState(false);
+    const [isProfilePopUpOpen, setProfilePopUpOpen] = useState(false);
     const [rightSideOption, setRightSideOption] = useState(0);
     const childrenDivRef = useRef<HTMLDivElement>(null);
     const [fixedElementStyle, setFixedElementStyle] = useState<React.CSSProperties>({});
@@ -74,7 +75,6 @@ const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => 
             element.addEventListener('transitionstart', handleTransitionStart);
             element.addEventListener('transitionend', handleTransitionEnd);
 
-            // Update styles initially
             updateFixedElementStyle();
 
             return () => {
@@ -95,27 +95,26 @@ const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => 
                     isMenuOpen={isMenuBarOpen}
                     onClickChatButton={() => setRightSideOption(0)}
                     onClickNotificationButton={() => setRightSideOption(1)}
+                    onClickProfileButton={() => setProfilePopUpOpen(true)}
                 />
-                <div>
-                    <div className='flex w-full h-full pt-[5.62vw]'>
-                        <div style={{ ...fixedElementStyle }} className='fixed rounded-xl h-full bg-gradient-to-b from-[#11062E] to-[#070123]' />
-                        <MenuBar isMenuOpen={isMenuBarOpen} currentPage={currentPage} />
-                        <div className='w-full flex justify-center items-center'>
-                            <div ref={childrenDivRef} className={`transition-width duration-300 flex flex-col gap-[3.47vw] ${isMenuBarOpen ? 'w-[69.44vw] max-w-[1000px]' : 'w-[78.47vw] max-w-[1130px]'} items-center z-10`}>
-                                <div className='w-full px-[2.08vw] pt-[2.08vw] pb-[4.86vw]'>
-                                    {children}
-                                    <Footer />
-                                </div>
+                <div className='flex w-full h-full pt-[5.62vw]'>
+                    <div style={{ ...fixedElementStyle }} className='fixed rounded-xl h-full bg-gradient-to-b from-[#11062E] to-[#070123]' />
+                    <MenuBar isMenuOpen={isMenuBarOpen} currentPage={currentPage} />
+                    <div className='w-full flex justify-center items-center'>
+                        <div ref={childrenDivRef} className={`${isMenuBarOpen ? 'w-[69.44vw] max-w-[1000px]' : 'w-[78.47vw] max-w-[1130px]'} transition-width duration-300 flex flex-col gap-[3.47vw] w-[78.47vw] max-w-[1507px] items-center z-10`}>
+                            <div className='w-full px-[2.08vw] pt-[2.08vw] pb-[4.86vw]'>
+                                {children}
+                                <Footer />
                             </div>
                         </div>
-                        <div className='shrink-0 w-[17.71vw]'>
-                            <ChatBar show={rightSideOption === 0} />
-                            <NotificationBar show={rightSideOption === 1} />
-                        </div>
+                    </div>
+                    <div className='shrink-0 w-[17.71vw]'>
+                        <ChatBar show={rightSideOption === 0} />
+                        <NotificationBar show={rightSideOption === 1} />
                     </div>
                 </div>
             </div>
-            <ProfilePopup />
+            <ProfilePopup show={isProfilePopUpOpen} onClose={() => setProfilePopUpOpen(false)} />
         </main>
     )
 }

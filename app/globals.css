@@ -20,6 +20,18 @@ body {
   background-color: #070123;
 }
 
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #241A46;
+}
+
 @font-face {
   font-family: 'PixelifySans-Regular';
   src: url('./assets/fonts/PixelifySans-Regular.ttf') format('truetype');
