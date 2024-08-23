@@ -1,13 +1,10 @@
 import React from 'react'
-import basePath from '../utilities/basepath'
-import Image from 'next/image'
+import ImageResponsive from './ImageResponsive'
 
 const SorterButton = () => {
     return (
         <button className='text-white w-[10.56%] aspect-[113/40] bg-[#241A43] rounded-lg flex items-center justify-center gap-[5.30%]'>
-            <div className='shrink-0 w-[1.04vw] aspect-square'>
-                <Image src={`${basePath}/images/thick-purple-multitool-image.png`} alt='Search Icon' layout='responsive' width={100} height={100} />
-            </div>
+            <ImageResponsive src='/images/thick-purple-multitool-image.png' alt='Sorter Logo' width='w-[1.04vw]' />
             <p className='text-[0.83vw] font-medium'>Dashboard</p>
         </button >
     )

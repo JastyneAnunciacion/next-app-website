@@ -42,7 +42,7 @@ const MenuBar = ({ isMenuOpen, currentPage, onProfileClick }: MenuBarProps) => {
                         notSelectedImgSrc='/images/gradient-purple-medal-image.png'
                         SelectedImgSrc='/images/gradient-white-to-purple-medal-image.png'
                         itemName='Affiliate'
-                        pageHref='/pages/games'
+                        pageHref='/pages/affiliate'
                         isSelected={false}
                     />
                     <MenuBarListItem
