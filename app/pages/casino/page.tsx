@@ -6,7 +6,7 @@ import MainComponents from '@/app/components/MainComponents'
 import GameBanner from '@/app/components/Banners/GameBanner'
 import ReferralBanner from '@/app/components/Banners/ReferralBanner'
 import walletList from "../../components/wallet-list.json"
-import CasinoSorterButton from '@/app/components/CasinoSorterButton'
+import SorterButton from '@/app/components/SorterButton'
 
 
 const CasinoPage = () => {
@@ -23,13 +23,13 @@ const CasinoPage = () => {
                         <Searchbar placeholderText='Game name | Provider' />
                     </div>
                     <div className='w-full flex gap-[0.93%]'>
-                        <CasinoSorterButton />
-                        <CasinoSorterButton />
-                        <CasinoSorterButton />
-                        <CasinoSorterButton />
-                        <CasinoSorterButton />
-                        <CasinoSorterButton />
-                        <CasinoSorterButton />
+                        <SorterButton />
+                        <SorterButton />
+                        <SorterButton />
+                        <SorterButton />
+                        <SorterButton />
+                        <SorterButton />
+                        <SorterButton />
                     </div>
                 </div>
                 <div className='flex flex-col gap-[2.10vw]'>

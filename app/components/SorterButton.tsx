@@ -2,7 +2,7 @@ import React from 'react'
 import basePath from '../utilities/basepath'
 import Image from 'next/image'
 
-const CasinoSorterButton = () => {
+const SorterButton = () => {
     return (
         <button className='text-white w-[10.56%] aspect-[113/40] bg-[#241A43] rounded-lg flex items-center justify-center gap-[5.30%]'>
             <div className='shrink-0 w-[1.04vw] aspect-square'>
@@ -13,4 +13,4 @@ const CasinoSorterButton = () => {
     )
 }
 
-export default CasinoSorterButton
+export default SorterButton
