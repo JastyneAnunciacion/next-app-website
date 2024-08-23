@@ -1,6 +1,6 @@
 'use client'
 
-import React, { ReactNode, useEffect, useRef, useState } from 'react'
+import React, { ReactNode, useEffect, useRef, useState, useCallback } from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import MenuBar from './SideBar/LeftSideBar/MenuBar'
@@ -26,7 +26,7 @@ const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => 
         setMenuBarOpen(prev => !prev);
     };
 
-    const updateFixedElementStyle = () => {
+    const updateFixedElementStyle = useCallback(() => {
         if (childrenDivRef.current) {
             const { width, top, left } = childrenDivRef.current.getBoundingClientRect();
             setFixedElementStyle({
@@ -35,28 +35,29 @@ const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => 
                 position: 'fixed',
             });
         }
-    };
+    }, []);
 
-    const updateWhileTransforming = () => {
+    const updateWhileTransforming = useCallback(() => {
         updateFixedElementStyle();
         animationFrameId.current = requestAnimationFrame(updateWhileTransforming);
-    };
+    }, [updateFixedElementStyle]);
 
     useEffect(() => {
         updateFixedElementStyle();
 
         const resizeObserver = new ResizeObserver(updateFixedElementStyle);
 
-        if (childrenDivRef.current) {
-            resizeObserver.observe(childrenDivRef.current);
+        const element = childrenDivRef.current;
+        if (element) {
+            resizeObserver.observe(element);
         }
 
         const mutationObserver = new MutationObserver(() => {
             updateFixedElementStyle();
         });
 
-        if (childrenDivRef.current) {
-            mutationObserver.observe(childrenDivRef.current, {
+        if (element) {
+            mutationObserver.observe(element, {
                 attributes: true,
                 attributeFilter: ['style', 'class'],
                 subtree: true
@@ -64,12 +65,12 @@ const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => 
         }
 
         return () => {
-            if (childrenDivRef.current) {
-                resizeObserver.unobserve(childrenDivRef.current);
+            if (element) {
+                resizeObserver.unobserve(element);
                 mutationObserver.disconnect();
             }
         };
-    }, [isMenuBarOpen]);
+    }, [updateFixedElementStyle, isMenuBarOpen]);
 
     useEffect(() => {
         const element = childrenDivRef.current;
@@ -102,7 +103,7 @@ const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => 
                 }
             };
         }
-    }, [isMenuBarOpen]);
+    }, [updateFixedElementStyle, updateWhileTransforming, isMenuBarOpen]);
 
     return (
         <main className='h-full w-full overflow-x-hidden'>
@@ -136,4 +137,4 @@ const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => 
     )
 }
 
-export default MainComponents
+export default MainComponents;
