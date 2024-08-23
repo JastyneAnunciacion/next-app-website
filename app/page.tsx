@@ -33,7 +33,6 @@ export default function Home() {
         <RealTimeBetWinners />
         <FAQReferral />
       </div>
-
     </MainComponents>
   )
 }

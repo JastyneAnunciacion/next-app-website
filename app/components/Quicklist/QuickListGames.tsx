@@ -24,9 +24,9 @@ const QuickListGames = ({ headerImgSrc, gameListTitle, gameList, rows = 4 }: Qui
       if (fullWidthRefDiv.current) {
         const getFullWidth = fullWidthRefDiv.current.offsetWidth;
         setFullWidth(getFullWidth);
-        const calculatedGapX = (fullWidth * 0.0138).toFixed(2);
+        const calculatedGapX = (getFullWidth * 0.0138).toFixed(2);
         setGapX(`${calculatedGapX}px`);
-        const calculatedGapY = (fullWidth * 0.0092).toFixed(2);
+        const calculatedGapY = (getFullWidth * 0.0092).toFixed(2);
         setGapY(`${calculatedGapY}px`);
       }
     };

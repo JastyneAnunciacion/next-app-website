@@ -1,46 +1,46 @@
 import React from 'react'
 import Searchbar from '@/app/components/Searchbar'
 import QuickListGames from '@/app/components/Quicklist/QuickListGames'
-import list from '@/app/components/wallet-list.json'
-import QuickListProviders from '@/app/components/Quicklist/QuickListProviders'
 import RealTimeBetWinners from '@/app/components/RealTimeBetWinners/RealTimeBetWinners'
-import BoxBanner from '@/app/components/Banners/BoxBanner'
 import MainComponents from '@/app/components/MainComponents'
+import GameBanner from '@/app/components/Banners/GameBanner'
+import ReferralBanner from '@/app/components/Banners/ReferralBanner'
+import walletList from "../../components/wallet-list.json"
+
 
 const CasinoPage = () => {
     return (
         <MainComponents currentPage='Casino'>
-            <div className='w-full mt-5 flex flex-col gap-5'>
-                <div className='flex w-full justify-between'>
-                    <BoxBanner
-                        title='BONUS'
-                        highlightText='200% Rakeback'
-                        miniDescription='200% rakeback bonus up to 10 ETH + 50 Free Spins'
-                        buttonText='Deposit Now'
-                    />
-                    <BoxBanner
-                        title='AIRDROP'
-                        highlightText='Season 2 Airdrop Finale'
-                        miniDescription='Earn your share of a $1,500,000 of Eth! Rewards to all active players!'
-                        buttonText='Find out more'
-                    />
-                    <BoxBanner
-                        title='COMMUNITY'
-                        highlightText='Join our Community'
-                        miniDescription='Chat with like-minded players and share your big wins!'
-                        buttonText='Get link on Telegram'
-                    />
+            <div className='w-full flex flex-col gap-[2.08vw]'>
+                <div className='w-full flex flex-col items-center justify-center'>
+                    <div className='w-full flex gap-[1.40%] items-center justify-center mb-[1.04vw]'>
+                        <GameBanner imgSrc='/images/4xl-game-icon-1.png' />
+                        <ReferralBanner />
+                        <GameBanner imgSrc='/images/4xl-game-icon-2.png' />
+                    </div>
+                    <div className='w-full h-[2.78vw] text-[0.83vw]'>
+                        <Searchbar placeholderText='Search Games' />
+                    </div>
                 </div>
-                <div className='w-full border'>
-                    <Searchbar />
-                </div>
-                <div className='w-full flex flex-col gap-5'>
-                    <QuickListGames headerImgSrc='/images/gradient-purple-cards-image.png' gameListTitle='Popular' gameList={list} />
-                    <QuickListGames headerImgSrc='/images/gradient-purple-cards-image.png' gameListTitle='Slots' gameList={list} />
-                    <QuickListProviders providerList={list} />
-                    <QuickListGames headerImgSrc='/images/gradient-purple-cards-image.png' gameListTitle='Live Casino' gameList={list} />
-                    <QuickListGames headerImgSrc='/images/gradient-purple-cards-image.png' gameListTitle='Bonus Buy' gameList={list} />
-                    <QuickListGames headerImgSrc='/images/gradient-purple-cards-image.png' gameListTitle='New Casino' gameList={list} />
+                <div className='flex flex-col gap-[2.10vw]'>
+                    <QuickListGames
+                        headerImgSrc='/images/gradient-purple-cards-image.png'
+                        gameListTitle='Popular Games'
+                        gameList={walletList}
+                        rows={1}
+                    />
+                    <QuickListGames
+                        headerImgSrc='/images/gradient-purple-cards-image.png'
+                        gameListTitle='Popular Games'
+                        gameList={walletList}
+                        rows={1}
+                    />
+                    <QuickListGames
+                        headerImgSrc='/images/gradient-purple-cards-image.png'
+                        gameListTitle='Popular Games'
+                        gameList={walletList}
+                        rows={1}
+                    />
                 </div>
                 <RealTimeBetWinners />
             </div>
