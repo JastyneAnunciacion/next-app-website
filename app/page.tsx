@@ -28,6 +28,7 @@ export default function Home() {
           headerImgSrc='/images/gradient-purple-cards-image.png'
           gameListTitle='Popular Games'
           gameList={walletList}
+          rows={2}
         />
         <RealTimeBetWinners />
         <FAQReferral />

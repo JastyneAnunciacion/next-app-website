@@ -19,7 +19,7 @@ const QuickListSports = ({ highlightedSportsList }: QuickListSportsProps) => {
             title='Sports'
             gapAmount='1.31%'
             viewAllLink='/games'
-            childrenList={temporaryList.map((item, i) => {
+            children={temporaryList.map((item, i) => {
                 return (
                     <button key={i} className='relative bg-[#170A35] w-[32.42%] aspect-[347/185] rounded-lg border border-[#231744] flex items-center justify-center'>
                         <Image className='absolute mix-blend-screen' src={`/images/sports-quick-list-vs-image.png`} alt='VS Image' layout='responsive' width={100} height={100} />

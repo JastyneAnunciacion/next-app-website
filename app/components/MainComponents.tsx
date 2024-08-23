@@ -118,7 +118,7 @@ const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => 
                     <div style={{ ...fixedElementStyle }} className='fixed rounded-xl h-full bg-gradient-to-b from-[#11062E] to-[#070123]' />
                     <MenuBar isMenuOpen={isMenuBarOpen} currentPage={currentPage} onProfileClick={() => setProfilePopUpOpen(true)} />
                     <div className='w-full flex justify-center items-center'>
-                        <div ref={childrenDivRef} className={`w-full max-w-[1130px] transition-width duration-300 flex flex-col items-center z-10`}>
+                        <div ref={childrenDivRef} className={`w-full max-w-[1507px] transition-width duration-300 flex flex-col items-center z-10`}>
                             <div className='w-full px-[2.08vw] pt-[2.08vw] pb-[4.86vw]'>
                                 {children}
                                 <Footer />

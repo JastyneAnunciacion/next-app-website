@@ -10,12 +10,13 @@ import basePath from '@/app/utilities/basepath';
 interface QuickListProps {
   headerIconPath: string;
   title: string;
-  childrenList: ReactNode;
+  children: ReactNode;
   gapAmount?: string;
   viewAllLink?: string;
+  widthScroll?: number;
 }
 
-const QuickList = ({ headerIconPath: headerImagePath, title, childrenList, gapAmount = '0px', viewAllLink }: QuickListProps) => {
+const QuickList = ({ headerIconPath: headerImagePath, title, children, gapAmount = '0px', viewAllLink, widthScroll = 300 }: QuickListProps) => {
   const listRef = useRef<HTMLDivElement | null>(null);
   const [isAtStart, setIsAtStart] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
@@ -25,7 +26,7 @@ const QuickList = ({ headerIconPath: headerImagePath, title, childrenList, gapAm
     const list = listRef.current;
     if (!list) return;
 
-    const scrollValue = 300;
+    const scrollValue = widthScroll;
 
     if (direction === 'right') {
       list.scrollTo({
@@ -55,6 +56,9 @@ const QuickList = ({ headerIconPath: headerImagePath, title, childrenList, gapAm
     const list = listRef.current;
     if (list) {
       const isOverflowing = list.scrollWidth > list.clientWidth;
+      console.log('scrollWidth:', list.scrollWidth);
+      console.log('clientWidth:', list.clientWidth);
+      console.log('isOverflowing:', isOverflowing);
       setIsOverflowing(isOverflowing);
 
       list.addEventListener('scroll', handleScroll);
@@ -114,7 +118,7 @@ const QuickList = ({ headerIconPath: headerImagePath, title, childrenList, gapAm
           gap: gapAmount,
         }}
         className={`flex scrollbar-none`} ref={listRef}>
-        {childrenList}
+        {children}
       </div>
     </div>
   );
