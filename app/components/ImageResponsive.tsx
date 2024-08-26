@@ -20,7 +20,7 @@ const ImageResponsive = ({ src, alt, width, aspectWidth = 1, aspectHeight = 1, r
                 flexShrink: 0
             }}
         >
-            <Image className={`${rounded}`} src={`${basePath + src}`} alt={alt} layout='responsive' width={100} height={100} />
+            <Image className={`${rounded}`} src={`${src}`} alt={alt} layout='responsive' width={100} height={100} />
         </div>
     )
 }

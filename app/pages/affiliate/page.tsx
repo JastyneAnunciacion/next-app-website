@@ -1,5 +1,7 @@
 import AffiliateReferralLinks from '@/app/components/Affiliate/AffiliateReferralLinks'
 import AffiliateUserStats from '@/app/components/Affiliate/AffiliateUserStats'
+import InvitesPromo from '@/app/components/Affiliate/InvitesPromo'
+import YourReferrals from '@/app/components/Affiliate/YourReferrals'
 import FAQReferral from '@/app/components/FAQReferral'
 import ImageResponsive from '@/app/components/ImageResponsive'
 import MainComponents from '@/app/components/MainComponents'
@@ -10,9 +12,9 @@ const AffiliatePage = () => {
     return (
         <div>
             <MainComponents currentPage='Affiliate'>
-                <div className='text-white w-full flex flex-col'>
+                <div className='text-white w-full flex flex-col font-montserrat font-medium'>
                     <div className='flex items-center gap-[0.47%] mb-[1.86%]'>
-                        <ImageResponsive src='/images/gradient-purple-medal-image.png' alt='Affiliate Logo' width='1.87vw' />
+                        <ImageResponsive src='/images/gradient-purple-medal-image.png' alt='Affiliate Logo' width='1.87%' />
                         <p className='font-montserrat-alternates text-[1.25vw] font-semibold'>Affiliate</p>
                     </div>
                     <div className='flex gap-[0.93%] mb-[1.86%]'>
@@ -21,7 +23,7 @@ const AffiliatePage = () => {
                         <SorterButton />
                         <SorterButton />
                     </div>
-                    <div className='flex gap-[0.47%] font-montserrat font-medium mb-[1.4%]'>
+                    <div className='flex gap-[0.47%] mb-[1.4%]'>
                         <div className='w-[62.24%] aspect-[666/389]'>
                             <AffiliateReferralLinks />
                         </div>
@@ -29,6 +31,15 @@ const AffiliatePage = () => {
                             <AffiliateUserStats />
                         </div>
                     </div>
+
+                    <div className='mb-[4.67%]'>
+                        <InvitesPromo currentInvites={2} maxInvites={10} />
+                    </div>
+
+                    <div className='mb-[4.67%]'>
+                        <YourReferrals />
+                    </div>
+
 
                     <div className='mb-[4.67%]'>
                         <FAQReferral />
