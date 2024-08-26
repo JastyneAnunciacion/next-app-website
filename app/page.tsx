@@ -31,7 +31,9 @@ export default function Home() {
           rows={2}
         />
         <RealTimeBetWinners />
-        <FAQReferral />
+        <div className='mb-[4.67%]'>
+          <FAQReferral />
+        </div>
       </div>
     </MainComponents>
   )
