@@ -1,3 +1,6 @@
+import AffiliateReferralLinks from '@/app/components/Affiliate/AffiliateReferralLinks'
+import AffiliateUserStats from '@/app/components/Affiliate/AffiliateUserStats'
+import FAQReferral from '@/app/components/FAQReferral'
 import ImageResponsive from '@/app/components/ImageResponsive'
 import MainComponents from '@/app/components/MainComponents'
 import SorterButton from '@/app/components/SorterButton'
@@ -7,16 +10,28 @@ const AffiliatePage = () => {
     return (
         <div>
             <MainComponents currentPage='Affiliate'>
-                <div className='text-white flex flex-col gap-[1.86%]'>
-                    <div className='flex items-center gap-[0.47%]'>
+                <div className='text-white w-full flex flex-col'>
+                    <div className='flex items-center gap-[0.47%] mb-[1.86%]'>
                         <ImageResponsive src='/images/gradient-purple-medal-image.png' alt='Affiliate Logo' width='1.87vw' />
                         <p className='font-montserrat-alternates text-[1.25vw] font-semibold'>Affiliate</p>
                     </div>
-                    <div className='flex gap-[0.93%]'>
+                    <div className='flex gap-[0.93%] mb-[1.86%]'>
                         <SorterButton />
                         <SorterButton />
                         <SorterButton />
                         <SorterButton />
+                    </div>
+                    <div className='flex gap-[0.47%] font-montserrat font-medium mb-[1.4%]'>
+                        <div className='w-[62.24%] aspect-[666/389]'>
+                            <AffiliateReferralLinks />
+                        </div>
+                        <div className='w-[37.28%] aspect-[399/389] text-[0.97vw]'>
+                            <AffiliateUserStats />
+                        </div>
+                    </div>
+
+                    <div className='mb-[4.67%]'>
+                        <FAQReferral />
                     </div>
                 </div>
             </MainComponents>

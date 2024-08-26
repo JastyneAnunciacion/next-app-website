@@ -16,7 +16,8 @@ const ImageResponsive = ({ src, alt, width, aspectWidth = 1, aspectHeight = 1, r
         <div
             style={{
                 width: width,
-                aspectRatio: `${aspectWidth}/${aspectHeight}`
+                aspectRatio: `${aspectWidth}/${aspectHeight}`,
+                flexShrink: 0
             }}
         >
             <Image className={`${rounded}`} src={`${basePath + src}`} alt={alt} layout='responsive' width={100} height={100} />
