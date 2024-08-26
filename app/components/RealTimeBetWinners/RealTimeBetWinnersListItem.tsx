@@ -72,7 +72,7 @@ const RealTimeBetWinnersListItem = ({
                 </div>
                 <p className='flex justify-center items-center'>{'x' + tempMultiplier}</p>
                 <div className='flex gap-[0.35vw] items-center justify-end'>
-                    <p className={`flex items-center ${numericPayout < 0 ? 'text-[#AEA8BE]' : 'text-green-500'}`}>
+                    <p className={`flex items-center ${numericPayout < 0 ? 'text-[#acacac]' : 'text-green-500'}`}>
                         {numericPayout > 0 ? '+' : ''}{tempPayout}
                     </p>
                     <div className='shrink-0'>
