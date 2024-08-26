@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import basePath from '@/app/utilities/basepath';
+import Link from 'next/link'
+
 
 interface MenuBarListItemProps {
     isSideBarOpen: boolean,
@@ -12,7 +14,7 @@ interface MenuBarListItemProps {
     onClick?: () => void,
 }
 
-const MenuBarListItem = ({ isSideBarOpen, notSelectedImgSrc, SelectedImgSrc, itemName, pageHref, isSelected, onClick }: MenuBarListItemProps) => {
+const MenuBarListItem = ({ isSideBarOpen, notSelectedImgSrc, SelectedImgSrc, itemName, pageHref = '/', isSelected, onClick }: MenuBarListItemProps) => {
     const [showItemName, setShowItemName] = useState(isSideBarOpen);
 
     useEffect(() => {
@@ -28,9 +30,9 @@ const MenuBarListItem = ({ isSideBarOpen, notSelectedImgSrc, SelectedImgSrc, ite
 
     return (
         <li className='relative w-full flex items-start justify-start'>
-            <a
-                onClick={onClick}
+            <Link
                 href={pageHref}
+                onClick={onClick}
                 className={`${isSelected && 'pointer-events-none'} ${pageHref == ''} transition-all duration-300 flex items-center pl-[0.83vw] h-[2.77vw] overflow-hidden gap-[0.69vw] rounded-lg
                     ${!isSideBarOpen ?
                         'w-[2.77vw] relative group shrink-0'
@@ -53,7 +55,7 @@ const MenuBarListItem = ({ isSideBarOpen, notSelectedImgSrc, SelectedImgSrc, ite
                         {itemName}
                     </p>
                 )}
-            </a>
+            </Link>
         </li>
     )
 }
