@@ -50,7 +50,7 @@ const RealTimeBetWinnersListItem = ({
         const generatedPayout = (Math.random() * (8) - 4).toFixed(4);
         setTempPayout(generatedPayout);
 
-    }, [gameNames]);
+    }, []);
 
     const numericPayout = parseFloat(tempPayout);
 
