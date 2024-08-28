@@ -126,7 +126,7 @@ const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => 
                             </div>
                         </div>
                     </div>
-                    <div className='shrink-0 w-[17.71vw]'>
+                    <div className='shrink-0 w-[17.71vw] max-w-[340px]'>
                         <ChatBar show={rightSideOption === 0} />
                         <NotificationBar show={rightSideOption === 1} />
                     </div>

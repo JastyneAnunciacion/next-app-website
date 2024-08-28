@@ -8,8 +8,8 @@ interface NotificationBarProps {
 const NotificationBar = ({ show }: NotificationBarProps) => {
     return (
         <>
-            <div className={`shrink-0 fixed transition-width duration-300 w-[17.71vw] pt-[10px] bg-[#070123] h-[90vh] flex flex-col text-white ${!show && 'translate-x-full'}`}>
-                <p className='pl-[2.54vw] mb-[10px]'>Notification</p>
+            <div className={`shrink-0 fixed transition-width duration-300 w-[17.71vw] max-w-[340px] pt-[0.69vw] bg-[#070123] h-[90vh] flex flex-col text-white ${!show && 'translate-x-full'}`}>
+                <p className='pl-[2.54vw] mb-[0.69vw]'>Notification</p>
                 <div
                     style={{
                         WebkitOverflowScrolling: 'touch',
@@ -18,9 +18,9 @@ const NotificationBar = ({ show }: NotificationBarProps) => {
                         overflowY: 'scroll',
                         overflowX: 'visible',
                     }}
-                    className='flex flex-col items-end pr-[0.69vw] gap-[5px] mb-[6px]'
+                    className='flex flex-col items-end pr-[0.69vw] gap-[0.35vw]'
                 >
-                    {Array.from({ length: 18 }).map((_, index) => (
+                    {Array.from({ length: 10 }).map((_, index) => (
                         <Notification key={index} />
                     ))}
                 </div>
