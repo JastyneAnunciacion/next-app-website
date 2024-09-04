@@ -12,6 +12,7 @@ const LeaderboardRanks = () => {
             </div>
             {Array.from({ length: numberOfRanks }).map((_, index) => (
                 <LeaderboardRankTemplate
+                    key={index}
                     rank={index + 1}
                     playerProfilePictureSrc='/images/md-temporary-profile-image.png'
                     playerName={'Player ' + (index + 1)}
