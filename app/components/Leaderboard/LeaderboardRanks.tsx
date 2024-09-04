@@ -4,7 +4,7 @@ import LeaderboardRankTemplate from './LeaderboardRankTemplate'
 const LeaderboardRanks = () => {
     const numberOfRanks = 11;
     return (
-        <div className='w-full aspect-[107/56] bg-[#170A35] rounded-[5px] p-[1.87%] text-white font-montserrat text-[0.83vw] font-medium'>
+        <div className='w-full bg-[#170A35] rounded-[5px] p-[1.87%] text-white font-montserrat text-[0.83vw] font-medium'>
             <div className='w-full grid grid-cols-3 mb-[1.46%]'>
                 <p className='text-[#D187FF]'>Place/Player</p>
                 <p className='text-[#FFBF39] flex justify-center'>Wagered</p>
