@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import basePath from '../utilities/basepath'
+import ImageResponsive from './ImageResponsive'
 
 const Footer = () => {
     return (
@@ -38,7 +39,7 @@ const Footer = () => {
 
             <div className='absolute w-full h-full flex items-end'>
                 <button className='w-[2.15%] aspect-square'>
-                    <Image className='rounded-full' src={`/images/purple-x-image.png`} alt="Footer Main Logo" layout='responsive' width={100} height={100} />
+                    <ImageResponsive src='/images/purple-x-image.png' alt='Footer Twitter Logo' width='100%' />
                 </button>
             </div>
         </div>

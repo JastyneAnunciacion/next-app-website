@@ -35,13 +35,17 @@ const WalletHeaderDropdown = ({ walletButtonOnClick }: WalletHeaderDropdownProps
                 <p className='text-[0.83vw] font-medium'>{selectedWallet.Amount}</p>
               </div>
             )}
-            <button onClick={(e) => { e.stopPropagation(); walletButtonOnClick(); }} className='bg-[#02CC00] w-[4.72vw] aspect-[68/35] rounded-lg flex items-center justify-center shrink-0'>
+            <button onClick={(e) => {
+              e.stopPropagation();
+              // walletButtonOnClick(); 
+            }}
+              className='bg-[#02CC00] w-[4.72vw] aspect-[68/35] rounded-lg flex items-center justify-center shrink-0'>
               <p className='text-[0.83vw] font-medium'>Deposit</p>
             </button>
           </div>
         </div>
 
-        {isOpen && (
+        {/* {isOpen && (
           <div className='absolute bg-black border border-orange-500 w-72 left-0 top-11 flex flex-col overflow-hidden z-20'>
             <div className='p-3'>
               <div className='border text-white'>
@@ -68,7 +72,7 @@ const WalletHeaderDropdown = ({ walletButtonOnClick }: WalletHeaderDropdownProps
               <Toggle bgIsDark={true} />
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </div>
 

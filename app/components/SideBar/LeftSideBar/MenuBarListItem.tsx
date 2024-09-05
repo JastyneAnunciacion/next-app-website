@@ -14,7 +14,7 @@ interface MenuBarListItemProps {
     onClick?: () => void,
 }
 
-const MenuBarListItem = ({ isSideBarOpen, notSelectedImgSrc, SelectedImgSrc, itemName, pageHref = '/', isSelected, onClick }: MenuBarListItemProps) => {
+const MenuBarListItem = ({ isSideBarOpen, notSelectedImgSrc, SelectedImgSrc, itemName, pageHref = '', isSelected, onClick }: MenuBarListItemProps) => {
     const [showItemName, setShowItemName] = useState(isSideBarOpen);
 
     useEffect(() => {
