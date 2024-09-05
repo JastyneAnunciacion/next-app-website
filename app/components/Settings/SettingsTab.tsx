@@ -44,15 +44,15 @@ const SettingsTab = () => {
             <div className='w-[774px]'>
                 <p className='underline font-bold'>Communication</p>
                 <div className='grid grid-cols-2 gap-2'>
-                    <Toggle toggleText='Receieve Marketing emails' />
-                    <Toggle toggleText='Receieve Marketing SMS' />
+                    {/* <Toggle toggleText='Receieve Marketing emails' />
+                    <Toggle toggleText='Receieve Marketing SMS' /> */}
                 </div>
             </div>
 
             <div>
                 <p className='underline font-bold'>Privacy</p>
                 <div>
-                    <Toggle toggleText='Hide my Username' />
+                    {/* <Toggle toggleText='Hide my Username' /> */}
                 </div>
             </div>
 
