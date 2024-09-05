@@ -1,5 +1,3 @@
-'use client'
-
 import ImageResponsive from '@/app/components/ImageResponsive'
 import MainComponents from '@/app/components/MainComponents'
 import Searchbar from '@/app/components/Searchbar'
@@ -7,19 +5,10 @@ import SelectionButtonsWithIcons from '@/app/components/SelectionButtonsWithIcon
 import Toggle from '@/app/components/Toggle'
 import WalletList from '@/app/components/Wallet/WalletList'
 import WalletListItem from '@/app/components/Wallet/WalletListItem'
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import walletList from '@/app/components/wallet-list.json'
 
 const WalletPage = () => {
-    const refereceDivHeight = useRef<HTMLDivElement>(null);
-    const [height, setHeight] = useState('auto');
-
-    useEffect(() => {
-        if (refereceDivHeight.current) {
-            const referenceHeight = refereceDivHeight.current.clientHeight;
-            setHeight(`${referenceHeight}px`);
-        }
-    }, [refereceDivHeight.current]);
     return (
         <MainComponents currentPage='Wallet'>
             <div className='text-white font-montserrat font-medium text-[0.83vw]'>
@@ -29,40 +18,52 @@ const WalletPage = () => {
                         <p className='font-montserrat-alternates text-[1.25vw] font-semibold'>Wallet</p>
                     </div>
                 </div>
-                <div className='relative w-full'>
-                    <div className='absolute bg-[#1B1237] w-[16.26%] p-[0.93%] rounded-[5px]'>
+                <div className='flex justify-between'>
+                    <div className='bg-[#1B1237] w-[16.26%] h-fit p-[0.93%] rounded-[5px]'>
                         <SelectionButtonsWithIcons
                             defaultIconSrc='/images/violet-drawer-image.png'
                             selectedIconSrc='/images/drawer-image.png'
+                            iconWidth='12.1%'
+                            iconAspectWidth={15}
+                            iconAspectHeight={13.85}
                             buttonText='Balance'
                             isSelected={true}
                         />
                         <SelectionButtonsWithIcons
                             defaultIconSrc='/images/violet-deposit-image.png'
                             selectedIconSrc='/images/deposit-image.png'
+                            iconWidth='12.1%'
+                            iconAspectWidth={15}
+                            iconAspectHeight={13.39}
                             buttonText='Deposit'
                             isSelected={false}
                         />
                         <SelectionButtonsWithIcons
                             defaultIconSrc='/images/violet-withdraw-image.png'
                             selectedIconSrc='/images/withdraw-image.png'
+                            iconWidth='12.9%'
+                            iconAspectWidth={16}
+                            iconAspectHeight={11.44}
                             buttonText='Withdraw'
                             isSelected={false}
                         />
                         <SelectionButtonsWithIcons
                             defaultIconSrc='/images/violet-buy-crypto-image.png'
                             selectedIconSrc='/images/buy-crypto-image.png'
+                            iconWidth='12.1%'
+                            iconAspectWidth={15}
+                            iconAspectHeight={15.05}
                             buttonText='Buy Crypto'
                             isSelected={false}
                             isLast={true}
                         />
                     </div>
 
-                    <div ref={refereceDivHeight} className='absolute right-0 w-[82.334%]'>
+                    <div className='w-[82.334%]'>
                         <div className='w-full aspect-[881/80] bg-[#241A43] rounded-[5px] mb-[0.57%] flex items-center px-[3.97%]'>
                             <ImageResponsive src='/images/stacked-coins-image.png' alt='Stacked Coins Image' width='2.84%' />
                             <div className='ml-[0.57%] mr-[3.97%]'>
-                                <p className='leading-[122.91%] '>Total Balance</p>
+                                <p className='leading-[122.91%]'>Total Balance</p>
                                 <p className='text-[1.11vw] text-[#FFBF39] font-bold leading-[121.88%]'>$0.00</p>
                             </div>
                             <div className='h-[62.5%] w-[1px] bg-[#2F2551] shrink-0' />
@@ -99,7 +100,6 @@ const WalletPage = () => {
                         </div>
                     </div>
                 </div>
-                <div style={{ height: height, marginBottom: '4.67%' }} />
             </div>
         </MainComponents>
     )
