@@ -43,23 +43,23 @@ const MenuBar = ({ isMenuOpen, currentPage, onProfileClick }: MenuBarProps) => {
                         SelectedImgSrc='/images/gradient-white-to-purple-medal-image.png'
                         itemName='Affiliate'
                         pageHref='/pages/affiliate'
-                        isSelected={false}
+                        isSelected={currentPage == 'Affiliate'}
                     />
                     <MenuBarListItem
                         isSideBarOpen={isMenuOpen}
                         notSelectedImgSrc='/images/gradient-purple-trophy-image.png'
                         SelectedImgSrc='/images/gradient-white-to-purple-trophy-image.png'
                         itemName='Leaderboard'
-                        pageHref='/pages/games'
-                        isSelected={false}
+                        pageHref='/pages/leaderboard'
+                        isSelected={currentPage == 'Leaderboard'}
                     />
                     <MenuBarListItem
                         isSideBarOpen={isMenuOpen}
                         notSelectedImgSrc='/images/gradient-purple-stacked-image.png'
                         SelectedImgSrc='/images/gradient-white-to-purple-stacked-image.png'
                         itemName='Staking'
-                        pageHref='/pages/games'
-                        isSelected={false}
+                        pageHref='/pages/staking'
+                        isSelected={currentPage == 'Staking'}
                     />
                 </ul>
                 <ul className='flex flex-col gap-[1.25vh] text-white w-full'>

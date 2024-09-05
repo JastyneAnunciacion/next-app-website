@@ -1,13 +1,12 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import RealTimeBetWinnersListItem from './RealTimeBetWinnersListItem'
 import walletList from '../wallet-list.json'
 import Image from 'next/image'
 import basePath from '@/app/utilities/basepath'
 
 const RealTimeBetWinners = () => {
-
     return (
         <div className='w-full flex flex-col font-montserrat text-white gap-[1.04vw]'>
             <div className='w-full flex gap-[0.35vw] items-center'>

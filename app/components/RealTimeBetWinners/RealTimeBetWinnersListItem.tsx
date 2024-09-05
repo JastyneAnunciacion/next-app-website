@@ -32,6 +32,7 @@ const RealTimeBetWinnersListItem = ({
         '2 Wild 2 Die'
     ];
 
+    //remove when actual data is available
     const [tempGameName, setTempGameName] = useState<string>('');
     const [tempBetAmount, setTempBetAmount] = useState<string>('0.0000');
     const [tempMultiplier, setTempMultiplier] = useState<string>('1.00');
@@ -51,6 +52,7 @@ const RealTimeBetWinnersListItem = ({
         setTempPayout(generatedPayout);
 
     }, []);
+    //remove when actual data is available
 
     const numericPayout = parseFloat(tempPayout);
 

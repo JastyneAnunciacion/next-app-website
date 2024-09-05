@@ -14,7 +14,7 @@ interface MenuBarListItemProps {
     onClick?: () => void,
 }
 
-const MenuBarListItem = ({ isSideBarOpen, notSelectedImgSrc, SelectedImgSrc, itemName, pageHref = '/', isSelected, onClick }: MenuBarListItemProps) => {
+const MenuBarListItem = ({ isSideBarOpen, notSelectedImgSrc, SelectedImgSrc, itemName, pageHref = '', isSelected, onClick }: MenuBarListItemProps) => {
     const [showItemName, setShowItemName] = useState(isSideBarOpen);
 
     useEffect(() => {
@@ -50,11 +50,11 @@ const MenuBarListItem = ({ isSideBarOpen, notSelectedImgSrc, SelectedImgSrc, ite
                 </div>
                 <p className={`${isSideBarOpen ? 'text-white' : 'text-white/0'} text-[0.83vw] transition-colors duration-100`}>{itemName}</p>
 
-                {showItemName && (
+                {/* {showItemName && (
                     <p className='fixed z-[1000] p-2 h-8 left-[4vw] bg-gradient-to-b from-[#BD73F9] shadow-glow shadow-[#bb6ffa86] to-[#9B34FD] text-sm text-nowrap rounded-lg opacity-0 transition-opacity duration-200 pointer-events-none group-hover:opacity-100 text-white font-bold'>
                         {itemName}
                     </p>
-                )}
+                )} */}
             </Link>
         </li>
     )
