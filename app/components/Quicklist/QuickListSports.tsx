@@ -16,7 +16,7 @@ const temporaryList = [
 const QuickListSports = ({ highlightedSportsList }: QuickListSportsProps) => {
     return (
         <QuickList
-            headerIconPath={`${basePath}/images/gradient-purple-sports-image.png`}
+            headerIconPath={`/images/gradient-purple-sports-image.png`}
             title='Sports'
             gapAmount='1.31%'
             viewAllLink='/games'

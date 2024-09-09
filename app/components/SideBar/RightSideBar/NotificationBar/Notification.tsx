@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import basePath from '@/app/utilities/basepath'
+import ImageResponsive from '@/app/components/ImageResponsive'
 
 const Notification = () => {
     return (
@@ -22,11 +23,14 @@ const Notification = () => {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </p>
 
-                <div className='self-end flex gap-[0.35vw] mt-[3.7%]'>
-                    <p className='font-semibold text-[0.83vw]'>Show all</p>
-                    <div className='shrink-0 w-[1.04vw] aspect-square'>
-                        <Image src={`/images/white-filled-circle-arrow-down-image.png`} alt='Notification Type Icon' layout='responisve' width={100} height={100} />
-                    </div>
+                <div className='flex justify-end items-center gap-[0.35vw] w-full mb-[4.35%]'>
+                    <p
+                        style={{ fontSize: '0.83vw' }}
+                        // style={{ fontSize: `${useDynamicFontSize(0.83)}px` }}
+                        className='font-semibold'
+                    >
+                        Show all</p>
+                    <ImageResponsive src='/images/white-filled-circle-arrow-down-image.png' alt='Show all Icon' width='7.5%' />
                 </div>
             </div>
             <div className='flex flex-col justify-start gap-[1.84vh] pb-[1.84vh]'>
