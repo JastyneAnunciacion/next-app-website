@@ -8,8 +8,13 @@ interface ChatBarProps {
 const ChatBar = ({ show = true }: ChatBarProps) => {
     return (
         <>
-            <div className={`shrink-0 fixed transition-width duration-300 w-[17.71vw] max-w-[340px] pt-[10px] bg-[#070123] h-[90vh] flex flex-col text-white ${!show && 'translate-x-full'}`}>
-                <p className='pl-[2.54vw] mb-[10px]'>Chat</p>
+            <div className={`shrink-0 fixed transition-width duration-300 w-[17.71vw] max-w-[340px] bg-[#070123] h-full flex flex-col text-white ${!show && 'translate-x-full'}`}>
+                <p
+                    style={{ fontSize: 'clamp(1px, 0.97vw , 18.68px)' }}
+                    className='pl-[9.80%] mb-[3.92%] pt-[3.92%]'
+                >
+                    Chat
+                </p>
                 <div
                     style={{
                         WebkitOverflowScrolling: 'touch',
@@ -18,10 +23,12 @@ const ChatBar = ({ show = true }: ChatBarProps) => {
                         overflowY: 'scroll',
                         overflowX: 'visible',
                     }}
-                    className='flex flex-col items-end pr-[0.69vw] gap-[5px] mb-[6px]'
+                    className='pl-[5.88%] pr-[3.92%]'
                 >
-                    {Array.from({ length: 18 }).map((_, index) => (
-                        <ChatBarMessage key={index} />
+                    {Array.from({ length: 20 }).map((_, index) => (
+                        <div className={`w-full aspect-[115/33] ${index != 19 && 'mb-[2.17%]'}`} key={index}>
+                            <ChatBarMessage key={index} />
+                        </div>
                     ))}
                 </div>
                 <ChatBarChatBox />
