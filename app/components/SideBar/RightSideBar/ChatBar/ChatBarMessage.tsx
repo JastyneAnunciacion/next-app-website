@@ -8,7 +8,6 @@ const ChatBarMessage = () => {
                 style={{ fontSize: 'clamp(1px, 0.55vw , 10.67px)' }}
                 className='flex w-full justify-between text-[#9D87C9] font-medium mb-[3.33%]'
             >
-
                 <div className='flex w-full items-center gap-[0.35vw]'>
                     <ImageResponsive src='/images/2xs-profile-image.png' alt='User Profile Picture' width='7.14%' />
                     <p>@username99</p>
