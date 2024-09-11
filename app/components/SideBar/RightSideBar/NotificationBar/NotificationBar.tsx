@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Notification from './Notification'
 
 interface NotificationBarProps {
@@ -9,7 +9,11 @@ const NotificationBar = ({ show }: NotificationBarProps) => {
     return (
         <>
             <div className={`shrink-0 fixed transition-width duration-300 w-[17.71vw] max-w-[340px] pt-[0.69vw] bg-[#070123] h-[90vh] flex flex-col text-white ${!show && 'translate-x-full'}`}>
-                <p className='pl-[2.54vw] mb-[0.69vw]'>Notification</p>
+                <p
+                    style={{ fontSize: 'clamp(1px, 0.97vw , 18.68px)' }}
+                    className='pl-[9.80%] mb-[3.92%]'
+                >
+                    Notification</p>
                 <div
                     style={{
                         WebkitOverflowScrolling: 'touch',
@@ -18,13 +22,15 @@ const NotificationBar = ({ show }: NotificationBarProps) => {
                         overflowY: 'scroll',
                         overflowX: 'visible',
                     }}
-                    className='flex flex-col items-end pr-[0.69vw] gap-[0.35vw]'
+                    className='pl-[5.88%] pr-[3.92%]'
                 >
                     {Array.from({ length: 10 }).map((_, index) => (
-                        <Notification key={index} />
+                        <div className={`w-full aspect-[23/24] ${index != 9 && 'mb-[2.17%]'}`} key={index}>
+                            <Notification />
+                        </div>
                     ))}
                 </div>
-            </div >
+            </div>
         </>
     )
 }
