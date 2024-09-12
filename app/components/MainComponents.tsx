@@ -107,6 +107,12 @@ const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => 
 
     return (
         <main className='h-full w-full overflow-x-hidden'>
+            <MenuBar
+                isMenuOpen={isMenuBarOpen}
+                currentPage={currentPage}
+                onProfileClick={() => setProfilePopUpOpen(true)}
+                onMobileMenuClick={toggleMenuBar}
+            />
             <div className="flex w-full h-full flex-col">
                 <Header
                     onMenuButtonClick={toggleMenuBar}
@@ -115,9 +121,10 @@ const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => 
                     onClickNotificationButton={() => setRightSideOption(1)}
                     onClickProfileButton={() => setProfilePopUpOpen(true)}
                 />
-                <div className='flex w-full h-full pt-[5.62vw]'>
+                {/* Web Version */}
+                <div className='hidden lg:flex w-full h-full pt-[5.62vw]'>
                     <div style={{ ...fixedElementStyle }} className='fixed rounded-xl h-full bg-gradient-to-b from-[#11062E] to-[#070123]' />
-                    <MenuBar isMenuOpen={isMenuBarOpen} currentPage={currentPage} onProfileClick={() => setProfilePopUpOpen(true)} />
+                    <div className={`shrink-0 h-full transition-width duration-300 pl-[0.69vw] pr-[0.35vw] mr-[0.35vw] ${!isMenuBarOpen ? 'w-[3.82vw] ' : 'w-[12.85vw]'}`} />
                     <div className='w-full flex justify-center items-center'>
                         <div ref={childrenDivRef} className={`w-full max-w-[1507px] transition-width duration-300 flex flex-col items-center z-10`}>
                             <div className='w-full px-[2.08vw] pt-[2.08vw] pb-[4.86vw]'>
@@ -129,6 +136,13 @@ const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => 
                     <div className='shrink-0 w-[17.71vw] max-w-[340px]'>
                         <ChatBar show={rightSideOption === 0} />
                         <NotificationBar show={rightSideOption === 1} />
+                    </div>
+                </div>
+
+                {/* Mobile Version */}
+                <div className={`lg:hidden flex flex-col max-w-full h-screen w-screen ${isMenuBarOpen && 'overflow-hidden'}`}>
+                    <div className='w-full flex flex-col items-center self-center'>
+                        {children}
                     </div>
                 </div>
             </div>

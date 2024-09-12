@@ -1,17 +1,22 @@
 'use client'
 
+import FullMenu from '../../FullMenu'
+import ImageResponsive from '../../ImageResponsive'
+import QuickMenuButton from './QuickMenuButton'
 import MenuBarListItem from './MenuBarListItem'
 
 interface MenuBarProps {
     isMenuOpen: boolean,
     currentPage: string,
     onProfileClick: () => void
+    onMobileMenuClick: () => void
 }
 
-const MenuBar = ({ isMenuOpen, currentPage, onProfileClick }: MenuBarProps) => {
+const MenuBar = ({ isMenuOpen, currentPage, onProfileClick, onMobileMenuClick }: MenuBarProps) => {
     return (
         <div>
-            <div className={`fixed justify-between transition-width duration-300 ${!isMenuOpen ? 'w-[3.82vw]' : 'w-[12.85vw]'} bg-[#070123] pl-[0.69vw] pr-[0.35vw] h-[90vh] flex flex-col justify-between pb-[1.35vh]`}>
+            {/* Web Version */}
+            <div className={`fixed justify-between transition-width duration-300 ${!isMenuOpen ? 'w-[3.82vw]' : 'w-[12.85vw]'} bg-[#070123] pl-[0.69vw] pr-[0.35vw] mr-[0.35vw] h-[90vh] hidden lg:flex flex-col justify-between pb-[1.35vh] left-0 top-[5.63vw]`}>
                 <ul className={`flex flex-col gap-[1.25vh] text-white w-full`}>
                     <MenuBarListItem
                         isSideBarOpen={isMenuOpen}
@@ -89,7 +94,80 @@ const MenuBar = ({ isMenuOpen, currentPage, onProfileClick }: MenuBarProps) => {
                     />
                 </ul>
             </div >
-            <div className={`h-full transition-width duration-300 pl-[0.69vw] mr-[0.35vw] ${!isMenuOpen ? 'w-[3.82vw] ' : 'w-[12.85vw]'}`} />
+
+            {/* Mobile Version */}
+            <div className='lg:hidden'>
+                <div className='flex items-center justify-center font-manrope font-bold text-[2.08vw]'>
+                    <div className={`${isMenuOpen ? 'w-[13%] aspect-square duration-500' : 'w-full aspect-[403/72] duration-700'} flex justify-center items-center max-w-[83.95%] bg-[#1F2937] fixed rounded-full bottom-[10.83vw] z-50 transition-all`}>
+                        <div className={`${isMenuOpen ? 'justify-center' : 'justify-between'} flex items-center w-full px-[6.97vw]`}>
+                            <button className={`${isMenuOpen && 'w-full'} flex flex-col items-center justify-center`} onClick={onMobileMenuClick}>
+                                {isMenuOpen ?
+                                    <div>
+                                        <div>
+                                            <p className='text-[4.16vw] text-[#FF8787]'>X</p>
+                                        </div>
+                                    </div>
+                                    :
+                                    <div className='flex flex-col gap-[0.83vw] items-center'>
+                                        <div className='w-[4.58vw] aspect-square'>
+                                            <ImageResponsive src='/images/menu-image.png' alt='Footer Button Image' width='100%' />
+                                        </div>
+                                        <p>Menu</p>
+                                    </div>
+                                }
+                            </button>
+
+                            {!isMenuOpen &&
+                                <>
+                                    <QuickMenuButton
+                                        iconSrc='/images/games-image.png'
+                                        iconActiveSrc='/images/games-selected-image.png'
+                                        activeTextColor='#D187FF'
+                                        pageHref='/'
+                                        buttonName='Games'
+                                        active={currentPage === 'Games'}
+                                    />
+                                    <QuickMenuButton
+                                        iconSrc='/images/sports-image.png'
+                                        iconActiveSrc='/images/sports-selected-image.png'
+                                        activeTextColor='#FFF387'
+                                        pageHref='/pages/sports'
+                                        buttonName='Sports'
+                                        active={currentPage === 'Sports'}
+                                    />
+                                    <QuickMenuButton
+                                        iconSrc='/images/rewards-image.png'
+                                        iconActiveSrc='/images/rewards-selected-image.png'
+                                        activeTextColor='#87FFD4'
+                                        pageHref='/pages/rewards'
+                                        buttonName='Rewards'
+                                        active={currentPage === 'Rewards'}
+                                    />
+                                    <QuickMenuButton
+                                        iconSrc='/images/wallet-image.png'
+                                        iconActiveSrc='/images/wallet-selected-image.png'
+                                        activeTextColor='#9FFF87'
+                                        pageHref='/pages/wallet'
+                                        buttonName='Wallet'
+                                        active={currentPage === 'Wallet'}
+                                    />
+                                    <QuickMenuButton
+                                        iconSrc='/images/profile-image.png'
+                                        iconActiveSrc='/images/profile-selected-image.png'
+                                        activeTextColor='#87C5FF'
+                                        pageHref='/pages/profile'
+                                        buttonName='Profile'
+                                        active={currentPage === 'Profile'}
+                                    />
+                                </>
+                            }
+                        </div>
+                    </div>
+                    <FullMenu isExpanded={isMenuOpen} />
+                </div>
+                <div className='fixed bg-gradient-to-t from-[#242037] via-[#1F1648]/9 via-78% to-[#D9D9D9]/0 w-full h-[39.16vw] bottom-0 z-0 pointer-events-none' />
+                <div className='h-[42.29vw] bottom-0 z-0 pointer-events-none' />
+            </div>
         </div >
 
     );
