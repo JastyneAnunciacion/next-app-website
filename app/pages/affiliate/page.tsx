@@ -49,7 +49,7 @@ const AffiliatePage = () => {
             </div>
 
             {/* Mobile Ver */}
-            <div className='flex flex-col items-center w-full px-[4.17vw] font-manrope overflow-x-hidden'>
+            <div className='lg:hidden flex flex-col items-center w-full px-[4.17vw] font-manrope overflow-x-hidden'>
                 <div className='flex items-center justify-between w-full h-[6.74vh] rounded-lg bg-[#241b42]'>
                     <p className='flex justify-center items-center w-full text-[#D187FF] text-[4.17vw] font-semibold'>Rewards</p>
                 </div>
