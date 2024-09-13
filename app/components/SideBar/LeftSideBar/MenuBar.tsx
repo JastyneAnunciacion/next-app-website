@@ -139,9 +139,9 @@ const MenuBar = ({ isMenuOpen, currentPage, onProfileClick, onMobileMenuClick }:
                                         iconSrc='/images/mobile-rewards-image.png'
                                         iconActiveSrc='/images/mobile-light-green-rewards-image.png'
                                         activeTextColor='#87FFD4'
-                                        pageHref='/pages/rewards'
+                                        pageHref='/pages/affiliate'
                                         buttonName='Rewards'
-                                        active={currentPage === 'Rewards'}
+                                        active={currentPage === 'Affiliate'}
                                     />
                                     <QuickMenuButton
                                         iconSrc='/images/mobile-wallet-image.png'
