@@ -24,6 +24,7 @@ const Header = ({ onMenuButtonClick, isMenuOpen, onClickChatButton, onClickNotif
 
   return (
     <>
+      {/* Web Version */}
       <header className='w-full fixed z-50 hidden lg:block'>
         <div className='bg-gradient-to-r from-[#070123] via-[#573A93] to-[#070123] w-full h-full pb-[1px] flex items-center justify-center rounded-lg text-white'>
 
@@ -79,6 +80,7 @@ const Header = ({ onMenuButtonClick, isMenuOpen, onClickChatButton, onClickNotif
         </div >
       </header >
 
+      {/* Mobile Version */}
       <header className='w-full h-full flex items-center lg:hidden'>
         <div className='borders px-[6.04vw] flex items-center w-full aspect-[441/74] justify-center gap-[2.08vw]'>
           <Link href="/" className='w-[9.17vw] aspect-square shrink-0'>
@@ -86,7 +88,6 @@ const Header = ({ onMenuButtonClick, isMenuOpen, onClickChatButton, onClickNotif
           </Link>
           <div className='w-[40.21vw] aspect-[193/49] shrink-0'>
             <WalletHeaderDropdown walletButtonOnClick={() => setShowWalletPopup(true)} />
-            {/* <WalletDropdown /> */}
           </div>
           <Link href='/pages/wallet' className='w-[10.21vw] aspect-square shrink-0 bg-[#241a46] rounded-xl flex items-center justify-center'>
             <ImageResponsive src='/images/plus-purple-image.png`' alt='Plus Icon' width='51.02%' />

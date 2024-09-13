@@ -1,3 +1,4 @@
+import BigBannerSlider from './components/Banners/BigBannerSlider'
 import GameBanner from './components/Banners/GameBanner'
 import ReferralBanner from './components/Banners/ReferralBanner'
 import FAQReferral from './components/FAQReferral'
@@ -38,20 +39,20 @@ export default function Home() {
 
       <div className="flex flex-col w-full items-center lg:hidden">
         <div className="w-full max-w-[91.88%] flex flex-col mb-[3.54vw] gap-[5.41vw]">
-          {/* <BigBannerSlider /> */}
+          <BigBannerSlider />
           <div className="w-full h-[10.41vw]">
-            {/* <Serachbar placeholderText='Search Games' /> */}
+            <Searchbar placeholderText='Search Games' />
           </div>
         </div>
 
         <div className="w-full flex flex-col gap-[6.25vw] justify-center">
-          {/* <QuickListGames gameListTitle="Top Games" gameList={walletList} />
-          <QuickListGames gameListTitle="New" gameList={walletList} />
-          <QuickListGames gameListTitle="Biggest Multiplier" gameList={walletList} />
-          <QuickListGames gameListTitle="Bonus Buy" gameList={walletList} />
-          <QuickListGames gameListTitle="Crypto Games" gameList={walletList} />
-          <QuickListGames gameListTitle="Table Games" gameList={walletList} />
-          <QuickListGames gameListTitle="Game Shows" gameList={walletList} /> */}
+          <QuickListGames gameListTitle="Top Games" gameList={walletList} headerImgSrc='' rows={1} />
+          <QuickListGames gameListTitle="New" gameList={walletList} headerImgSrc='' rows={1} />
+          <QuickListGames gameListTitle="Biggest Multiplier" gameList={walletList} headerImgSrc='' rows={1} />
+          <QuickListGames gameListTitle="Bonus Buy" gameList={walletList} headerImgSrc='' rows={1} />
+          <QuickListGames gameListTitle="Crypto Games" gameList={walletList} headerImgSrc='' rows={1} />
+          <QuickListGames gameListTitle="Table Games" gameList={walletList} headerImgSrc='' rows={1} />
+          <QuickListGames gameListTitle="Game Shows" gameList={walletList} headerImgSrc='' rows={1} />
         </div>
       </div>
     </MainComponents>
