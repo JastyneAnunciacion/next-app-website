@@ -11,11 +11,11 @@ import Image from 'next/image';
 import basePath from '../utilities/basepath';
 
 interface HeaderProps {
-  onMenuButtonClick: () => void;
+  onMenuButtonClick?: () => void;
   isMenuOpen: boolean;
-  onClickChatButton: () => void;
-  onClickNotificationButton: () => void;
-  onClickProfileButton: () => void;
+  onClickChatButton?: () => void;
+  onClickNotificationButton?: () => void;
+  onClickProfileButton?: () => void;
 }
 
 const Header = ({ onMenuButtonClick, isMenuOpen, onClickChatButton, onClickNotificationButton, onClickProfileButton }: HeaderProps) => {
@@ -56,13 +56,13 @@ const Header = ({ onMenuButtonClick, isMenuOpen, onClickChatButton, onClickNotif
                 <Searchbar />
               </div>
               <button
-                onClick={() => { setShowChat(false); onClickNotificationButton(); }}
+                onClick={() => { setShowChat(false); onClickNotificationButton?.(); }}
                 className={`${!showChat && 'pointer-events-none'} w-[2.77vw] aspect-square shrink-0 flex items-center justify-center rounded-2xl ${showChat ? 'bg-[#241A46] ' : 'bg-gradient-to-b from-[#BD73F9] to-[#9B34FD] shadow-glow shadow-[#bb6ffa86]'} `}
               >
                 <ImageResponsive src={`/images/${!showChat ? 'gradient-white-to-purple' : 'purple'}-notification-bell-image.png`} alt='Notification icon' width='35%' aspectWidth={13.85} aspectHeight={15} />
               </button>
               <button
-                onClick={() => { setShowChat(true); onClickChatButton(); }}
+                onClick={() => { setShowChat(true); onClickChatButton?.(); }}
                 className={`${showChat && 'pointer-events-none'} w-[2.77vw] aspect-square shrink-0 flex items-center justify-center rounded-2xl ${showChat ? 'bg-gradient-to-b from-[#BD73F9] to-[#9B34FD] shadow-glow shadow-[#bb6ffa86]' : 'bg-[#241A46]'} `}
               >
                 <ImageResponsive src={`/images/${showChat ? 'gradient-white-to-purple' : 'purple'}-chat-image.png`} alt='Chat icon' width='40%' aspectWidth={16} aspectHeight={14.86} />
@@ -70,7 +70,7 @@ const Header = ({ onMenuButtonClick, isMenuOpen, onClickChatButton, onClickNotif
               <div className='w-[12.15vw] aspect-[35/8]'>
                 <WalletHeaderDropdown walletButtonOnClick={() => setShowWalletPopup(true)} />
               </div>
-              <Profile profileOnClick={onClickProfileButton} />
+              <Profile profileOnClick={() => { onClickProfileButton?.() }} />
               <div className='w-[2.77vw] aspect-square shrink-0 flex items-center justify-center bg-[#241A46] rounded-xl border border-[#231744]'>
                 <ImageResponsive src='/images/globe-image.png' alt='Language icon' width='40%' />
               </div>

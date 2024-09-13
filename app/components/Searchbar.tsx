@@ -1,31 +1,49 @@
 import React from 'react'
 import Image from 'next/image'
 import basePath from '../utilities/basepath'
+import ImageResponsive from './ImageResponsive'
 
 interface SerachbarProps {
   placeholderText?: string
   bgColor?: string
   borderColor?: string
   hasborder?: boolean
+
+  gap?: string,
+  paddingX?: string,
+  searchIconWidth?: string,
 }
 
 const Searchbar = ({
   placeholderText = 'Search',
   bgColor = '#170A35',
   borderColor = '#231744',
-  hasborder = true
+  hasborder = true,
+
+  gap = '0.69vw',
+  paddingX = '1.04vw',
+  searchIconWidth = '1.04vw',
+
 }: SerachbarProps) => {
   return (
     <div
       style={{
         backgroundColor: bgColor,
-        borderColor: borderColor
+        borderColor: borderColor,
+        gap: gap,
+        paddingLeft: paddingX,
+        paddingRight: paddingX,
+
       }}
-      className={`w-full h-full flex items-center justify-center rounded-[5px] px-[1.04vw] gap-[0.69vw] ${hasborder && 'border'}`}>
-      <div className='shrink-0 w-[1.04vw] aspect-square'>
-        <Image src={`${basePath}/images/purple-search-image.png`} alt='Search Icon' layout='responsive' width={100} height={100} />
-      </div>
-      <input placeholder={placeholderText} className='w-full h-full bg-transparent text-white text-sm outline-none focus:ring-0' />
+      className={`w-full h-full flex items-center justify-center rounded-[10px] lg:rounded-[5px] ${hasborder && 'border'}`}>
+      <ImageResponsive
+        src='/images/purple-search-image.png'
+        alt='Search Icon'
+        width={searchIconWidth}
+      />
+      <input
+        placeholder={placeholderText}
+        className='w-full h-full bg-transparent text-white outline-none focus:ring-0' />
     </div>
   )
 }

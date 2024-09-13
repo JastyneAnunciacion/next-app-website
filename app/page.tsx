@@ -12,6 +12,7 @@ import walletList from "./components/wallet-list.json"
 export default function Home() {
   return (
     <MainComponents currentPage='Home'>
+      {/* Web View */}
       <div className='w-full hidden lg:flex flex-col gap-[2.08vw]'>
         <div className='w-full flex flex-col items-center justify-center'>
           <div className='w-full h-[2.78vw] mb-[1.04vw] text-[0.83vw]'>
@@ -37,11 +38,17 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Mobile View */}
       <div className="flex flex-col w-full items-center lg:hidden">
         <div className="w-full max-w-[91.88%] flex flex-col mb-[3.54vw] gap-[5.41vw]">
           <BigBannerSlider />
-          <div className="w-full h-[10.41vw]">
-            <Searchbar placeholderText='Search Games' />
+          <div className="w-full h-[10.41vw] text-[4.16vw] text-manrope">
+            <Searchbar
+              placeholderText='Search Games'
+              gap='2.70vw'
+              paddingX='4.17vw'
+              searchIconWidth='5.20vw'
+            />
           </div>
         </div>
 
