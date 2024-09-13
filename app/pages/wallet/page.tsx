@@ -133,7 +133,7 @@ const WalletPage = () => {
                     <div className={`${option === 2 && 'bg-gradient-to-r from-[#607073] via-[#A9C7CB] to-[#546265] p-[0.21vw] rounded-lg'} w-[29.17vw] h-full`}>
                         <button onClick={() => changeOption(2)}
                             className={`${option === 2 ? 'bg-gradient-to-r from-[#8CCEF4] to-[#4C8293] rounded-lg text-white' : 'rounded-lg text-[#D187FF]'} h-full w-full flex justify-center items-center gap-[1.84vw]`}>
-                            <ImageResponsive src={`/images/${option === 2 ? 'BTC-fancy-outline-icon.png' : 'BTC-fancy-outline-purple-icon.png'}`} alt='Deposit Icon' width='3.28vw' aspectWidth={15.75} aspectHeight={21} />
+                            <ImageResponsive src={`/images/tokens/${option === 2 ? 'BTC-fancy-outline-icon.png' : 'BTC-fancy-outline-purple-icon.png'}`} alt='Deposit Icon' width='3.28vw' aspectWidth={15.75} aspectHeight={21} />
                             <p>Buy Crypto</p>
                         </button>
                     </div>

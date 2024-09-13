@@ -68,7 +68,7 @@ const QuickListGames = ({ headerImgSrc, gameListTitle, gameList, rows = 4 }: Qui
         headerIconPath={headerImgSrc}
         title={gameListTitle}
         gapAmount={gapX}
-        viewAllLink='/games'
+        viewAllLink=''
         widthScroll={fullWidth}
       >
         <div ref={fullWidthRefDiv} className='w-full'>
@@ -95,7 +95,7 @@ const QuickListGames = ({ headerImgSrc, gameListTitle, gameList, rows = 4 }: Qui
           headerIconPath=""
           title={gameListTitle}
           gapAmount='3.12vw'
-          viewAllLink='/games'
+          viewAllLink=''
         >
           {gameList.map((item, i) => {
             const imageIndex = Math.floor(Math.random() * 7) + 1;
