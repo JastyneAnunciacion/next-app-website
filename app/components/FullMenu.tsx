@@ -35,7 +35,7 @@ const FullMenu = ({ isExpanded }: FullMenuProps) => {
                     </ListContainterWithTitleHeader>
                     <ListContainterWithTitleHeader title='More' gap='6.25vw'>
                         <ListItem imgSrc={`${basePath}/images/mobile-light-green-rewards-image.png`} linkHref='/pages/affiliate' itemName='Rewards' textHexColor='#87FFD4' />
-                        <ListItem imgSrc={`${basePath}/images/promotion-selected-image.png`} linkHref='/pages/promotions' itemName='Promotions' textHexColor='#878CFF' />
+                        <ListItem imgSrc={`${basePath}/images/promotion-selected-image.png`} linkHref='' itemName='Promotions' textHexColor='#878CFF' />
                     </ListContainterWithTitleHeader>
                     <ListContainterWithTitleHeader title='User' hasBorderBottom={false} gap='6.25vw'>
                         <ListItem imgSrc={`${basePath}/images/mobile-blue-profile-image.png`} linkHref='/pages/profile' itemName='Profile' textHexColor='#87C5FF' />
