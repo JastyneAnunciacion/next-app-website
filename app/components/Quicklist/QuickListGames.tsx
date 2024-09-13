@@ -91,13 +91,14 @@ const QuickListGames = ({ headerImgSrc, gameListTitle, gameList, rows = 4 }: Qui
       </div>
 
       {/* Mobile Version */}
-      {/* <div className='lg:hidden'>
+      <div className='lg:hidden'>
         <QuickList
           headerIconPath=""
           title={gameListTitle}
           gapAmount='3.12vw'
           viewAllLink='/games'
-          children={gameList.map((item, i) => {
+        >
+          {gameList.map((item, i) => {
             const imageIndex = Math.floor(Math.random() * 7) + 1;
             return (
               <button key={i} className={`bg-gray-600 w-[41.25vw] aspect-[198/251] shrink-0 rounded-xl`}>
@@ -112,8 +113,8 @@ const QuickListGames = ({ headerImgSrc, gameListTitle, gameList, rows = 4 }: Qui
               </button>
             );
           })}
-        />
-      </div> */}
+        </QuickList>
+      </div>
     </>
   );
 }
