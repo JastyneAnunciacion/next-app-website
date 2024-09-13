@@ -1,10 +1,30 @@
+'use client'
+
 import ImageResponsive from '@/app/components/ImageResponsive'
 import LeaderboardOverview from '@/app/components/Leaderboard/LeaderboardOverview'
 import LeaderboardRanks from '@/app/components/Leaderboard/LeaderboardRanks'
 import MainComponents from '@/app/components/MainComponents'
-import React from 'react'
+import { useRouter } from 'next/navigation'
+import React, { useEffect } from 'react'
 
 const LeaderboardPage = () => {
+    const router = useRouter();
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const handleResize = () => {
+                if (window.innerWidth < 1024) {
+                    router.push('/');
+                }
+            };
+
+            window.addEventListener('resize', handleResize);
+            handleResize();
+
+            return () => window.removeEventListener('resize', handleResize);
+        }
+    }, [router]);
+
     return (
         <MainComponents currentPage='Leaderboard'>
             <div className='text-white font-montserrat font-medium'>

@@ -63,7 +63,8 @@ const MenuBar = ({ isMenuOpen, currentPage, onProfileClick, onMobileMenuClick }:
                         notSelectedImgSrc='/images/gradient-purple-stacked-image.png'
                         SelectedImgSrc='/images/gradient-white-to-purple-stacked-image.png'
                         itemName='Staking'
-                        pageHref='/pages/staking'
+                        // pageHref='/pages/staking'
+                        pageHref=''
                         isSelected={currentPage == 'Staking'}
                     />
                 </ul>

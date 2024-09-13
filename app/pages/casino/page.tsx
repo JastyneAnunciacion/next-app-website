@@ -1,4 +1,6 @@
-import React from 'react'
+'use client'
+
+import React, { useEffect } from 'react'
 import Searchbar from '@/app/components/Searchbar'
 import QuickListGames from '@/app/components/Quicklist/QuickListGames'
 import RealTimeBetWinners from '@/app/components/RealTimeBetWinners/RealTimeBetWinners'
@@ -7,9 +9,27 @@ import GameBanner from '@/app/components/Banners/GameBanner'
 import ReferralBanner from '@/app/components/Banners/ReferralBanner'
 import walletList from "../../components/wallet-list.json"
 import SorterButton from '@/app/components/SorterButton'
+import { useRouter } from 'next/navigation'
 
 
 const CasinoPage = () => {
+    const router = useRouter();
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const handleResize = () => {
+                if (window.innerWidth < 1024) {
+                    router.push('/');
+                }
+            };
+
+            window.addEventListener('resize', handleResize);
+            handleResize();
+
+            return () => window.removeEventListener('resize', handleResize);
+        }
+    }, [router]);
+
     return (
         <MainComponents currentPage='Casino'>
             <div className='w-full flex flex-col gap-[2.08vw]'>

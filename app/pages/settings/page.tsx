@@ -1,10 +1,29 @@
-import React from 'react'
+'use client'
+
+import React, { useEffect } from 'react'
 import MainComponents from '@/app/components/MainComponents'
 import ImageResponsive from '@/app/components/ImageResponsive';
 import SelectionButtonsWithIcons from '@/app/components/SelectionButtonsWithIcons';
+import { useRouter } from 'next/navigation';
 
 
 const SettingsPage = () => {
+    const router = useRouter();
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const handleResize = () => {
+                if (window.innerWidth < 1024) {
+                    router.push('/');
+                }
+            };
+
+            window.addEventListener('resize', handleResize);
+            handleResize();
+
+            return () => window.removeEventListener('resize', handleResize);
+        }
+    }, [router]);
     return (
         <MainComponents>
             <div className='text-white font-montserrat font-medium text-[0.83vw]'>
