@@ -91,7 +91,7 @@ const QuickListGames = ({ headerImgSrc, gameListTitle, gameList, rows = 4 }: Qui
       </div>
 
       {/* Mobile Version */}
-      <div>
+      {/* <div className='lg:hidden'>
         <QuickList
           headerIconPath=""
           title={gameListTitle}
@@ -113,7 +113,7 @@ const QuickListGames = ({ headerImgSrc, gameListTitle, gameList, rows = 4 }: Qui
             );
           })}
         />
-      </div>
+      </div> */}
     </>
   );
 }
