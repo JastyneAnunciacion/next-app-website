@@ -27,7 +27,7 @@ export default function Home() {
         </div>
         <QuickListSports highlightedSportsList={walletList} />
         <QuickListGames
-          headerImgSrc='/images/gradient-purple-cards-image.png'
+          headerImgSrc='/images/popular-games-image.png'
           gameListTitle='Popular Games'
           gameList={walletList}
           rows={2}
@@ -53,13 +53,13 @@ export default function Home() {
         </div>
 
         <div className="w-full flex flex-col gap-[6.25vw] justify-center">
-          <QuickListGames gameListTitle="Top Games" gameList={walletList} headerImgSrc='' rows={1} />
-          <QuickListGames gameListTitle="New" gameList={walletList} headerImgSrc='' rows={1} />
-          <QuickListGames gameListTitle="Biggest Multiplier" gameList={walletList} headerImgSrc='' rows={1} />
-          <QuickListGames gameListTitle="Bonus Buy" gameList={walletList} headerImgSrc='' rows={1} />
-          <QuickListGames gameListTitle="Crypto Games" gameList={walletList} headerImgSrc='' rows={1} />
-          <QuickListGames gameListTitle="Table Games" gameList={walletList} headerImgSrc='' rows={1} />
-          <QuickListGames gameListTitle="Game Shows" gameList={walletList} headerImgSrc='' rows={1} />
+          <QuickListGames gameListTitle="Top Games" gameList={walletList} headerImgSrc='/images/popular-games-image.png' rows={1} />
+          <QuickListGames gameListTitle="New" gameList={walletList} headerImgSrc='/images/popular-games-image.png' rows={1} />
+          <QuickListGames gameListTitle="Biggest Multiplier" gameList={walletList} headerImgSrc='/images/popular-games-image.png' rows={1} />
+          <QuickListGames gameListTitle="Bonus Buy" gameList={walletList} headerImgSrc='/images/popular-games-image.png' rows={1} />
+          <QuickListGames gameListTitle="Crypto Games" gameList={walletList} headerImgSrc='/images/popular-games-image.png' rows={1} />
+          <QuickListGames gameListTitle="Table Games" gameList={walletList} headerImgSrc='/images/popular-games-image.png' rows={1} />
+          <QuickListGames gameListTitle="Game Shows" gameList={walletList} headerImgSrc='/images/popular-games-image.png' rows={1} />
         </div>
       </div>
     </MainComponents>

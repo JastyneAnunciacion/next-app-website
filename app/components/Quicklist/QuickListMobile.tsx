@@ -85,7 +85,7 @@ const QuickListMobile = ({ headerIconPath: headerImagePath, title, children, gap
 
                 <div className='flex items-center gap-[2.71vw] w-full'>
                     {viewAllLink && (
-                        <div className=' ml-auto'>
+                        <div className='ml-auto'>
                             <Link href={viewAllLink} className='w-[19.17vw] aspect-[92/41] border border-[#332a61] text-[2.91vw] rounded-md flex items-center justify-center'>
                                 View All
                             </Link>
