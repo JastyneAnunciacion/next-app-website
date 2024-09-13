@@ -155,7 +155,7 @@ const MenuBar = ({ isMenuOpen, currentPage, onProfileClick, onMobileMenuClick }:
                                         iconSrc='/images/mobile-profile-image.png'
                                         iconActiveSrc='/images/mobile-blue-profile-image.png'
                                         activeTextColor='#87C5FF'
-                                        pageHref=''
+                                        pageHref='/pages/profile'
                                         buttonName='Profile'
                                         active={currentPage === 'Profile'}
                                     />

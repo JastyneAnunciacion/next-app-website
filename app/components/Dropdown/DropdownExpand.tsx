@@ -42,7 +42,7 @@ const DropdownExpand = ({
     return (
         <div
             className={`w-full transition-all duration-500 overflow-hidden font-medium
-            ${isMobile ? 'text-[3.33vw] text-[#D187FF]  font-manrope' : 'text-[1.25vw] font-montserrat'} 
+            ${isMobile ? 'text-[3.33vw] text-[#D187FF]  font-manrope' : 'text-[1.25vw] text-white font-montserrat'} 
             ${position === 'Top' && 'rounded-t-lg'} ${position === 'Bottom' && 'rounded-b-lg'}`}
         >
 
