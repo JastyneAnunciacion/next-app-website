@@ -140,10 +140,11 @@ const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => 
                 </div>
 
                 {/* Mobile Version */}
-                <div className={`lg:hidden flex flex-col max-w-full h-screen w-screen ${isMenuBarOpen && 'overflow-hidden'}`}>
+                <div className={`lg:hidden flex flex-col max-w-full ${isMenuBarOpen && 'overflow-hidden'}`}>
                     <div className='w-full flex flex-col items-center self-center'>
                         {children}
                     </div>
+                    <div className='h-[42.29vw] bottom-0 z-0 pointer-events-none' />
                 </div>
             </div>
             <ProfilePopup show={isProfilePopUpOpen} onClose={() => setProfilePopUpOpen(false)} />

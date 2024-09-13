@@ -6,9 +6,10 @@ interface CopyTextTemplate {
   textToCopy: string,
   textWidth?: string,
   hasLinkImage?: boolean
+  copyIconWidth?: string
 }
 
-const CopyTextTemplate = ({ textToCopy, textWidth, hasLinkImage = false }: CopyTextTemplate) => {
+const CopyTextTemplate = ({ textToCopy, textWidth, hasLinkImage = false, copyIconWidth = '27.5%' }: CopyTextTemplate) => {
   return (
     <>
       <div
@@ -16,8 +17,8 @@ const CopyTextTemplate = ({ textToCopy, textWidth, hasLinkImage = false }: CopyT
         className={`text-ellipsis flex-shrink overflow-hidden whitespace-nowrap`}>
         {textToCopy}
       </div>
-      <div className='w-[12.99%] aspect-square'>
-        <CopyButton textToCopy={textToCopy} />
+      <div className='w-[12.99%] aspect-square shrink-0'>
+        <CopyButton textToCopy={textToCopy} iconWidth={copyIconWidth} />
       </div>
     </>
   )

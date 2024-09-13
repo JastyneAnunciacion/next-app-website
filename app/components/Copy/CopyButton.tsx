@@ -6,9 +6,10 @@ import ImageResponsive from '../ImageResponsive'
 
 interface CopyButtonProps {
     textToCopy: string
+    iconWidth?: string
 }
 
-const CopyButton = ({ textToCopy }: CopyButtonProps) => {
+const CopyButton = ({ textToCopy, iconWidth = '27.5%' }: CopyButtonProps) => {
     const [copied, setCopied] = useState(false);
 
     const copyToClipboard = () => {
@@ -18,8 +19,8 @@ const CopyButton = ({ textToCopy }: CopyButtonProps) => {
     };
 
     return (
-        <button onClick={copyToClipboard} className='w-full h-full bg-[#352C58] flex items-center justify-center rounded- shrink-0 rounded-lg'>
-            <ImageResponsive src='/images/purple-copy-image.png' alt='Copy Icon' width='27.5%' aspectWidth={11} aspectHeight={15} />
+        <button onClick={copyToClipboard} className='w-full h-full bg-[#352C58] flex items-center justify-center rounded-[10px] lg:rounded-[5px] shrink-0'>
+            <ImageResponsive src='/images/purple-copy-image.png' alt='Copy Icon' width={iconWidth} aspectWidth={11} aspectHeight={15} />
         </button>
     )
 }
