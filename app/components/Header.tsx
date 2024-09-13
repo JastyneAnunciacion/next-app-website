@@ -90,10 +90,10 @@ const Header = ({ onMenuButtonClick, isMenuOpen, onClickChatButton, onClickNotif
             <WalletHeaderDropdown walletButtonOnClick={() => setShowWalletPopup(true)} />
           </div>
           <Link href='/pages/wallet' className='w-[10.21vw] aspect-square shrink-0 bg-[#241a46] rounded-xl flex items-center justify-center'>
-            <ImageResponsive src='/images/plus-purple-image.png`' alt='Plus Icon' width='51.02%' />
+            <ImageResponsive src='/images/plus-purple-image.png' alt='Plus Icon' width='51.02%' />
           </Link>
           <div className='w-[10.21vw] aspect-square shrink-0 bg-[#241a46] rounded-xl flex items-center justify-center'>
-            <ImageResponsive src='/images/purple-question-image.png`' alt='Question Icon' width='51.02%' />
+            <ImageResponsive src='/images/purple-question-image.png' alt='Question Icon' width='51.02%' />
           </div>
           <Link href="/pages/profile" className='w-[10.21vw] aspect-square flex items-center shrink-0'>
             <ImageResponsive src='/images/temporary-profile-small-image.png' alt="Player" width='100%' />

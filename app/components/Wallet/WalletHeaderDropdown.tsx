@@ -117,7 +117,7 @@ const WalletHeaderDropdown = ({ walletButtonOnClick, paddingMobileLeft = '2.92vw
           <div
             style={{ right: paddingMobileRight }}
             className='absolute right-0 shrink-0 ml-auto w-[15.54%] bg-gradient-to-b from-[#9C6EF7] to-[#7727F7] aspect-square rounded-lg items-center justify-center flex'>
-            <ImageResponsive src={`${basePath}/images/${isOpen ? 'up' : 'down'}-thin-arrow-image.png`} alt='Wallet Mobile Dropdown Arrow' width='33.33%' aspectWidth={10} aspectHeight={13} />
+            <ImageResponsive src={`/images/${isOpen ? 'up' : 'down'}-thin-arrow-image.png`} alt='Wallet Mobile Dropdown Arrow' width='33.33%' aspectWidth={10} aspectHeight={13} />
           </div>
         </button>
         {isOpen && dropdownTopMobile !== null && (
@@ -139,11 +139,25 @@ const WalletHeaderDropdown = ({ walletButtonOnClick, paddingMobileLeft = '2.92vw
             </div>
 
             <div className='py-[6.67vw] px-[5.63vw] text-[3.33vw] h-[29.38vw] gap-[6.88vw] flex flex-col justify-center'>
-              <div className='flex justify-between'>
-                <Toggle toggleText='Hide 0 balances' toggleWidth='' />
+              <div className='w-full'>
+                <Toggle toggleText='Hide 0 balances'
+                  toggleWidth='12.36%'
+                  aspectWidth={46}
+                  aspectHeight={25}
+                  placeTextLeft={true}
+                  justifyBetween={true}
+                  bgColor='#333946'
+                />
               </div>
-              <div className='flex justify-between'>
-                <Toggle toggleText='Display in USD' toggleWidth='' />
+              <div className='w-full'>
+                <Toggle
+                  toggleText='Display in USD'
+                  toggleWidth='12.36%' aspectWidth={46}
+                  aspectHeight={25}
+                  placeTextLeft={true}
+                  justifyBetween={true}
+                  bgColor='#333946'
+                />
               </div>
             </div>
           </div>

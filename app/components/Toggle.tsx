@@ -6,6 +6,8 @@ interface ToggleProps {
     toggleWidth: string;
     aspectWidth?: number;
     aspectHeight?: number;
+    justifyBetween?: boolean,
+    bgColor?: string,
 }
 
 const Toggle = ({
@@ -13,10 +15,12 @@ const Toggle = ({
     placeTextLeft = false,
     toggleWidth,
     aspectWidth = 1,
-    aspectHeight = 1
+    aspectHeight = 1,
+    justifyBetween = false,
+    bgColor = '#372B5B'
 }: ToggleProps) => {
     return (
-        <label className="inline-flex items-center h-full w-full cursor-pointer">
+        <label className={`${justifyBetween && 'justify-between'} inline-flex items-center h-full w-full cursor-pointer`}>
             {toggleText && placeTextLeft && (
                 <span className={`me-3`}>
                     {toggleText}
@@ -27,8 +31,9 @@ const Toggle = ({
                 style={{
                     width: toggleWidth,
                     aspectRatio: `${aspectWidth}/${aspectHeight}`,
+                    backgroundColor: bgColor
                 }}
-                className={`relative rounded-full peer bg-[#372B5B] peer-checked:bg-[#B767FA] flex items-center
+                className={`relative rounded-full peer peer-checked:bg-[#B767FA] flex items-center
                     after:h-[71.43%] after:aspect-square after:bg-[#6E6E6E] after:rounded-full after:translate-x-[20%] peer-checked:after:translate-x-[180%] after:transition-all after:duration-300 after:ease-in-out peer-checked:after:bg-white`}
             />
             {

@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import QuickList from './QuickList'
 import basePath from '@/app/utilities/basepath';
 import Image from 'next/image';
+import QuickListMobile from './QuickListMobile';
 
 interface QuickListGamesProps {
   headerImgSrc: string;
@@ -63,36 +64,34 @@ const QuickListGames = ({ headerImgSrc, gameListTitle, gameList, rows = 4 }: Qui
   return (
     <>
       {/* Web Version */}
-      <div className='hidden lg:block'>
-        <QuickList
-          headerIconPath={headerImgSrc}
-          title={gameListTitle}
-          gapAmount='1.38%'
-          viewAllLink='/games'
-          widthScroll={fullWidth}
-        >
-          <div ref={fullWidthRefDiv} className='w-full'>
-            <div
-              style={{ gap: gapY }}
-              className='w-full flex flex-col'
-            >
-              {Array.from({ length: rows }).map((_, rowIndex) => (
-                <div
-                  key={rowIndex}
-                  style={{ gap: gapX }}
-                  className='w-[15.55%] flex shrink-0'
-                >
-                  {renderGameIcons(rowIndex)}
-                </div>
-              ))}
-            </div>
+      <QuickList
+        headerIconPath={headerImgSrc}
+        title={gameListTitle}
+        gapAmount={gapX}
+        viewAllLink='/games'
+        widthScroll={fullWidth}
+      >
+        <div ref={fullWidthRefDiv} className='w-full'>
+          <div
+            style={{ gap: gapY }}
+            className='w-full flex flex-col'
+          >
+            {Array.from({ length: rows }).map((_, rowIndex) => (
+              <div
+                key={rowIndex}
+                style={{ gap: gapX }}
+                className='w-[15.55%] flex shrink-0'
+              >
+                {renderGameIcons(rowIndex)}
+              </div>
+            ))}
           </div>
-        </QuickList>
-      </div>
+        </div>
+      </QuickList>
 
       {/* Mobile Version */}
       <div className='lg:hidden'>
-        <QuickList
+        <QuickListMobile
           headerIconPath=""
           title={gameListTitle}
           gapAmount='3.12vw'
@@ -113,7 +112,7 @@ const QuickListGames = ({ headerImgSrc, gameListTitle, gameList, rows = 4 }: Qui
               </button>
             );
           })}
-        </QuickList>
+        </QuickListMobile>
       </div>
     </>
   );

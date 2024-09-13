@@ -110,7 +110,7 @@ const MenuBar = ({ isMenuOpen, currentPage, onProfileClick, onMobileMenuClick }:
                                     :
                                     <div className='flex flex-col gap-[0.83vw] items-center'>
                                         <div className='w-[4.58vw] aspect-square'>
-                                            <ImageResponsive src='/images/menu-image.png' alt='Footer Button Image' width='100%' />
+                                            <ImageResponsive src='/images/mobile-menu-image.png' alt='Footer Button Image' width='100%' />
                                         </div>
                                         <p>Menu</p>
                                     </div>
@@ -120,40 +120,40 @@ const MenuBar = ({ isMenuOpen, currentPage, onProfileClick, onMobileMenuClick }:
                             {!isMenuOpen &&
                                 <>
                                     <QuickMenuButton
-                                        iconSrc='/images/games-image.png'
-                                        iconActiveSrc='/images/games-selected-image.png'
+                                        iconSrc='/images/mobile-games-image.png'
+                                        iconActiveSrc='/images/mobile-pink-games-image.png'
                                         activeTextColor='#D187FF'
                                         pageHref='/'
                                         buttonName='Games'
-                                        active={currentPage === 'Games'}
+                                        active={currentPage === 'Home'}
                                     />
                                     <QuickMenuButton
-                                        iconSrc='/images/sports-image.png'
-                                        iconActiveSrc='/images/sports-selected-image.png'
+                                        iconSrc='/images/mobile-sports-image.png'
+                                        iconActiveSrc='/images/mobile-yellow-sports-image.png'
                                         activeTextColor='#FFF387'
                                         pageHref='/pages/sports'
                                         buttonName='Sports'
                                         active={currentPage === 'Sports'}
                                     />
                                     <QuickMenuButton
-                                        iconSrc='/images/rewards-image.png'
-                                        iconActiveSrc='/images/rewards-selected-image.png'
+                                        iconSrc='/images/mobile-rewards-image.png'
+                                        iconActiveSrc='/images/mobile-light-green-rewards-image.png'
                                         activeTextColor='#87FFD4'
                                         pageHref='/pages/rewards'
                                         buttonName='Rewards'
                                         active={currentPage === 'Rewards'}
                                     />
                                     <QuickMenuButton
-                                        iconSrc='/images/wallet-image.png'
-                                        iconActiveSrc='/images/wallet-selected-image.png'
+                                        iconSrc='/images/mobile-wallet-image.png'
+                                        iconActiveSrc='/images/mobile-green-wallet-image.png'
                                         activeTextColor='#9FFF87'
                                         pageHref='/pages/wallet'
                                         buttonName='Wallet'
                                         active={currentPage === 'Wallet'}
                                     />
                                     <QuickMenuButton
-                                        iconSrc='/images/profile-image.png'
-                                        iconActiveSrc='/images/profile-selected-image.png'
+                                        iconSrc='/images/mobile-profile-image.png'
+                                        iconActiveSrc='/images/mobile-blue-profile-image.png'
                                         activeTextColor='#87C5FF'
                                         pageHref='/pages/profile'
                                         buttonName='Profile'
