@@ -109,7 +109,6 @@ const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => 
         <main className='h-full w-full overflow-x-hidden'>
             <MenuBar
                 isMenuOpen={isMenuBarOpen}
-                currentPage={currentPage}
                 onProfileClick={() => setProfilePopUpOpen(true)}
                 onMobileMenuClick={toggleMenuBar}
             />
