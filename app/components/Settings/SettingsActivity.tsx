@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import SelectionDropdown from '../Dropdown/SelectionDropdown'
 import FilterToggleOptions from '../Filters/FilterToggleOptions'
-import walletList from '../wallet-list.json'
+import walletList from '../temporaryJsons/wallet-list.json'
 
 const SettingsActivity = () => {
     const activitySelections = [
