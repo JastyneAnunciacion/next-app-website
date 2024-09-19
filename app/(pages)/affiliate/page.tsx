@@ -7,13 +7,12 @@ import ReferralStatistics from '@/app/components/Affiliate/MobileAffiliate/Refer
 import YourReferrals from '@/app/components/Affiliate/YourReferrals'
 import FAQReferral from '@/app/components/FAQReferral'
 import ImageResponsive from '@/app/components/ImageResponsive'
-import MainComponents from '@/app/components/MainComponents'
 import SorterButton from '@/app/components/SorterButton'
 import React from 'react'
 
 const AffiliatePage = () => {
     return (
-        <MainComponents currentPage='Affiliate'>
+        <>
             {/* Web Version */}
             <div className='text-white w-full lg:flex flex-col font-montserrat font-medium hidden'>
                 <div className='flex items-center gap-[0.47%] mb-[1.86%]'>
@@ -75,7 +74,7 @@ const AffiliatePage = () => {
                     <FAQReferral isMobile={true} />
                 </div>
             </div>
-        </MainComponents>
+        </>
     )
 }
 

@@ -4,10 +4,9 @@ import React, { useEffect } from 'react'
 import Searchbar from '@/app/components/Searchbar'
 import QuickListGames from '@/app/components/Quicklist/QuickListGames'
 import RealTimeBetWinners from '@/app/components/RealTimeBetWinners/RealTimeBetWinners'
-import MainComponents from '@/app/components/MainComponents'
 import GameBanner from '@/app/components/Banners/GameBanner'
 import ReferralBanner from '@/app/components/Banners/ReferralBanner'
-import walletList from "../../components/wallet-list.json"
+import walletList from "../../components/temporaryJsons/wallet-list.json"
 import SorterButton from '@/app/components/SorterButton'
 import { useRouter } from 'next/navigation'
 
@@ -31,7 +30,7 @@ const CasinoPage = () => {
     }, [router]);
 
     return (
-        <MainComponents currentPage='Casino'>
+        <>
             <div className='w-full flex flex-col gap-[2.08vw]'>
                 <div className='w-full flex flex-col items-center justify-center'>
                     <div className='w-full flex gap-[1.40%] items-center justify-center mb-[1.04vw]'>
@@ -74,7 +73,7 @@ const CasinoPage = () => {
                 </div>
                 <RealTimeBetWinners />
             </div>
-        </MainComponents>
+        </>
     )
 }
 

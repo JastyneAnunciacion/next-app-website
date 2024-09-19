@@ -7,8 +7,6 @@ import Searchbar from './Searchbar';
 import WalletPopup from './Wallet/WalletPopup';
 import ImageResponsive from './ImageResponsive';
 import Link from 'next/link';
-import Image from 'next/image';
-import basePath from '../utilities/basepath';
 
 interface HeaderProps {
   onMenuButtonClick?: () => void;

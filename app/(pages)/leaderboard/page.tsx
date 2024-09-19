@@ -3,7 +3,6 @@
 import ImageResponsive from '@/app/components/ImageResponsive'
 import LeaderboardOverview from '@/app/components/Leaderboard/LeaderboardOverview'
 import LeaderboardRanks from '@/app/components/Leaderboard/LeaderboardRanks'
-import MainComponents from '@/app/components/MainComponents'
 import { useRouter } from 'next/navigation'
 import React, { useEffect } from 'react'
 
@@ -26,7 +25,7 @@ const LeaderboardPage = () => {
     }, [router]);
 
     return (
-        <MainComponents currentPage='Leaderboard'>
+        <>
             <div className='text-white font-montserrat font-medium'>
                 <div className='w-full flex flex-col'>
                     <div className='flex items-center gap-[0.47%] mb-[1.86%]'>
@@ -43,7 +42,7 @@ const LeaderboardPage = () => {
                     <LeaderboardRanks />
                 </div>
             </div>
-        </MainComponents>
+        </>
     )
 }
 

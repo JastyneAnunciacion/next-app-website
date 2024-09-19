@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react'
 import Image from 'next/image'
 import { useState } from 'react'
-import languages from '@/app/components/language-list.json'
+import languages from '@/app/components/temporaryJsons/language-list.json'
 import basePath from '../../utilities/basepath'
 import MainComponents from '../../components/MainComponents'
 import Link from 'next/link'
@@ -46,7 +46,7 @@ const ProfilePage = () => {
   }, [router]);
 
   return (
-    <MainComponents currentPage='Profile'>
+    <>
       <div className='absolute w-full aspect-[561.36/295.08] flex-shrink-0 top-[26.81vw] z-0'>
         <Image className='z-0' src={`${basePath}/images/profile-page-bg-design.png`} alt='Large Profile BG ' layout='responsive' width={100} height={100} />
       </div>
@@ -76,7 +76,7 @@ const ProfilePage = () => {
           <TransactionHistoryTable />
         </div>
       </div>
-    </MainComponents>
+    </>
   )
 }
 

@@ -1,7 +1,10 @@
+'use client'
+
 import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
 import basePath from '../../../utilities/basepath';
+import { usePathname } from 'next/navigation';
 
 interface QuickMenuButtonProps {
   buttonName: string;
@@ -9,19 +12,18 @@ interface QuickMenuButtonProps {
   iconActiveSrc: string;
   activeTextColor: string;
   pageHref: string;
-  active: boolean;
 }
 
-const QuickMenuButton = ({ buttonName, iconSrc, iconActiveSrc, activeTextColor, pageHref, active }: QuickMenuButtonProps) => {
-  const iconStatus = active ? iconActiveSrc : iconSrc;
-  const textColor = active ? activeTextColor : '#00000'
+const QuickMenuButton = ({ buttonName, iconSrc, iconActiveSrc, activeTextColor, pageHref }: QuickMenuButtonProps) => {
+  const pathName = usePathname();
+  const isActive = pageHref === pathName;
   return (
     <div>
-      <Link href={pageHref} className={`${active && 'pointer-events-none'} flex flex-col gap-[0.83vw] items-center`}>
+      <Link href={pageHref} className={`${isActive && 'pointer-events-none'} flex flex-col gap-[0.83vw] items-center`}>
         <div className='w-[4.58vw] aspect-square'>
-          <Image src={basePath + iconStatus} alt='Footer Button Image' layout='responsive' width={100} height={100} />
+          <Image src={basePath + `${isActive ? iconActiveSrc : iconSrc}`} alt='Footer Button Image' layout='responsive' width={100} height={100} />
         </div>
-        <div style={{ color: textColor }}>
+        <div style={{ color: isActive ? activeTextColor : 'white' }}>
           {buttonName}
         </div>
       </Link >

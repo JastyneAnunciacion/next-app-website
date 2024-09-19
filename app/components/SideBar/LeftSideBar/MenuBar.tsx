@@ -7,12 +7,11 @@ import MenuBarListItem from './MenuBarListItem'
 
 interface MenuBarProps {
     isMenuOpen: boolean,
-    currentPage: string,
     onProfileClick: () => void
     onMobileMenuClick: () => void
 }
 
-const MenuBar = ({ isMenuOpen, currentPage, onProfileClick, onMobileMenuClick }: MenuBarProps) => {
+const MenuBar = ({ isMenuOpen, onProfileClick, onMobileMenuClick }: MenuBarProps) => {
     return (
         <div>
             {/* Web Version */}
@@ -24,15 +23,13 @@ const MenuBar = ({ isMenuOpen, currentPage, onProfileClick, onMobileMenuClick }:
                         SelectedImgSrc='/images/gradient-white-to-purple-home-image.png'
                         itemName='Home'
                         pageHref='/'
-                        isSelected={currentPage === 'Home'}
                     />
                     <MenuBarListItem
                         isSideBarOpen={isMenuOpen}
                         notSelectedImgSrc='/images/gradient-purple-cards-image.png'
                         SelectedImgSrc='/images/gradient-white-to-purple-cards-image.png'
                         itemName='Casino'
-                        pageHref='/pages/casino'
-                        isSelected={currentPage === 'Casino'}
+                        pageHref='/casino'
                     />
                     <MenuBarListItem
                         isSideBarOpen={isMenuOpen}
@@ -40,32 +37,28 @@ const MenuBar = ({ isMenuOpen, currentPage, onProfileClick, onMobileMenuClick }:
                         SelectedImgSrc='/images/gradient-white-to-purple-sports-image.png'
                         itemName='Sports'
                         pageHref=''
-                        isSelected={false}
                     />
                     <MenuBarListItem
                         isSideBarOpen={isMenuOpen}
                         notSelectedImgSrc='/images/gradient-purple-medal-image.png'
                         SelectedImgSrc='/images/gradient-white-to-purple-medal-image.png'
                         itemName='Affiliate'
-                        pageHref='/pages/affiliate'
-                        isSelected={currentPage == 'Affiliate'}
+                        pageHref='/affiliate'
                     />
                     <MenuBarListItem
                         isSideBarOpen={isMenuOpen}
                         notSelectedImgSrc='/images/gradient-purple-trophy-image.png'
                         SelectedImgSrc='/images/gradient-white-to-purple-trophy-image.png'
                         itemName='Leaderboard'
-                        pageHref='/pages/leaderboard'
-                        isSelected={currentPage == 'Leaderboard'}
+                        pageHref='/leaderboard'
                     />
                     <MenuBarListItem
                         isSideBarOpen={isMenuOpen}
                         notSelectedImgSrc='/images/gradient-purple-stacked-image.png'
                         SelectedImgSrc='/images/gradient-white-to-purple-stacked-image.png'
                         itemName='Staking'
-                        // pageHref='/pages/staking'
+                        // pageHref='/staking'
                         pageHref=''
-                        isSelected={currentPage == 'Staking'}
                     />
                 </ul>
                 <ul className='flex flex-col gap-[1.25vh] text-white w-full'>
@@ -74,7 +67,6 @@ const MenuBar = ({ isMenuOpen, currentPage, onProfileClick, onMobileMenuClick }:
                         notSelectedImgSrc='/images/gradient-purple-profile-image.png'
                         SelectedImgSrc='/images/gradient-white-to-purple-profile-image.png'
                         itemName='Profile'
-                        isSelected={false}
                         onClick={onProfileClick}
                     />
                     <MenuBarListItem
@@ -82,16 +74,14 @@ const MenuBar = ({ isMenuOpen, currentPage, onProfileClick, onMobileMenuClick }:
                         notSelectedImgSrc='/images/gradient-purple-wallet-image.png'
                         SelectedImgSrc='/images/gradient-white-to-purple-wallet-image.png'
                         itemName='Wallet'
-                        pageHref='/pages/wallet'
-                        isSelected={currentPage === 'Wallet'}
+                        pageHref='/wallet'
                     />
                     <MenuBarListItem
                         isSideBarOpen={isMenuOpen}
                         notSelectedImgSrc='/images/gradient-purple-cog-image.png'
                         SelectedImgSrc='/images/gradient-white-to-purple-cog-image.png'
                         itemName='Settings'
-                        pageHref='/pages/settings'
-                        isSelected={currentPage === 'Settings'}
+                        pageHref='/settings'
                     />
                 </ul>
             </div >
@@ -126,39 +116,34 @@ const MenuBar = ({ isMenuOpen, currentPage, onProfileClick, onMobileMenuClick }:
                                         activeTextColor='#D187FF'
                                         pageHref='/'
                                         buttonName='Games'
-                                        active={currentPage === 'Home'}
                                     />
                                     <QuickMenuButton
                                         iconSrc='/images/mobile-sports-image.png'
                                         iconActiveSrc='/images/mobile-yellow-sports-image.png'
                                         activeTextColor='#FFF387'
-                                        pageHref='/pages/sports'
+                                        pageHref='/sports'
                                         buttonName='Sports'
-                                        active={currentPage === 'Sports'}
                                     />
                                     <QuickMenuButton
                                         iconSrc='/images/mobile-rewards-image.png'
                                         iconActiveSrc='/images/mobile-light-green-rewards-image.png'
                                         activeTextColor='#87FFD4'
-                                        pageHref='/pages/affiliate'
+                                        pageHref='/affiliate'
                                         buttonName='Rewards'
-                                        active={currentPage === 'Affiliate'}
                                     />
                                     <QuickMenuButton
                                         iconSrc='/images/mobile-wallet-image.png'
                                         iconActiveSrc='/images/mobile-green-wallet-image.png'
                                         activeTextColor='#9FFF87'
-                                        pageHref='/pages/wallet'
+                                        pageHref='/wallet'
                                         buttonName='Wallet'
-                                        active={currentPage === 'Wallet'}
                                     />
                                     <QuickMenuButton
                                         iconSrc='/images/mobile-profile-image.png'
                                         iconActiveSrc='/images/mobile-blue-profile-image.png'
                                         activeTextColor='#87C5FF'
-                                        pageHref='/pages/profile'
+                                        pageHref='/profile'
                                         buttonName='Profile'
-                                        active={currentPage === 'Profile'}
                                     />
                                 </>
                             }

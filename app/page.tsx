@@ -2,16 +2,15 @@ import BigBannerSlider from './components/Banners/BigBannerSlider'
 import GameBanner from './components/Banners/GameBanner'
 import ReferralBanner from './components/Banners/ReferralBanner'
 import FAQReferral from './components/FAQReferral'
-import MainComponents from './components/MainComponents'
 import QuickListGames from './components/Quicklist/QuickListGames'
 import QuickListSports from './components/Quicklist/QuickListSports'
 import RealTimeBetWinners from './components/RealTimeBetWinners/RealTimeBetWinners'
 import Searchbar from './components/Searchbar'
-import walletList from "./components/wallet-list.json"
+import walletList from "./components/temporaryJsons/wallet-list.json"
 
 export default function Home() {
   return (
-    <MainComponents currentPage='Home'>
+    <>
       {/* Web View */}
       <div className='w-full hidden lg:flex flex-col gap-[2.08vw]'>
         <div className='w-full flex flex-col items-center justify-center'>
@@ -62,6 +61,6 @@ export default function Home() {
           <QuickListGames gameListTitle="Game Shows" gameList={walletList} headerImgSrc='/images/popular-games-image.png' rows={1} />
         </div>
       </div>
-    </MainComponents>
+    </>
   )
 }

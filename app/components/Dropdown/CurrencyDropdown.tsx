@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react'
-import list from '@/app/components/currencies-list.json'
+import list from '@/app/components/temporaryJsons/currencies-list.json'
 import Image from 'next/image';
 import basePath from '../../utilities/basepath';
 

@@ -1,14 +1,13 @@
 'use client'
 
 import ImageResponsive from '@/app/components/ImageResponsive'
-import MainComponents from '@/app/components/MainComponents'
 import Searchbar from '@/app/components/Searchbar'
 import SelectionButtonsWithIcons from '@/app/components/SelectionButtonsWithIcons'
 import Toggle from '@/app/components/Toggle'
 import WalletList from '@/app/components/Wallet/WalletList'
 import WalletListItem from '@/app/components/Wallet/WalletListItem'
 import React, { useState } from 'react'
-import walletList from '@/app/components/wallet-list.json'
+import walletList from '@/app/components/temporaryJsons/wallet-list.json'
 import Deposit from '@/app/components/Wallet/WalletMobile/Deposit'
 import Withdraw from '@/app/components/Wallet/WalletMobile/Withdraw'
 import BuyCrypto from '@/app/components/Wallet/WalletMobile/BuyCrypto'
@@ -16,7 +15,7 @@ import BuyCrypto from '@/app/components/Wallet/WalletMobile/BuyCrypto'
 const WalletPage = () => {
     const [option, changeOption] = useState(0);
     return (
-        <MainComponents currentPage='Wallet'>
+        <>
             {/* Web Ver */}
             <div className='text-white font-montserrat font-medium text-[0.83vw] hidden lg:block'>
                 <div className='w-full flex flex-col'>
@@ -142,7 +141,7 @@ const WalletPage = () => {
                 {option === 1 && <Withdraw />}
                 {option === 2 && <BuyCrypto />}
             </div>
-        </MainComponents>
+        </>
     )
 }
 

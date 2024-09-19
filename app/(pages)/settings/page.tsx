@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useEffect } from 'react'
-import MainComponents from '@/app/components/MainComponents'
 import ImageResponsive from '@/app/components/ImageResponsive';
 import SelectionButtonsWithIcons from '@/app/components/SelectionButtonsWithIcons';
 import { useRouter } from 'next/navigation';
@@ -25,7 +24,7 @@ const SettingsPage = () => {
         }
     }, [router]);
     return (
-        <MainComponents>
+        <>
             <div className='text-white font-montserrat font-medium text-[0.83vw]'>
                 <div className='w-full flex flex-col'>
                     <div className='flex items-center gap-[0.47%] mb-[1.86%]'>
@@ -123,7 +122,7 @@ const SettingsPage = () => {
                     </div>
                 </div>
             </div>
-        </MainComponents >
+        </ >
     )
 }
 

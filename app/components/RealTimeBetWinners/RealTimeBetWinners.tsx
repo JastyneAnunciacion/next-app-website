@@ -2,7 +2,7 @@
 
 import React from 'react'
 import RealTimeBetWinnersListItem from './RealTimeBetWinnersListItem'
-import walletList from '../wallet-list.json'
+import walletList from '../temporaryJsons/wallet-list.json'
 import Image from 'next/image'
 import basePath from '@/app/utilities/basepath'
 

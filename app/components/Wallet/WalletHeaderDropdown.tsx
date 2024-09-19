@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react'
-import list from '../wallet-list.json'
+import list from '../temporaryJsons/wallet-list.json'
 import Image from 'next/image';
 import basePath from '../../utilities/basepath';
 import Toggle from '../Toggle';

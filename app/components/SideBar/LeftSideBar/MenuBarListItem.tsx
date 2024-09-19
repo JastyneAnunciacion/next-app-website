@@ -1,7 +1,10 @@
+'use client'
+
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import basePath from '@/app/utilities/basepath';
 import Link from 'next/link'
+import { usePathname } from 'next/navigation';
 
 
 interface MenuBarListItemProps {
@@ -10,12 +13,13 @@ interface MenuBarListItemProps {
     SelectedImgSrc: string,
     itemName: string,
     pageHref?: string,
-    isSelected: boolean,
     onClick?: () => void,
 }
 
-const MenuBarListItem = ({ isSideBarOpen, notSelectedImgSrc, SelectedImgSrc, itemName, pageHref = '', isSelected, onClick }: MenuBarListItemProps) => {
+const MenuBarListItem = ({ isSideBarOpen, notSelectedImgSrc, SelectedImgSrc, itemName, pageHref = '', onClick }: MenuBarListItemProps) => {
     const [showItemName, setShowItemName] = useState(isSideBarOpen);
+    const pathName = usePathname();
+    const isActive = pageHref === pathName;
 
     useEffect(() => {
         let timer: NodeJS.Timeout;
@@ -33,20 +37,20 @@ const MenuBarListItem = ({ isSideBarOpen, notSelectedImgSrc, SelectedImgSrc, ite
             <Link
                 href={pageHref}
                 onClick={onClick}
-                className={`${isSelected && 'pointer-events-none'} ${pageHref == ''} transition-all duration-300 flex items-center pl-[0.83vw] h-[2.77vw] overflow-hidden gap-[0.69vw] rounded-lg
+                className={`${isActive && 'pointer-events-none'} ${pageHref == ''} transition-all duration-300 flex items-center pl-[0.83vw] h-[2.77vw] overflow-hidden gap-[0.69vw] rounded-lg
                     ${!isSideBarOpen ?
                         'w-[2.77vw] relative group shrink-0'
                         :
                         'w-[11.80vw]'
                     }  
-                    ${isSelected ?
+                    ${isActive ?
                         'bg-gradient-to-b from-[#BD73F9] to-[#9B34FD] shadow-glow shadow-[#bb6ffa86]'
                         :
                         'bg-[#241A46]'
                     }
                     `}>
                 <div className={`h-[1.04vw] aspect-square`}>
-                    <Image src={`${!isSelected ? basePath + notSelectedImgSrc : basePath + SelectedImgSrc}`} alt='Menu icon' layout='responsive' width={100} height={100} />
+                    <Image src={`${!isActive ? basePath + notSelectedImgSrc : basePath + SelectedImgSrc}`} alt='Menu icon' layout='responsive' width={100} height={100} />
                 </div>
                 <p className={`${isSideBarOpen ? 'text-white' : 'text-white/0'} text-[0.83vw] transition-colors duration-100`}>{itemName}</p>
 

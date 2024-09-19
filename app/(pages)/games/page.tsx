@@ -1,8 +1,7 @@
 'use client'
 
 import React from 'react'
-import walletList from '@/app/components/wallet-list.json'
-import MainComponents from '@/app/components/MainComponents'
+import walletList from '@/app/components/temporaryJsons/wallet-list.json'
 import SelectionDropdown from '@/app/components/Dropdown/SelectionDropdown'
 import Searchbar from '@/app/components/Searchbar'
 import GridList from '@/app/components/GridList'
@@ -34,7 +33,7 @@ const CasinoPage = () => {
   }))
 
   return (
-    <MainComponents>
+    <>
       <div className='mt-4 flex flex-col gap-1 text-sm w-full'>
         <SelectionDropdown items={sort} placeHolderText='Sort:' placeArrowOnRight={true} />
         <SelectionDropdown items={providers} placeHolderText='Provider:' placeArrowOnRight={true} />
@@ -49,7 +48,7 @@ const CasinoPage = () => {
       <div className='w-full'>
         <GridList list={walletList} />
       </div>
-    </MainComponents>
+    </>
 
   )
 }
