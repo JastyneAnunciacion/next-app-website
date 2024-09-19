@@ -1,6 +1,5 @@
 import React from 'react'
 import SelectionDropdown from '../Dropdown/SelectionDropdown'
-import Toggle from '../Toggle';
 import DropdownExpand from '../Dropdown/DropdownExpand';
 import SettingsInputField from './SettingsInputField';
 
