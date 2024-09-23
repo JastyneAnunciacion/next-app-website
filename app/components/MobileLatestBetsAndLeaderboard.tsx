@@ -19,7 +19,7 @@ const MobileLatestBetsAndLeaderboard = () => {
                     <ImageResponsive src={`/images/${toggleOption === 0 ? 'gradient-purple' : 'gray'}-fire-image.png`}
                         alt='Latest Bet Icon' width='3.79vw' aspectWidth={18.21} aspectHeight={20}
                     />
-                    <p>Latest Bets</p>
+                    <p className={`${toggleOption === 0 ? 'text-white' : 'text-[#7A7A7A]'} text-[2.91vw]`}>Latest Bets</p>
                 </button>
                 <button
                     onClick={() => setToggleOption(1)}
@@ -28,7 +28,7 @@ const MobileLatestBetsAndLeaderboard = () => {
                     <ImageResponsive src={`/images/${toggleOption === 1 ? 'gradient-purple' : 'gray'}-trophy-image.png`}
                         alt='Leaderboard Icon' width='4.16vw'
                     />
-                    <p>Leaderboard</p>
+                    <p className={`${toggleOption === 1 ? 'text-white' : 'text-[#7A7A7A]'} text-[2.91vw]`}>Leaderboard</p>
                 </button>
             </div>
             <div className='border-t border-[#34375F]' />
@@ -38,10 +38,10 @@ const MobileLatestBetsAndLeaderboard = () => {
                 }
 
                 {toggleOption === 1 &&
-                    <>
-                        <LeaderboardOverview />
+                    <div className='flex flex-col gap-[1.66vw]'>
                         <LeaderboardRanks />
-                    </>
+                        <LeaderboardOverview />
+                    </ div>
                 }
             </div>
         </div>
