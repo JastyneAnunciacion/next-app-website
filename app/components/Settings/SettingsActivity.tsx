@@ -44,7 +44,7 @@ const SettingsActivity = () => {
             </div>
 
             {currentShowToggle && (
-                <div className='flex flex-col gap-2 text-orange-500 '>
+                <div className='flex flex-col gap-2 text-orange-500'>
                     <div className='w-[774px]'>
                         <p className='font-semibold pl-1'>Currency</p>
                         <SelectionDropdown items={wallet} placeArrowOnRight={true} />

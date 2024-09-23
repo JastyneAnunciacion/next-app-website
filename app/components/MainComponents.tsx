@@ -10,10 +10,9 @@ import ProfilePopup from './ProfilePopup'
 
 interface MainComponentsProps {
     children: ReactNode,
-    currentPage?: string
 }
 
-const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => {
+const MainComponents = ({ children }: MainComponentsProps) => {
     const [isMenuBarOpen, setMenuBarOpen] = useState(false);
     const [isProfilePopUpOpen, setProfilePopUpOpen] = useState(false);
     const [rightSideOption, setRightSideOption] = useState(0);
@@ -142,6 +141,7 @@ const MainComponents = ({ children, currentPage = '' }: MainComponentsProps) => 
                 <div className={`lg:hidden flex flex-col max-w-full ${isMenuBarOpen && 'overflow-hidden'}`}>
                     <div className='w-full flex flex-col items-center self-center'>
                         {children}
+                        <Footer />
                     </div>
                     <div className='h-[42.29vw] bottom-0 z-0 pointer-events-none' />
                 </div>
