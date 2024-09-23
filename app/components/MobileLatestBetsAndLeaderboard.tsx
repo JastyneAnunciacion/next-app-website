@@ -2,6 +2,10 @@
 
 import React, { useState } from 'react'
 import ImageResponsive from './ImageResponsive'
+import RealTimeBetWinners from './RealTimeBetWinners/RealTimeBetWinners';
+import LeaderboardPosition from './Leaderboard/LeaderboardPosition';
+import LeaderboardOverview from './Leaderboard/LeaderboardOverview';
+import LeaderboardRanks from './Leaderboard/LeaderboardRanks';
 
 const MobileLatestBetsAndLeaderboard = () => {
     const [toggleOption, setToggleOption] = useState(0);
@@ -22,12 +26,24 @@ const MobileLatestBetsAndLeaderboard = () => {
                     className={`flex items-center gap-[1.04vw] py-[5vw] ${toggleOption === 1 && 'border-b border-[#9763F7]'}`}
                 >
                     <ImageResponsive src={`/images/${toggleOption === 1 ? 'gradient-purple' : 'gray'}-trophy-image.png`}
-                        alt='Leaderboard Icon' width='4.16'
+                        alt='Leaderboard Icon' width='4.16vw'
                     />
                     <p>Leaderboard</p>
                 </button>
             </div>
             <div className='border-t border-[#34375F]' />
+            <div className='w-full py-[6.66vw] px-[5vw]'>
+                {toggleOption === 0 &&
+                    <RealTimeBetWinners />
+                }
+
+                {toggleOption === 1 &&
+                    <>
+                        <LeaderboardOverview />
+                        <LeaderboardRanks />
+                    </>
+                }
+            </div>
         </div>
     )
 }

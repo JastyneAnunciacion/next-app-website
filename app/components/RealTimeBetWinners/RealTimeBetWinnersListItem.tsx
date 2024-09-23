@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import basePath from '@/app/utilities/basepath';
+import ImageResponsive from '../ImageResponsive';
 
 interface RealTimeBetWinnersListItemProps {
     userName?: string,
@@ -57,32 +58,52 @@ const RealTimeBetWinnersListItem = ({
     const numericPayout = parseFloat(tempPayout);
 
     return (
-        <div className={`w-full aspect-[103/4] ${isEvenInList && 'bg-[#130C28] rounded-xl'}`}>
-            <div className='w-full h-full grid grid-cols-5 items-center px-[0.69vw] text-[0.83vw]'>
-                <div className='flex h-full items-center gap-[0.35vw]'>
-                    <div className='h-[62.5%] aspect-square'>
-                        <Image src={`${basePath}/images/xs-game-icon-5.png`} alt="Game Icon" layout='responsive' width={100} height={100} />
+        <>
+            {/* Web Ver */}
+            <div className={`hidden lg:block w-full aspect-[103/4] ${isEvenInList && 'bg-[#130C28] rounded-xl'}`}>
+                <div className='w-full h-full grid grid-cols-5 items-center px-[0.69vw] text-[0.83vw]'>
+                    <div className='flex h-full items-center gap-[0.35vw]'>
+                        <div className='h-[62.5%] aspect-square'>
+                            <Image src={`${basePath}/images/xs-game-icon-5.png`} alt="Game Icon" layout='responsive' width={100} height={100} />
+                        </div>
+                        <p className='text-nowrap overflow-hidden text-ellipsis'>{tempGameName}</p>
                     </div>
-                    <p className='text-nowrap overflow-hidden text-ellipsis'>{tempGameName}</p>
-                </div>
-                <p className='flex justify-center items-center'>{userName}</p>
-                <div className='flex gap-[0.35vw] items-center justify-center'>
-                    <p>{tempBetAmount}</p>
-                    <div className='shrink-0'>
-                        <Image src={`${basePath + betTokenImgSrc}`} alt='Token Icon' width={15} height={15} />
+                    <p className='flex justify-center items-center'>{userName}</p>
+                    <div className='flex gap-[0.35vw] items-center justify-center'>
+                        <p>{tempBetAmount}</p>
+                        <div className='shrink-0'>
+                            <Image src={`${basePath + betTokenImgSrc}`} alt='Token Icon' width={15} height={15} />
+                        </div>
                     </div>
-                </div>
-                <p className='flex justify-center items-center'>{'x' + tempMultiplier}</p>
-                <div className='flex gap-[0.35vw] items-center justify-end'>
-                    <p className={`flex items-center ${numericPayout < 0 ? 'text-[#acacac]' : 'text-green-500'}`}>
-                        {numericPayout > 0 ? '+' : ''}{tempPayout}
-                    </p>
-                    <div className='shrink-0'>
-                        <Image src={`${basePath + betTokenImgSrc}`} alt='Token Icon' width={15} height={15} />
+                    <p className='flex justify-center items-center'>{'x' + tempMultiplier}</p>
+                    <div className='flex gap-[0.35vw] items-center justify-end'>
+                        <p className={`flex items-center ${numericPayout < 0 ? 'text-[#acacac]' : 'text-green-500'}`}>
+                            {numericPayout > 0 ? '+' : ''}{tempPayout}
+                        </p>
+                        <div className='shrink-0'>
+                            <Image src={`${basePath + betTokenImgSrc}`} alt='Token Icon' width={15} height={15} />
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+            {/* Mobile Ver */}
+            <div className={`lg:hidden w-full ${isEvenInList && 'bg-[#403269]'}`}>
+                <div className='w-full h-full grid grid-cols-2 items-center px-[5vw] py-[1.56vw] text-[3.33vw ]'>
+                    <div className='flex h-full items-center gap-[1.66vw]'>
+                        <ImageResponsive src='/images/xs-game-icon-5.png' alt="Game Icon" width='5.21vw' />
+                        <p className='text-nowrap overflow-hidden text-ellipsis'>{tempGameName}</p>
+                    </div>
+
+                    <div className='flex gap-[1.66vw] items-center justify-end'>
+                        <p className={`flex items-center ${numericPayout < 0 ? 'text-[#acacac]' : 'text-green-500'}`}>
+                            {numericPayout > 0 ? '+' : ''}{tempPayout}
+                        </p>
+                        <ImageResponsive src={betTokenImgSrc} alt='Token Icon' width='3.13vw' />
+                    </div>
+                </div>
+            </div>
+        </>
     )
 }
 

@@ -47,7 +47,7 @@ const Footer = () => {
             </div>
 
             {/* Mobile Ver */}
-            <div className='lg:hidden mt-[6.66vw] w-full'>
+            <div className='lg:hidden w-full'>
                 <div className='w-full border-t border-[#34375F]' />
                 <div className='flex flex-col items-center gap-[3.33vw] px-[4.79vw] text-center text-[#C0C0C0] py-[5vw] text-[2.91vw] font-montserrat'>
                     <p>All rights reserved - © Phoenix Game [v0.1.1]</p>
