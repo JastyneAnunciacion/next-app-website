@@ -2,6 +2,7 @@ import BigBannerSlider from './components/Banners/BigBannerSlider'
 import GameBanner from './components/Banners/GameBanner'
 import ReferralBanner from './components/Banners/ReferralBanner'
 import FAQReferral from './components/FAQReferral'
+import MobileLatestBetsAndLeaderboard from './components/MobileLatestBetsAndLeaderboard'
 import QuickListGames from './components/Quicklist/QuickListGames'
 import QuickListSports from './components/Quicklist/QuickListSports'
 import RealTimeBetWinners from './components/RealTimeBetWinners/RealTimeBetWinners'
@@ -60,6 +61,8 @@ export default function Home() {
           <QuickListGames gameListTitle="Table Games" gameList={walletList} headerImgSrc='/images/popular-games-image.png' rows={1} />
           <QuickListGames gameListTitle="Game Shows" gameList={walletList} headerImgSrc='/images/popular-games-image.png' rows={1} />
         </div>
+
+        <MobileLatestBetsAndLeaderboard />
       </div>
     </>
   )

@@ -49,11 +49,11 @@ const Footer = () => {
             {/* Mobile Ver */}
             <div className='lg:hidden mt-[6.66vw] w-full'>
                 <div className='w-full border-t border-[#34375F]' />
-                <div className='flex flex-col items-center gap-[3.33vw] px-[4.79vw] text-center text-[#C0C0C0] py-[5vw] text-[2.91vw]'>
+                <div className='flex flex-col items-center gap-[3.33vw] px-[4.79vw] text-center text-[#C0C0C0] py-[5vw] text-[2.91vw] font-montserrat'>
                     <p>All rights reserved - © Phoenix Game [v0.1.1]</p>
                     <p>1 TON = 5.69</p>
                     <p>Terms and conditions - Responsible Gaming - AML Policy - Restricted jurisdictions - Fairness - FAQ - Support</p>
-                    <button className='bg-[#2A2444] w-[22.7vw] aspect-[109/43] rounded-[10px] text-white'>English</button>
+                    <button className='bg-[#2A2444] w-[22.7vw] aspect-[109/43] rounded-[10px] text-white text-[3.54vw] font-manrope'>English</button>
                 </div>
                 <div className='w-full border-t border-[#34375F]' />
                 <div className='flex items-center justify-center gap-[14.37vw] py-[6.66vw]'>
