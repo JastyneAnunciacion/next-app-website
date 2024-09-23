@@ -13,7 +13,6 @@ interface CopyTextTemplate {
 const CopyTextTemplate = ({
   textToCopy,
   textWidth,
-  hasLinkImage = false,
   copyIconWidth = '27.5%',
   copyButtonWidth = '12.99%'
 }: CopyTextTemplate) => {
