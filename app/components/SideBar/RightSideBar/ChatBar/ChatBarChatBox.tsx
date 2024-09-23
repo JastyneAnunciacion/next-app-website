@@ -8,7 +8,7 @@ const ChatBarChatBox = () => {
 
     return (
         <div>
-            <div className='fixed w-[17.71vw] max-w-[340px] aspect-[125/27] bottom-0 right-0 bg-[#1A0938] border-t border-[#231744] rounded-tl-lg flex items-center justify-center'>
+            <div className='fixed w-[17.36vw] max-w-[380px] aspect-[125/27] bottom-0 right-0 bg-[#1A0938] border-t border-[#231744] rounded-tl-lg flex items-center justify-center'>
                 <div className='w-[88%] aspect-[110/17] rounded-lg pl-[4.54%] pr-[2.72%] bg-[#070123] flex items-center'>
                     <input
                         style={{ fontSize: 'clamp(1px, 0.83vw , 16.3px)' }}
@@ -25,7 +25,7 @@ const ChatBarChatBox = () => {
                     </button>
                 </div>
             </div>
-            <div className='w-[17.71vw] max-w-[340px] aspect-[125/27]' />
+            <div className='w-[17.36vw] max-w-[340px] aspect-[125/27]' />
         </div>
     )
 }

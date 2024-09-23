@@ -123,15 +123,15 @@ const MainComponents = ({ children }: MainComponentsProps) => {
                 <div className='hidden lg:flex w-full h-full pt-[5.62vw]'>
                     <div style={{ ...fixedElementStyle }} className='fixed rounded-xl h-full bg-gradient-to-b from-[#11062E] to-[#070123]' />
                     <div className={`shrink-0 h-full transition-width duration-300 pl-[0.69vw] pr-[0.35vw] mr-[0.35vw] ${!isMenuBarOpen ? 'w-[3.82vw] ' : 'w-[12.85vw]'}`} />
-                    <div className='w-full flex justify-center items-center'>
-                        <div ref={childrenDivRef} className={`w-full max-w-[1507px] transition-width duration-300 flex flex-col items-center z-10`}>
+                    <div className='mx-auto flex justify-center items-center'>
+                        <div ref={childrenDivRef} className={`max-w-[1200px] transition-width duration-300 flex flex-col items-center z-10`}>
                             <div className='w-full px-[2.08vw] pt-[2.08vw] pb-[4.86vw]'>
                                 {children}
                                 <Footer />
                             </div>
                         </div>
                     </div>
-                    <div className='shrink-0 w-[17.71vw] max-w-[340px]'>
+                    <div className='shrink-0 w-[17.36vw] ml-[0.35vw] max-w-[380px]'>
                         <ChatBar show={rightSideOption === 0} />
                         <NotificationBar show={rightSideOption === 1} />
                     </div>
