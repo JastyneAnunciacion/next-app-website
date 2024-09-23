@@ -58,16 +58,16 @@ const Footer = () => {
                 <div className='w-full border-t border-[#34375F]' />
                 <div className='flex items-center justify-center gap-[14.37vw] py-[6.66vw]'>
                     <button className='w-[7.5vw] aspect-square'>
-                        <ImageResponsive src='/images/tokens/grayscale-AVAX-icon.png' alt='Grayscale AVAX icon' width='w-full' />
+                        <ImageResponsive src='/images/tokens/grayscale-AVAX-icon.png' alt='Grayscale AVAX icon' width='100%' />
                     </button>
                     <button className='w-[7.5vw] aspect-square'>
-                        <ImageResponsive src='/images/tokens/grayscale-BTC-icon.png' alt='Grayscale BTC icon' width='w-full' aspectWidth={27} aspectHeight={36} />
+                        <ImageResponsive src='/images/tokens/grayscale-BTC-icon.png' alt='Grayscale BTC icon' width='75%' aspectWidth={27} aspectHeight={36} />
                     </button>
                     <button className='w-[7.5vw] aspect-square'>
-                        <ImageResponsive src='/images/tokens/grayscale-SOL-icon.png' alt='Grayscale SOL icon' width='w-full' aspectWidth={36} aspectHeight={27} />
+                        <ImageResponsive src='/images/tokens/grayscale-SOL-icon.png' alt='Grayscale SOL icon' width='100%' aspectWidth={36} aspectHeight={27} />
                     </button>
                     <button className='w-[7.5vw] aspect-square'>
-                        <ImageResponsive src='/images/tokens/grayscale-ETH-icon.png' alt='Grayscale ETH icon' width='w-full' aspectWidth={21.81} aspectHeight={35.8} />
+                        <ImageResponsive src='/images/tokens/grayscale-ETH-icon.png' alt='Grayscale ETH icon' width='60.58%' aspectWidth={21.81} aspectHeight={35.8} />
                     </button>
                 </div>
                 <div className='w-full border-t border-[#34375F]' />
