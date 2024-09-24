@@ -36,7 +36,7 @@ const MenuBar = ({ isMenuOpen, onProfileClick, onMobileMenuClick }: MenuBarProps
                         notSelectedImgSrc='/images/gradient-purple-sports-image.png'
                         SelectedImgSrc='/images/gradient-white-to-purple-sports-image.png'
                         itemName='Sports'
-                        pageHref=''
+                        pageHref='/sports'
                     />
                     <MenuBarListItem
                         isSideBarOpen={isMenuOpen}

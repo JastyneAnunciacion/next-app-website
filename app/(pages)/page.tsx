@@ -1,13 +1,13 @@
-import BigBannerSlider from './components/Banners/BigBannerSlider'
-import GameBanner from './components/Banners/GameBanner'
-import ReferralBanner from './components/Banners/ReferralBanner'
-import FAQReferral from './components/FAQReferral'
-import MobileLatestBetsAndLeaderboard from './components/MobileLatestBetsAndLeaderboard'
-import QuickListGames from './components/Quicklist/QuickListGames'
-import QuickListSports from './components/Quicklist/QuickListSports'
-import RealTimeBetWinners from './components/RealTimeBetWinners/RealTimeBetWinners'
-import Searchbar from './components/Searchbar'
-import walletList from "./components/temporaryJsons/wallet-list.json"
+import BigBannerSlider from '../components/Banners/BigBannerSlider'
+import GameBanner from '../components/Banners/GameBanner'
+import ReferralBanner from '../components/Banners/ReferralBanner'
+import FAQReferral from '../components/FAQReferral'
+import MobileLatestBetsAndLeaderboard from '../components/MobileLatestBetsAndLeaderboard'
+import QuickListGames from '../components/Quicklist/QuickListGames'
+import QuickListSports from '../components/Quicklist/QuickListSports'
+import RealTimeBetWinners from '../components/RealTimeBetWinners/RealTimeBetWinners'
+import Searchbar from '../components/Searchbar'
+import walletList from "../components/temporaryJsons/wallet-list.json"
 
 export default function Home() {
   return (
