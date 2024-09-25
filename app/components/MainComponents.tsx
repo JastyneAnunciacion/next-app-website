@@ -10,16 +10,14 @@ import ProfilePopup from './ProfilePopup'
 
 interface MainComponentsProps {
     children: ReactNode,
+    isMenuBarOpen: boolean,
+    toggleMenuBar: () => void
 }
 
-const MainComponents = ({ children }: MainComponentsProps) => {
-    const [isMenuBarOpen, setMenuBarOpen] = useState(false);
+const MainComponents = ({ children, isMenuBarOpen, toggleMenuBar }: MainComponentsProps) => {
     const [isProfilePopUpOpen, setProfilePopUpOpen] = useState(false);
     const [rightSideOption, setRightSideOption] = useState(0);
 
-    const toggleMenuBar = () => {
-        setMenuBarOpen(prev => !prev);
-    };
     return (
         <main className='h-full w-full overflow-x-hidden'>
             <MenuBar

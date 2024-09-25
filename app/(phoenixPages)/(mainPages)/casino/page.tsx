@@ -6,7 +6,7 @@ import QuickListGames from '@/app/components/Quicklist/QuickListGames'
 import RealTimeBetWinners from '@/app/components/RealTimeBetWinners/RealTimeBetWinners'
 import GameBanner from '@/app/components/Banners/GameBanner'
 import ReferralBanner from '@/app/components/Banners/ReferralBanner'
-import walletList from "../../components/temporaryJsons/wallet-list.json"
+import walletList from "../../../components/temporaryJsons/wallet-list.json"
 import SorterButton from '@/app/components/SorterButton'
 import { useRouter } from 'next/navigation'
 
