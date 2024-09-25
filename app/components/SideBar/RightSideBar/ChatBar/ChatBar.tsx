@@ -22,7 +22,7 @@ const ChatBar = ({ show = true }: ChatBarProps) => {
                     overflowY: 'scroll',
                     overflowX: 'visible',
                 }}
-                className='px-[4%]'
+                className='px-[4%] mb-[2.17%]'
             >
                 {Array.from({ length: 21 }).map((_, index) => (
                     <div className={`w-full aspect-[115/33] ${index != 20 && 'mb-[2.17%]'}`} key={index}>

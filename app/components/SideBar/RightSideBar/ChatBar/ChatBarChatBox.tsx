@@ -25,7 +25,7 @@ const ChatBarChatBox = () => {
                     </button>
                 </div>
             </div>
-            <div className='w-[17.36vw] max-w-[340px] aspect-[125/27]' />
+            <div className='w-[17.36vw] max-w-[380px] aspect-[125/27]' />
         </div>
     )
 }
